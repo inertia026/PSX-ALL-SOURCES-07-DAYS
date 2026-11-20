@@ -40,12 +40,15 @@ def build(ctx, state: dict) -> dict:
     run, snap, cfg = ctx.run, ctx.snap, settings()
     rows = scoring.rank(ctx)
     write_json(run / "ranking.json", {"as_of": snap["as_of"], "window": snap["window"],
-                                      "fingerprint": snap["fingerprint"], "rows": rows})
+                                      "fingerprint": snap["fingerprint"], "rows": rows,
+                                      # lets the scorecard build the KSE-100 proxy without the private snapshot
+                                      "benchmark_members": [[m["symbol"], m["free_float_shares"], m["close"]]
+                                                            for m in snap["members"]]})
     news, sen, rm, tr = (ctx.stage(n) for n in ("news", "sentiment", "research_manager", "trader"))
     risk1, risk2, pm = ctx.stage("risk_r1"), ctx.stage("risk_r2"), ctx.stage("portfolio_manager")
     social = ctx.stage("social") or snap.get("social") or {}
     narrative = ctx.stage("narrative").get("summary_md", "_Narrative not generated._")
-    missing = snap["source_errors"] + ([] if snap.get("fipi_lipi") else ["FIPI/LIPI flows (NCCPL blocks scripts; no manual file supplied)"])
+    missing = snap["source_errors"] + ([] if snap.get("fipi_lipi") else ["FIPI/LIPI numbers (NCCPL blocks scripts; flow headlines used instead)"])
     if not social.get("items"):
         missing.append("Social posts (collector off or found nothing)")
 
@@ -83,7 +86,7 @@ def build(ctx, state: dict) -> dict:
         titles = {n["id"]: (n["title"], n["url"]) for n in p["news"]}
         L += ["", f"### News (agent) view: {ns.get('news_view', 'none')}"]
         L += [f"- `{i['id']}` [{titles.get(i['id'], ('', ''))[0]}]({titles.get(i['id'], ('', ''))[1]}): {i['tone']}, {i['impact']} impact. {i['why']}"
-              for i in ns.get("items", [])] or ["- No company news in the last 7 days."]
+              for i in ns.get("items", [])] or [f"- No company news in the last {cfg['news']['lookback_days']} days."]
         sv = sen.get(s, {})
         L += ["", f"### Sentiment (agent): {sv.get('mood')} ({sv.get('strength')})"]
         L += [f"- {x['text']} {_c(x['cites'])}" for x in sv.get("reasons", [])]
@@ -129,12 +132,17 @@ def build(ctx, state: dict) -> dict:
            f"- As-of close: **{snap['as_of']}**; forecast window **{', '.join(snap['window'])}**",
            f"- Universe: top 30 KSE-100 by free-float market cap: {', '.join(snap['universe'])}",
            f"- Fingerprint `{snap['fingerprint']}`: every agent answer is cached against its exact input, so re-running replays identical results.",
-           f"- Missing or blocked sources: {'; '.join(missing) or 'none'}", "",
+           f"- Missing or blocked sources: {'; '.join(missing) or 'none'}",
+           f"- News: {sum(1 for s in snap['universe'] if ctx.packs[s]['news'])}/30 companies had news in the last "
+           f"{cfg['news']['lookback_days']} days (RSS feeds + Google News search); {len(snap.get('flow_mentions', []))} foreign-flow headlines.",
+           f"- Price adjustments (dividend/bonus/rights, from PSX's own adjusted previous close): "
+           f"{sum(len(v) for v in snap.get('price_adjustments', {}).values())} events across {len(snap.get('price_adjustments', {}))} stocks.",
+           *[f"- **Warning:** {w}" for w in snap.get("warnings", [])], "",
            "## Stage 1: Analysts",
            f"- **Market (Python):** scores range {min(r['market_score'] for r in rows):+d} to {max(r['market_score'] for r in rows):+d}; "
            f"positive for {sum(r['market_score'] > 0 for r in rows)} of 30.",
            f"- **Fundamentals (Python):** positive for {sum(r['fundamental_score'] > 0 for r in rows)} of 30 (P/E vs peers, EPS growth, margins, catalysts).",
-           f"- **News (agent):** {sum(1 for s in snap['universe'] if ctx.packs[s]['news'])} stocks had news in 7 days; "
+           f"- **News (agent):** {sum(1 for s in snap['universe'] if ctx.packs[s]['news'])} stocks had news in {cfg['news']['lookback_days']} days; "
            f"views: {_counts(v.get('news_view') for v in news.get('stocks', {}).values())}. Macro view: **{news.get('macro', {}).get('macro_view')}**.",
            *[f"  - Macro: {d['text']} ({d['tone']})" for d in news.get("macro", {}).get("drivers", [])],
            f"- **Sentiment (agent):** moods: {_counts(v.get('mood') for v in sen.values())}. Social market mood: {social.get('market_mood', 'not collected')}.",

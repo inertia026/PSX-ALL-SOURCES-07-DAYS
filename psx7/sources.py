@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import csv
 import html
+import time
 import io
 import re
 import zipfile
@@ -277,6 +278,75 @@ def fetch_news(log=print) -> tuple[list[dict], list[str]]:
             seen.add(k)
             uniq.append(it)
     return uniq, errors
+
+
+# ----------------------------------------------------------------- Google News search (RSS)
+GNEWS = "https://news.google.com/rss/search"
+
+
+def google_news(query: str, http: Http) -> tuple[list[dict], str | None]:
+    """Free Google News RSS search. Returns (items, error). Title publisher suffix removed."""
+    r = None
+    for wait in (0, 15, 40):            # back off politely if rate-limited (HTTP 429)
+        if wait:
+            time.sleep(wait)
+        try:
+            r = http.get(GNEWS, params={"q": query, "hl": "en-PK", "gl": "PK", "ceid": "PK:en"})
+        except Exception as e:  # noqa: BLE001
+            return [], f"google news '{query[:40]}': {type(e).__name__}"
+        if r.status_code != 429:
+            break
+    if r.status_code != 200:
+        return [], f"google news '{query[:40]}': HTTP {r.status_code}"
+    try:
+        root = ET.fromstring(r.content)
+    except ET.ParseError:
+        return [], f"google news '{query[:40]}': bad XML"
+    out = []
+    for it in root.iter("item"):
+        src_el = it.find("source")
+        src = (src_el.text or "").strip() if src_el is not None else "Google News"
+        title = _clean(it.findtext("title"), 220)
+        if src and title.endswith(f" - {src}"):
+            title = title[: -len(src) - 3].strip()
+        pub = it.findtext("pubDate")
+        try:
+            dt = parsedate_to_datetime(pub).astimezone(timezone.utc) if pub else None
+        except (TypeError, ValueError):
+            dt = None
+        if title and dt:
+            out.append({"source": src, "title": title[:200], "url": (it.findtext("link") or "").strip(),
+                        "published_utc": dt.strftime("%Y-%m-%dT%H:%MZ"), "summary": ""})
+    return out, None
+
+
+# ----------------------------------------------------------------- corporate-action adjustment
+def adjust_history(rows: list[dict]) -> tuple[list[dict], list[dict]]:
+    """Back-adjust OHLC for dividends, bonus and rights.
+
+    On an ex-date PSX publishes LDCP = previous close already adjusted for the
+    entitlement (e.g. MTL 302.90 -> 291.90 on 2026-10-19). So the factor is
+    ldcp_t / close_(t-1), read from PSX's own data. Earlier prices are multiplied
+    by the product of later factors. Volumes are left as traded.
+    Returns (adjusted rows, list of events).
+    """
+    factors, events = [1.0] * len(rows), []
+    for i in range(1, len(rows)):
+        prev, cur = rows[i - 1]["close"], rows[i]["ldcp"]
+        if prev and cur:
+            f = cur / prev
+            if abs(f - 1) > 0.002 and 0.2 <= f <= 1.5:
+                factors[i] = f
+                events.append({"date": rows[i]["date"], "factor": r2(f, 4), "marker": rows[i].get("ex_marker", "")})
+    out, cum = [None] * len(rows), 1.0
+    for i in range(len(rows) - 1, -1, -1):
+        r = dict(rows[i])
+        if cum != 1.0:
+            for k in ("open", "high", "low", "close", "ldcp"):
+                r[k] = r2(r[k] * cum, 4)
+        out[i] = r
+        cum *= factors[i]
+    return out, events
 
 
 # ----------------------------------------------------------------- manual inputs

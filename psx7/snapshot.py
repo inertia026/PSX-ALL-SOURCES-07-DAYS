@@ -19,11 +19,16 @@ MACRO_WORDS = [
     "stock market", "foreign investors", "FIPI", "remittances", "current account", "reserves",
     "T-bill", "PIB", "circular debt", "Moody", "Fitch", "S&P", "GDP", "tax",
 ]
-NAME_DROP = r"\b(the|limited|ltd|company|co|corporation|pakistan|\(pakistan\)|of)\b"
+NAME_SUFFIX = r"\b(the|limited|ltd\.?|company limited|\(pakistan\))\b"
+FLOW_RE = re.compile(r"(?<![A-Za-z])(foreign investors?|foreign buying|foreign selling|foreign outflows?|"
+                     r"foreign inflows?|FIPI|LIPI|overseas investors?)(?![A-Za-z])", re.I)
 
 
 def run_dir(as_of: str):
     return RUNS_DIR / as_of
+
+
+PK_CONTEXT = re.compile(r"(?<![A-Za-z])(Pakistan\w*|PSX|KSE|SBP|rupee|PKR|Karachi|Islamabad|Lahore|Punjab|Sindh)(?![A-Za-z])", re.I)
 
 
 def _aliases() -> tuple[dict, set]:
@@ -31,16 +36,123 @@ def _aliases() -> tuple[dict, set]:
     return data.get("aliases", {}) or {}, set(data.get("ticker_word_blocklist", []) or [])
 
 
+def _strict() -> set[str]:
+    data = yaml.safe_load((CONFIG_DIR / "aliases.yaml").read_text(encoding="utf-8")) or {}
+    return set(data.get("strict_aliases", []) or [])
+
+
+class StrictPattern:
+    """Matches an alias only when it is NOT preceded by another capitalised word.
+
+    'Systems Limited posts profit' matches; 'Fujiyama Power Systems Limited' does not.
+    """
+
+    def __init__(self, w: str):
+        self.w = w
+        self.rx = re.compile(r"(?<![A-Za-z])" + re.escape(w) + r"(?![A-Za-z])", re.I)
+
+    def search(self, text: str):
+        for m in self.rx.finditer(text):
+            before = text[: m.start()].rstrip()
+            prev = before.split()[-1] if before.split() else ""
+            if not (prev[:1].isupper() and prev.strip("\"'‘’(").isalpha()):
+                return m
+        return None
+
+
+def _pat(w: str) -> re.Pattern:
+    """ALL-CAPS names match case-sensitively (PPL, HBL); others ignore case."""
+    flags = 0 if w.upper() == w else re.I
+    return re.compile(r"(?<![A-Za-z])" + re.escape(w) + r"(?![A-Za-z])", flags)
+
+
+def core_name(name: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(NAME_SUFFIX, " ", name, flags=re.I)).strip(" .&,")
+
+
 def match_patterns(symbol: str, name: str) -> list[re.Pattern]:
+    """Patterns that identify a company in a headline.
+
+    Aliases from config/aliases.yaml, the ticker (unless it is a common word), and the
+    company name without 'Limited' etc., used only if it is 2+ words and matched
+    case-sensitively (so 'Pakistan Petroleum' never matches 'petroleum levy').
+    """
     aliases, block = _aliases()
-    words = set(aliases.get(symbol, []))
-    core = re.sub(r"\s+", " ", re.sub(NAME_DROP, " ", name, flags=re.I)).strip(" .&")
-    if len(core) >= 6:
-        words.add(core)
-    pats = [re.compile(r"(?<![A-Za-z])" + re.escape(w) + r"(?![A-Za-z])", re.I) for w in sorted(words)]
+    strict = _strict()
+    pats = [StrictPattern(w) if w in strict else _pat(w) for w in sorted(set(aliases.get(symbol, [])))]
+    core = core_name(name)
+    if len(core.split()) >= 2:
+        pats.append(re.compile(r"(?<![A-Za-z])" + re.escape(core) + r"(?![A-Za-z])"))
     if symbol not in block and len(symbol) >= 3:
-        pats.append(re.compile(r"(?<![A-Za-z])" + re.escape(symbol) + r"(?![A-Za-z])"))  # case-sensitive
+        pats.append(re.compile(r"(?<![A-Za-z])" + re.escape(symbol) + r"(?![A-Za-z])"))
     return pats
+
+
+def google_query(symbol: str, name: str, days: int) -> str:
+    aliases, _ = _aliases()
+    names = [w for w in aliases.get(symbol, []) if len(w) > 4][:3] or [core_name(name)]
+    return " OR ".join(f'"{w}"' for w in names) + f" when:{days}d"
+
+
+def collect_news(as_of: str, window_start: str, universe: list[str], names: dict[str, str],
+                 log=print) -> tuple[dict, list, list, list]:
+    """News for the window [as_of - lookback, window_start). Returns (stock, macro, flows, errors).
+
+    Sources: RSS feeds (1-3 days deep) + Google News RSS search per company and for
+    macro topics (about 14 days deep). Headlines are matched to companies by title.
+    """
+    cfg = settings()["news"]
+    lo = (date.fromisoformat(as_of) - timedelta(days=cfg["lookback_days"])).isoformat()
+    junk = re.compile("|".join(re.escape(j) for j in cfg.get("junk_title_patterns", [])) or "$^", re.I)
+    in_window = lambda n: lo < n["published_utc"][:10] < window_start and not junk.search(n["title"])  # noqa: E731
+
+    feed_items, errors = sources.fetch_news(log=log)
+    pats = {s: match_patterns(s, names[s]) for s in universe}
+    stock: dict[str, list[dict]] = {s: [] for s in universe}
+    pool: list[dict] = [n for n in feed_items if in_window(n)]
+    for n in pool:
+        text = f"{n['title']} {n['summary']}"
+        for s in universe:
+            if any(p.search(text) for p in pats[s]):
+                stock[s].append(n)
+
+    macro_pool = list(pool)
+    if cfg.get("google_news", True):
+        http = sources.Http(delay=1.0)
+        days = cfg["lookback_days"]
+        log(f"  Google News search: {len(universe)} companies + {len(cfg.get('macro_queries', []))} macro topics ...")
+        for s in universe:
+            items, err = sources.google_news(google_query(s, names[s], days), http)
+            if err:
+                errors.append(err)
+            for n in items:
+                if in_window(n) and any(p.search(n["title"]) for p in pats[s]):
+                    stock[s].append(n)
+        for q in cfg.get("macro_queries", []):
+            items, err = sources.google_news(f"{q} when:{days}d", http)
+            if err:
+                errors.append(err)
+            macro_pool += [n for n in items if in_window(n) and PK_CONTEXT.search(n["title"])]
+
+    def dedupe(items):
+        seen, out = set(), []
+        for n in sorted(items, key=lambda x: (x["published_utc"], x["title"]), reverse=True):
+            k = re.sub(r"\W+", " ", n["title"].lower()).strip()
+            if k not in seen:
+                seen.add(k)
+                out.append(n)
+        return out
+
+    k = cfg["max_items_per_stock"]
+    stock = {s: [dict(n, id=f"N-{s}-{i}") for i, n in enumerate(dedupe(stock[s])[:k], 1)] for s in universe}
+    macro_re = re.compile("|".join(r"(?<![A-Za-z])" + re.escape(w) + r"(?![A-Za-z])" for w in MACRO_WORDS), re.I)
+    allm = dedupe(macro_pool)
+    macro = [dict(n, id=f"MAC-{i}") for i, n in
+             enumerate([n for n in allm if macro_re.search(n["title"])][: cfg["max_macro_items"]], 1)]
+    flows = [dict(n, id=f"FL-{i}") for i, n in
+             enumerate([n for n in allm if FLOW_RE.search(n["title"]) and PK_CONTEXT.search(n["title"])]
+                       [: cfg.get("max_flow_items", 6)], 1)]
+    return stock, macro, flows, errors
 
 
 def breadth_last_days(history: dict[str, list[dict]], n: int) -> list[dict]:
@@ -119,48 +231,51 @@ def build(requested: date, refresh: bool = False, log=print) -> dict:
         if i % 10 == 0:
             log(f"  company pages: {i}/{len(universe)}")
 
-    log("Fetching news feeds ...")
-    news, news_err = sources.fetch_news(log=log)
-    errors += news_err
-    cutoff = (date.fromisoformat(as_of) - timedelta(days=cfg["news"]["lookback_days"])).isoformat()
-    news = [n for n in news if n["published_utc"][:10] > cutoff]
-
+    window = sources.next_trading_days(date.fromisoformat(as_of), cfg["horizon"]["trading_days"])
+    log("Fetching news ...")
     names = {m["symbol"]: m["name"] for m in members}
-    stock_news: dict[str, list[dict]] = {s: [] for s in universe}
-    macro: list[dict] = []
-    macro_re = re.compile("|".join(r"(?<![A-Za-z])" + re.escape(w) + r"(?![A-Za-z])" for w in MACRO_WORDS), re.I)
-    pats = {s: match_patterns(s, names[s]) for s in universe}
-    for n in news:
-        text = f"{n['title']} {n['summary']}"
-        for s in universe:
-            if any(p.search(text) for p in pats[s]):
-                stock_news[s].append(n)
-        if macro_re.search(n["title"]):
-            macro.append(n)
-    k = cfg["news"]["max_items_per_stock"]
-    for s in universe:
-        stock_news[s] = [dict(n, id=f"N-{s}-{i}") for i, n in enumerate(stock_news[s][:k], 1)]
-    macro = [dict(n, id=f"MAC-{i}") for i, n in enumerate(macro[: cfg["news"]["max_macro_items"]], 1)]
+    stock_news, macro, flows, news_err = collect_news(as_of, window[0], universe, names, log=log)
+    errors += news_err
+    log(f"  news: {sum(1 for s in universe if stock_news[s])}/{len(universe)} companies with news, "
+        f"{len(macro)} macro items, {len(flows)} flow mentions")
 
+    warnings = []
+    today = date.today()
+    if (today - date.fromisoformat(as_of)).days > 4:
+        warnings.append("Past date: KSE-100 members and free float are TODAY's, not as of this date "
+                        "(PSX does not publish history). Results for past dates are approximate.")
+    if window[0] == today.isoformat():
+        warnings.append("Today's session is part of the 5-day window and may already be trading.")
+    for w in warnings:
+        log("WARNING " + w)
+
+    adjusted, adj_events = {}, {}
+    for s, rows in history.items():
+        adjusted[s], ev = sources.adjust_history(rows)
+        if s in universe and ev:
+            adj_events[s] = ev
     breadth = breadth_last_days(history, 5)
 
     keep = ("date", "open", "high", "low", "close", "volume", "ldcp", "ex_marker")
     snap = {
         "as_of": as_of,
-        "window": sources.next_trading_days(date.fromisoformat(as_of), cfg["horizon"]["trading_days"]),
+        "window": window,
         "universe": universe,
         "members": [{k2: m[k2] for k2 in ("symbol", "name", "free_float_shares", "free_float_mcap",
                                           "index_weight_pct", "close")} for m in members],
-        "prices": {s: [{k2: r[k2] for k2 in keep} for r in history[s]] for s in universe},
+        "prices": {s: [{k2: r[k2] for k2 in keep} for r in adjusted[s]] for s in universe},
+        "price_adjustments": adj_events,      # dividend/bonus/rights factors from PSX's own LDCP
         "sector_code": {s: history[s][-1]["sector_code"] for s in universe},
         "companies": companies,
-        "market_proxy": market_proxy(history, members),
+        "market_proxy": market_proxy(adjusted, members),
         "breadth_5d": breadth,
         "stock_news": stock_news,
         "macro_news": macro,
+        "flow_mentions": flows,       # headlines about foreign/local investor flows
         "fipi_lipi": sources.manual_fipi_lipi(),
         "social": None,          # filled by the optional social-collector agent
         "source_errors": sorted(errors),
+        "warnings": warnings,
     }
     snap["fingerprint"] = sha256({k2: v for k2, v in snap.items() if k2 != "fingerprint"})
     snap["meta"] = {"fetched_at_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),

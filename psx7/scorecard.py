@@ -7,9 +7,31 @@ from . import sources
 from .util import RUNS_DIR, Http, r2, read_json, write_json
 
 
-def closes_on(d: str, http: Http) -> dict[str, float]:
+def rows_on(d: str, http: Http) -> dict[str, tuple[float, float]]:
+    """{symbol: (close, ldcp)} for one trading day (empty if market closed / no file)."""
     text = sources.eod_file(date.fromisoformat(d), http, date.today())
-    return {r["symbol"]: r["close"] for r in sources.parse_eod_text(text)} if text else {}
+    return {r["symbol"]: (r["close"], r["ldcp"]) for r in sources.parse_eod_text(text)} if text else {}
+
+
+def window_returns(window: list[str], today_as_of: str, http: Http) -> tuple[dict[str, float], str | None]:
+    """Total return % per symbol over the window, chaining close/LDCP day by day.
+
+    PSX's LDCP is the previous close adjusted for dividends/bonus/rights, so the
+    chain counts an ex-date correctly instead of as a fall.
+    """
+    growth: dict[str, float] = {}
+    last = None
+    for d in window:
+        if d > today_as_of:
+            break
+        day = rows_on(d, http)
+        if not day:
+            continue
+        last = d
+        for s, (c, l) in day.items():
+            if c and l:
+                growth[s] = growth.get(s, 1.0) * (c / l)
+    return {s: (g - 1) * 100 for s, g in growth.items()}, last
 
 
 def _ranks(xs: list[float]) -> list[float]:
@@ -50,31 +72,26 @@ def score_run(run_as_of: str, today_as_of: str, log=print) -> dict | None:
     window = ranking["window"]
     if window[-1] > today_as_of:
         return None  # window not finished yet
-    http = Http()
-    end_close, end_day = {}, None
-    for d in reversed(window):            # last trading day inside the window with a file
-        end_close = closes_on(d, http)
-        if end_close:
-            end_day = d
-            break
-    start_close = closes_on(run_as_of, http)
-    if not end_close or not start_close:
+    rets, end_day = window_returns(window, today_as_of, Http())
+    if not rets:
         log(f"  scorecard {run_as_of}: price files missing, will retry next run")
         return None
     rows = []
     for r in ranking["rows"]:
         s = r["symbol"]
-        if s in end_close and start_close.get(s):
-            ret = (end_close[s] / start_close[s] - 1) * 100
+        if s in rets:
+            ret = rets[s]
             rows.append({"symbol": s, "rank": r["rank"], "direction": r["final_direction"],
                          "hybrid_score": r["hybrid_score"], "actual_ret_pct": r2(ret), "hit": hit(r["final_direction"], ret)})
-    snap = read_json(run / "snapshot" / "snapshot.json")
+    bench = ranking.get("benchmark_members")
+    if bench is None:                      # older runs: fall back to the local snapshot if present
+        sp = run / "snapshot" / "snapshot.json"
+        bench = [[m["symbol"], m["free_float_shares"], m["close"]] for m in read_json(sp)["members"]] if sp.exists() else []
     num = den = 0.0
-    for m in snap["members"]:
-        s0, s1 = start_close.get(m["symbol"]), end_close.get(m["symbol"])
-        if s0 and s1 and m["free_float_shares"]:
-            w = m["free_float_shares"] * s0
-            num += w * (s1 / s0 - 1)
+    for sym, ff, close in bench:
+        if sym in rets and ff and close:
+            w = ff * close
+            num += w * rets[sym] / 100
             den += w
     top = [x for x in rows if x["rank"] <= 5]
     res = {

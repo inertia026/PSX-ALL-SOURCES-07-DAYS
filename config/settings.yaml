@@ -15,7 +15,27 @@ history:
   request_delay_seconds: 0.6  # be polite to PSX servers
 
 news:
-  lookback_days: 7
+  lookback_days: 14           # news window (agents told to weight the last 7 days more)
+  google_news: true           # per-company Google News RSS search: 14 days of history without a daily job
+  macro_queries:
+    - KSE-100 PSX stocks
+    - SBP policy rate Pakistan
+    - IMF Pakistan economy
+    - PKR rupee dollar interbank
+    - foreign investors PSX FIPI
+  junk_title_patterns:        # evergreen "stock page" titles, not news
+    - Competitors
+    - Stock Discussion
+    - Investor Sentiment -
+    - Financial Results & Fundamentals
+    - Stock Price
+    - Share Price
+    - Stock Quote
+    - Company Profile
+    - Technical Analysis
+    - "news: latest"
+    - Fixtures
+    - Scorecard
   feeds:
     - name: Business Recorder (latest)
       url: https://www.brecorder.com/feeds/latest-news
@@ -23,8 +43,9 @@ news:
       url: https://www.brecorder.com/feeds/markets
     - name: Dawn (business)
       url: https://www.dawn.com/feeds/business
-  max_items_per_stock: 6
+  max_items_per_stock: 8
   max_macro_items: 12
+  max_flow_items: 6
 
 sentiment:
   social_collector: true      # one small web-search agent per run (writes into the snapshot)
@@ -73,7 +94,9 @@ scoring:
   conviction_mult: {low: 0.5, medium: 1.0, high: 1.5}
   direction_sign: {up: 1, flat: 0, down: -1}
   move_k: 0.5                 # share of 5-day volatility expected to be captured
+  atr_cap_mult: 1.5           # volatility used for the move is capped at 1.5x the top-30 median,
+                              # so very jumpy stocks don't rank high just for being jumpy
   risk_penalty: {low: 0.0, medium: 0.25, high: 0.5}
   top_n: 5
 
-prompt_version: "1.1.0"
+prompt_version: "1.2.0"

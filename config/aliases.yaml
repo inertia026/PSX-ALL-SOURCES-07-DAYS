@@ -1,5 +1,7 @@
-# Extra names used to match news headlines to a ticker (case-insensitive, whole words).
-# The ticker itself and the cleaned company name are always used too.
+# Names used to match news headlines to a ticker (whole words).
+# Names with lowercase letters match case-insensitively; ALL-CAPS names (e.g. PPL)
+# match case-sensitively. The cleaned company name (2+ words, case-sensitive) and
+# the ticker are used too. The first 3 names also form the Google News query.
 # Add names here when a company is in the top 30 but news calls it something else.
 aliases:
   FFC: [Fauji Fertilizer, FFC]
@@ -28,13 +30,13 @@ aliases:
   MLCF: [Maple Leaf Cement, Maple Leaf]
   FATIMA: [Fatima Fertilizer]
   DGKC: [DG Khan Cement, D.G. Khan Cement, DGKC]
-  BOP: [Bank of Punjab, BoP]
-  PSEL: [Pakistan Services, Pearl Continental, PC Hotel]
+  BOP: [Bank of Punjab]
+  PSEL: [Pearl Continental, Pakistan Services Limited]
   ATRL: [Attock Refinery]
   SRVI: [Service Industries, Servis]
   SNGP: [Sui Northern, SNGPL]
   SSGC: [Sui Southern, SSGC]
-  PAEL: [Pak Elektron, PEL]
+  PAEL: [Pak Elektron]
   NML: [Nishat Mills]
   INDU: [Indus Motor, Toyota Indus]
   APL: [Attock Petroleum]
@@ -44,6 +46,10 @@ aliases:
   ABL: [Allied Bank]
   SEARL: [Searle]
   CHCC: [Cherat Cement]
+
+# Generic-sounding names: match only when not preceded by another capitalised word
+# (so 'Fujiyama Power Systems Limited' is not Systems Limited).
+strict_aliases: [Systems Limited, Systems Ltd, Service Industries, United Bank, National Bank of Pakistan]
 
 # Ambiguous tickers that are also common words: match only via aliases above.
 ticker_word_blocklist: [LUCK, MARI, SYS, POL, FATIMA, MTL, BOP]

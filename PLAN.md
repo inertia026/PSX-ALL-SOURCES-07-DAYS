@@ -90,7 +90,7 @@ tokens). Claude is used only where reading or arguing over text adds value.
 | Data | **Free public sources only** (details in section 5). |
 | Sentiment inputs | News tone + market breadth, live web search for social posts, and FIPI/LIPI flows. |
 | Final ranking | **Hybrid score** by formula. The Portfolio Manager may flag stocks with reasons but does not reorder them (section 2a). |
-| News window | **Last 7 days** of company and macro news. |
+| News window | **Last 14 days** of company and macro news (agents weight the last 7 days more). Collected at snapshot time: RSS feeds + Google News RSS search per company. No daily job needed. |
 | Liquidity penalty | Applies below **PKR 20 million/day** average traded value (20-day average). |
 | Output | **All 30 ranked + top 5 explained in depth.** |
 | Report format | **Markdown + an HTML page** per run. |
@@ -105,8 +105,8 @@ tokens). Claude is used only where reading or arguing over text adds value.
 |---|---|---|
 | **Market** (Python) | Daily OHLCV for about 1 year, KSE-100 proxy | Trend (20/50/200-day averages), momentum (RSI, MACD), volatility (ATR), 20-day support/resistance, volume spikes, relative strength vs the KSE-100 proxy, 52-week position, ex-dividend flags. Rule-based signals with points; score −100 to +100. |
 | **Fundamentals** (Python) | PSX company page: P/E (TTM), ratios, annual and quarterly EPS, announcements | P/E vs top-30 median, EPS growth, margin trend, latest quarter vs a year earlier, and **catalysts**: board-meeting notices (last 14 days), results and other announcements (last 7 days). Score −100 to +100. |
-| **News** | Company news and announcements (last 7 days), macro news | Company-specific and macro drivers: SBP policy rate, PKR/USD, IMF reviews, oil prices, budget, circulars. Each item tagged positive / negative / neutral with an expected impact. |
-| **Sentiment** | Headline tone, market breadth (advancers/decliners, volume), web search of social posts, FIPI/LIPI flows | Mood score for the stock and the market, and whether foreign and local investors are buying or selling. |
+| **News** | Company headlines (last 14 days, matched by title), macro headlines | Company-specific and macro drivers: SBP policy rate, PKR/USD, IMF reviews, oil prices, budget, circulars. Each item tagged positive / negative / neutral with an expected impact. |
+| **Sentiment** | Headline tone, market breadth (advancers/decliners, volume), social posts, foreign-flow headlines (+ NCCPL numbers if supplied) | Mood score for the stock and the market, and whether foreign and local investors are buying or selling. |
 
 **Merge:** the four reports become one **evidence pack** per stock. Every fact keeps
 its source and date, so later stages can cite it.
@@ -164,11 +164,12 @@ its source and date, so later stages can cite it.
 | Daily OHLCV + sector code, every stock | PSX daily market summary files (`/download/mkt_summary/<date>.Z`), cached forever | works |
 | KSE-100 members + free-float shares | PSX index page `/indices/KSE100` | works |
 | Financials, ratios, P/E, announcements | PSX company pages `/company/<SYMBOL>` | works |
-| News (company + macro) | Business Recorder (latest, markets) and Dawn business RSS | works |
+| News (company + macro) | Business Recorder + Dawn RSS (1–3 days deep) **and Google News RSS search** per company and for 5 macro topics (14 days deep; polite delay + back-off) | works: 28/30 companies had news in a live check |
+| Foreign-flow signal | Headlines about foreign/local investor flows (Pakistan-context only) | works |
 | Social sentiment | One web-search "social collector" agent per run, frozen into the snapshot | works (costs 1 call) |
 | FIPI/LIPI flows | NCCPL site blocks scripts (bot protection; we do not bypass) | manual CSV in `inputs/` |
 | KSE-100 index history | Not available to scripts | rebuilt as free-float-weighted proxy |
-| Dividend payouts | PSX payouts endpoint blocks scripts | ex-dividend days flagged from PSX file markers |
+| Dividend / bonus / rights adjustment | PSX publishes LDCP = previous close **adjusted** for the entitlement on the ex-date | prices back-adjusted with factor LDCP ÷ previous close |
 | Yahoo Finance `.KA` | Data stopped in 2024 | not used |
 | Profit, Mettis feeds; Reddit | Feeds removed / blocked | not used |
 
@@ -183,7 +184,7 @@ report says so instead of filling in guesses.
 ```
 direction_sign   = { up: +1, flat: 0, down: −1 }
 conviction_mult  = { low: 0.5, medium: 1.0, high: 1.5 }
-expected_5d_move = direction_sign × conviction_mult × ATR%(14) × √5 × 0.5
+expected_5d_move = direction_sign × conviction_mult × min(ATR%(14), 1.5 × top-30 median) × √5 × 0.5
 hybrid_score     = expected_5d_move × conviction_weight
                    − risk_penalty × |expected_5d_move|
                    − liquidity_penalty (if 20-day avg traded value < PKR 20m)
@@ -211,7 +212,11 @@ with a "not financial advice" note at the top.
 ## 8. Evaluation (scorecard, in version 1)
 
 - Each new run starts by scoring the previous run. This uses price data only,
-  with no Claude calls.
+  with no Claude calls. Returns chain close ÷ PSX's adjusted previous close each
+  day, so dividends inside the window aren't counted as losses. The KSE-100 proxy
+  weights are saved in the published `ranking.json`, so scoring works on any machine.
+- **Past dates (`--date`)** are approximate: PSX only publishes today's index members
+  and free float. The report shows a warning; news after the as-of date is excluded.
 - After each 5-day window closes, score the earlier run: direction hit rate,
   rank correlation between predicted and actual returns, and top 5 average
   return vs KSE-100.

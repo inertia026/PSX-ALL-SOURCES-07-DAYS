@@ -9,7 +9,7 @@ from datetime import date
 from statistics import median
 
 from . import indicators as ind
-from .util import r2
+from .util import r2, settings
 
 
 def _sig(out: list, prefix: str, text: str, pts: int) -> None:
@@ -17,7 +17,7 @@ def _sig(out: list, prefix: str, text: str, pts: int) -> None:
 
 
 # ----------------------------------------------------------------- market analyst
-def market_analyst(sym: str, rows: list[dict], proxy: list[dict]) -> dict:
+def market_analyst(sym: str, rows: list[dict], proxy: list[dict], adjustments: list[dict] | None = None) -> dict:
     closes = [r["close"] for r in rows]
     highs = [r["high"] or r["close"] for r in rows]
     lows = [r["low"] or r["close"] for r in rows]
@@ -36,7 +36,8 @@ def market_analyst(sym: str, rows: list[dict], proxy: list[dict]) -> dict:
     tv20 = sum(a * b for a, b in zip(closes[-20:], vols[-20:])) / min(20, len(closes))
     hi52, lo52 = max(highs[-250:]), min(lows[-250:])
     pos52 = (c - lo52) / (hi52 - lo52) if hi52 > lo52 else None
-    ex_recent = [r["date"] for r in rows[-10:] if r.get("ex_marker")]
+    recent_days = {r["date"] for r in rows[-20:]}
+    ex_recent = [a for a in (adjustments or []) if a["date"] in recent_days]
     sup20, res20 = min(lows[-20:]), max(highs[-20:])
 
     pre, s = f"M-{sym}-", []
@@ -84,7 +85,8 @@ def market_analyst(sym: str, rows: list[dict], proxy: list[dict]) -> dict:
         _sig(s, pre, f"Price sits at {pos52 * 100:.0f}% of its 52-week range ({lo52:.2f} to {hi52:.2f})", p)
     _sig(s, pre, f"20-day support {sup20:.2f}, resistance {res20:.2f}", 0)
     if ex_recent:
-        _sig(s, pre, f"Ex-dividend/bonus marker on {', '.join(ex_recent)}: part of any recent drop may be mechanical (prices are not adjusted)", 0)
+        _sig(s, pre, "Dividend/bonus/rights adjustment on " + ", ".join(f"{a['date']} (x{a['factor']})" for a in ex_recent)
+             + ": earlier prices adjusted, so the ex-date drop is not counted as a fall", 0)
 
     score = max(-100, min(100, sum(x["points"] for x in s)))
     return {
@@ -93,7 +95,7 @@ def market_analyst(sym: str, rows: list[dict], proxy: list[dict]) -> dict:
                   "sma20": r2(sma20), "sma50": r2(sma50), "rsi14": r2(rsi, 1),
                   "ret5_pct": r2(ret5), "ret20_pct": r2(ret20), "mkt_ret5_pct": r2(m5),
                   "vol_ratio_5_20": r2(vr), "avg_traded_value_pkr_m": r2(tv20 / 1e6, 1),
-                  "support20": r2(sup20), "resistance20": r2(res20), "ex_marker_recent": ex_recent},
+                  "support20": r2(sup20), "resistance20": r2(res20), "ex_marker_recent": [a["date"] for a in ex_recent]},
     }
 
 
@@ -171,7 +173,7 @@ def run(snap: dict) -> dict:
     packs = {}
     names = {m["symbol"]: m["name"] for m in snap["members"]}
     for s in snap["universe"]:
-        m = market_analyst(s, snap["prices"][s], snap["market_proxy"])
+        m = market_analyst(s, snap["prices"][s], snap["market_proxy"], snap.get("price_adjustments", {}).get(s))
         f = fundamentals_analyst(s, snap["companies"][s], pe_med, snap["as_of"])
         quant = round(0.6 * m["score"] + 0.4 * f["score"], 1)
         packs[s] = {
@@ -181,6 +183,12 @@ def run(snap: dict) -> dict:
             "quant_score": quant,
             "news": snap["stock_news"].get(s, []),
         }
+    # volatility cap: the move estimate uses at most atr_cap_mult x the top-30 median ATR%
+    atrs = [p["market"]["facts"]["atr_pct"] for p in packs.values() if p["market"]["facts"]["atr_pct"]]
+    cap = median(atrs) * settings()["scoring"]["atr_cap_mult"] if atrs else None
+    for p in packs.values():
+        a = p["market"]["facts"]["atr_pct"]
+        p["market"]["facts"]["atr_pct_capped"] = r2(min(a, cap)) if (a and cap) else a
     return packs
 
 

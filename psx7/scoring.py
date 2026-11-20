@@ -1,6 +1,7 @@
 """Hybrid score and ranking: pure formula, so the order is fully repeatable.
 
-expected_move_% = direction_sign x conviction_mult x ATR%(14) x sqrt(5) x move_k
+expected_move_% = direction_sign x conviction_mult x min(ATR%(14), cap) x sqrt(5) x move_k
+                  (cap = atr_cap_mult x top-30 median ATR%, so jumpiness alone can't win)
 hybrid_score    = expected_move_% x (1 - risk_penalty) - liquidity_penalty
 order           = hybrid_score desc, quant_score desc, ticker A->Z
 """
@@ -22,7 +23,7 @@ def expected_move(atr_pct: float | None, direction: str, conviction: str) -> flo
 def levels(facts: dict, direction: str, conviction: str) -> dict:
     """Entry/target/stop from volatility (Python, not the LLM)."""
     c, atr = facts.get("close"), facts.get("atr")
-    mv = expected_move(facts.get("atr_pct"), direction, conviction)
+    mv = expected_move(facts.get("atr_pct_capped", facts.get("atr_pct")), direction, conviction)
     if not c or not atr:
         return {"expected_move_pct": r2(mv)}
     out = {"entry_ref": r2(c), "expected_move_pct": r2(mv), "target": r2(c * (1 + mv / 100))}
@@ -46,7 +47,7 @@ def rank(ctx) -> list[dict]:
         rc = risk_consensus(ctx, s)
         v = pm.get(s) or {"final_direction": rm.get(s, {}).get("direction", "flat"),
                           "final_conviction": rc["conviction_after_risk"], "flag": "none", "reason": ""}
-        mv = expected_move(f["atr_pct"], v["final_direction"], v["final_conviction"])
+        mv = expected_move(f.get("atr_pct_capped", f["atr_pct"]), v["final_direction"], v["final_conviction"])
         illiquid = (f["avg_traded_value_pkr_m"] or 0) < liq_min
         hybrid = mv * (1 - cfg["scoring"]["risk_penalty"][rc["risk_rating"]]) \
             - (cfg["liquidity"]["penalty_pct_points"] if illiquid else 0)

@@ -62,12 +62,15 @@ Outputs land in `runs/<as-of date>/`:
 | Daily OHLCV, all stocks | PSX daily market summary files | ✅ |
 | KSE-100 members, free float | PSX data portal index page | ✅ |
 | Financials, ratios, announcements | PSX company pages | ✅ |
-| News | Business Recorder and Dawn RSS | ✅ |
+| News (14 days) | Business Recorder and Dawn RSS + Google News RSS search per company | ✅ |
+| Foreign-flow headlines | From the same news (Pakistan context only) | ✅ |
 | Social chatter | One small web-search agent per run (optional) | ✅ |
-| FIPI/LIPI flows | NCCPL blocks scripts. Drop a CSV in `inputs/fipi_lipi.csv` (`date,category,net_usd_m`) | manual |
+| FIPI/LIPI numbers | NCCPL blocks scripts. Optional CSV in `inputs/fipi_lipi.csv` (`date,category,net_usd_m`) | optional |
 | KSE-100 index history | Not free for scripts. Rebuilt as a free-float-weighted proxy | proxy |
 
-Prices are **not adjusted** for dividends; ex-dividend days are flagged in the reports.
+Prices are **back-adjusted** for dividends, bonus and rights using PSX's own adjusted previous close (LDCP) on
+ex-dates. The scorecard chains close ÷ LDCP day by day, so payouts inside a window aren't counted as losses.
+The volatility used for the expected move is capped at 1.5× the top-30 median.
 
 ## Settings
 

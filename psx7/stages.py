@@ -91,6 +91,7 @@ class Ctx:
         ids = {x["id"] for x in p["market"]["signals"] + p["fundamentals"]["signals"] + p["fundamentals"]["catalysts"]}
         ids |= {n["id"] for n in p["news"]}
         ids |= {n["id"] for n in self.snap.get("macro_news", [])}
+        ids |= {n["id"] for n in self.snap.get("flow_mentions", [])}
         ids |= {i["id"] for i in (self.snap.get("social") or {}).get("items", [])}
         ids |= {d["id"] for d in self.stage("news").get("macro", {}).get("drivers", []) if d.get("id")}
         ids.add(f"SENT-{sym}")
@@ -180,7 +181,8 @@ class Social(Stage):
 class News(Stage):
     name, agent = "news", "news-analyst"
     rules = ["Judge each headline only for its likely effect on the stock in the next 5 trading days.",
-             "Use only the given headlines. 'why' <= 20 words."]
+             "Headlines cover the last 14 days: news older than 7 days is usually already in the price, so give it low impact unless it is still unfolding.",
+             "If a headline is not really about this company (name clash), mark it neutral/low. Use only the given headlines. 'why' <= 20 words."]
     output_format = {"results": [{"symbol": "TICKER", "news_view": "positive|negative|neutral|mixed",
                                   "items": [{"id": "N-TICKER-1", "tone": "positive|negative|neutral",
                                              "impact": "low|medium|high", "why": "<=20 words"}]}],
@@ -256,7 +258,9 @@ class Sentiment(Stage):
     def jobs(self, ctx):
         news, social = ctx.stage("news"), ctx.stage("social") or ctx.snap.get("social") or {}
         shared = {"breadth_last_5_days": ctx.snap["breadth_5d"],
-                  "foreign_local_flows": ctx.snap.get("fipi_lipi") or "not available (NCCPL blocks scripts; no manual file)",
+                  "foreign_local_flows": ctx.snap.get("fipi_lipi") or "no NCCPL numbers (site blocks scripts); see flow_headlines",
+                  "flow_headlines": [{"id": n["id"], "title": n["title"], "date": n["published_utc"][:10]}
+                                     for n in ctx.snap.get("flow_mentions", [])],
                   "macro_view": news.get("macro", {}).get("macro_view", "none"),
                   "social_market_mood": social.get("market_mood", "not collected")}
         jobs = []
@@ -715,7 +719,7 @@ def collect(run: Path, stage: Stage, ctx: Ctx, state: dict) -> tuple[list[dict],
                 state["agent_calls"] = state.get("agent_calls", 0) + 1
                 continue
             attempts[akey] = attempts.get(akey, 0) + 1
-            outp.rename(outp.with_suffix(f".rejected{attempts[akey]}.json"))
+            outp.replace(outp.with_suffix(f".rejected{attempts[akey]}.json"))   # replace: safe on Windows
             msgs.append(f"{akey}: rejected ({'; '.join(errs)[:200]})")
             if attempts[akey] >= 2:
                 write_json(done, {"cache_key": key, "source": "fallback", "clean": stage.fallback(job, ctx)})
