@@ -1,0 +1,70 @@
+# PSX-ALL-SOURCES-07-DAYS settings.
+# Changing anything under "prompt_version" or "scoring" changes cache keys,
+# so agent answers are regenerated instead of replayed.
+
+universe:
+  index: KSE100
+  size: 30                    # top N by free-float market cap
+  rank_by: free_float_mcap    # free-float shares x last close
+
+horizon:
+  trading_days: 5
+
+history:
+  trading_days: 260           # about 1 year of daily files
+  request_delay_seconds: 0.6  # be polite to PSX servers
+
+news:
+  lookback_days: 7
+  feeds:
+    - name: Business Recorder (latest)
+      url: https://www.brecorder.com/feeds/latest-news
+    - name: Business Recorder (markets)
+      url: https://www.brecorder.com/feeds/markets
+    - name: Dawn (business)
+      url: https://www.dawn.com/feeds/business
+  max_items_per_stock: 6
+  max_macro_items: 12
+
+sentiment:
+  social_collector: true      # one small web-search agent per run (writes into the snapshot)
+  fipi_lipi_manual_file: inputs/fipi_lipi.csv   # optional; NCCPL blocks scripts
+
+liquidity:
+  min_avg_traded_value_pkr: 20000000   # 20-day average
+  penalty_pct_points: 0.5
+
+models:                       # Claude Code subagent model per role
+  news: haiku
+  sentiment: haiku
+  social_collector: haiku
+  bull: haiku
+  bear: haiku
+  research_manager: sonnet
+  trader: haiku
+  risk: haiku
+  portfolio_manager: sonnet
+  narrative: haiku
+
+batching:                     # stocks per agent call
+  news: 5
+  sentiment: 5
+  debate: 1                   # Bull/Bear: one stock per call (core debate)
+  research_manager: 1
+  trader: 5
+  risk: 5
+  portfolio_manager: 5
+
+debate:
+  research_rounds: 2
+  risk_rounds: 2
+  max_words_per_turn: 120
+
+scoring:
+  conviction_mult: {low: 0.5, medium: 1.0, high: 1.5}
+  direction_sign: {up: 1, flat: 0, down: -1}
+  move_k: 0.5                 # share of 5-day volatility expected to be captured
+  risk_penalty: {low: 0.0, medium: 0.25, high: 0.5}
+  top_n: 5
+
+prompt_version: "1.0.0"

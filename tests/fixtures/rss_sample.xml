@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel><title>Sample feed (synthetic test data)</title>
+<item><title>OGDCL announces new gas discovery in Sindh</title><link>https://example.com/a</link>
+<pubDate>Thu, 19 Nov 2026 10:00:00 +0500</pubDate><description>&lt;p&gt;Synthetic test item about Oil &amp;amp; Gas Development.&lt;/p&gt;</description></item>
+<item><title>SBP keeps policy rate unchanged</title><link>https://example.com/b</link>
+<pubDate>Wed, 18 Nov 2026 16:00:00 +0500</pubDate><description>Synthetic macro item.</description></item>
+<item><title>Lucky day for cricket fans</title><link>https://example.com/c</link>
+<pubDate>Wed, 18 Nov 2026 12:00:00 +0500</pubDate><description>Should not match LUCK.</description></item>
+<item><title>No date item</title><link>https://example.com/d</link></item>
+</channel></rss>

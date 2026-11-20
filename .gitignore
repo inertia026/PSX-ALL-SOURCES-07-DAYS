@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# downloaded PSX files + agent replay cache (local only)
+cache/
+
+# hand-supplied data (e.g. NCCPL FIPI/LIPI export)
+inputs/
+
+# raw snapshot (contains third-party news text) and agent job files stay local;
+# published runs keep the reports, stage results and ranking
+runs/*/snapshot/
+runs/*/jobs/
+runs/*/analysts.json

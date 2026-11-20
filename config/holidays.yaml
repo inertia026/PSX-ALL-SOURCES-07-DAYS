@@ -1,0 +1,15 @@
+# PSX market holidays (weekdays the exchange is closed).
+# Used only to count the 5 trading days AHEAD of a run. Past trading days are
+# taken from the PSX daily files themselves, so mistakes here never affect history.
+# Islamic holidays depend on moon sighting: update these when PSX announces them.
+holidays:
+  - 2026-12-25   # Quaid-e-Azam Day / Christmas
+  - 2027-02-05   # Kashmir Solidarity Day
+  - 2027-03-10   # Eid ul Fitr (estimate, check PSX notice)
+  - 2027-03-11   # Eid ul Fitr (estimate)
+  - 2027-03-12   # Eid ul Fitr (estimate)
+  - 2027-03-23   # Pakistan Day
+  - 2027-05-01   # Labour Day
+  - 2027-05-17   # Eid ul Adha (estimate)
+  - 2027-05-18   # Eid ul Adha (estimate)
+  - 2027-08-14   # Independence Day
