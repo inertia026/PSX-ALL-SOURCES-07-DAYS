@@ -65,8 +65,6 @@ def synthetic_snapshot() -> dict:
 def fake_agent(job: dict, packs: dict) -> dict:
     """Deterministic stand-in for a Claude subagent."""
     st, data, syms = job["stage"], job["data"], job["symbols"]
-    ev = lambda s: packs[s]["market"]["signals"][0]["id"]  # noqa: E731
-    q = lambda s: packs[s]["quant_score"]  # noqa: E731
     if st == "social":
         return {"result": {"market_mood": "neutral", "items": [{"symbol": "T01", "text": "Investors like T01", "tone": "positive", "source": "https://example.com"}]}}
     if st == "news" and job["job_id"] == "macro":
