@@ -49,8 +49,8 @@ models:                       # Claude Code subagent model per role
 batching:                     # stocks per agent call
   news: 5
   sentiment: 5
-  debate: 1                   # Bull/Bear: one stock per call (core debate)
-  research_manager: 1
+  debate: 5                   # Bull/Bear: structured picks are tiny, so 5 stocks per call
+  research_manager: 5
   trader: 5
   risk: 5
   portfolio_manager: 5
@@ -58,7 +58,16 @@ batching:                     # stocks per agent call
 debate:
   research_rounds: 2
   risk_rounds: 2
-  max_words_per_turn: 120
+  # Structured Bull vs Bear: agents pick evidence IDs + weights (round 1) and
+  # rebuttal reasons (round 2). Python scores the result:
+  max_picks: 4
+  max_rebuttals: 3
+  weights: {strong: 3, moderate: 2, weak: 1}
+  rebutted_factor: 0.5        # a rebutted point counts half
+  outweighed_factor: 0.0      # "outweighed_by" an equal-or-stronger item counts zero
+  direction_threshold: 2.0    # net >= +2 -> up, <= -2 -> down, else flat
+  conviction_thresholds: {medium: 3.5, high: 6.0}
+  quant_disagree_downgrade: true   # lower conviction one step if quant score points the other way
 
 scoring:
   conviction_mult: {low: 0.5, medium: 1.0, high: 1.5}
@@ -67,4 +76,4 @@ scoring:
   risk_penalty: {low: 0.0, medium: 0.25, high: 0.5}
   top_n: 5
 
-prompt_version: "1.0.0"
+prompt_version: "1.1.0"

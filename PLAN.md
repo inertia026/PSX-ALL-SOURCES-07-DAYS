@@ -63,7 +63,9 @@ tokens). Claude is used only where reading or arguing over text adds value.
 1. **Market and Fundamentals analysts are pure Python** rule-based reports.
    They keep their place in the flow, cost zero tokens and are fully repeatable.
 2. **Compact evidence packs** (about 300 tokens per stock), never raw price tables.
-3. **Length caps:** about 120 words per debate turn; round 2 sees a short summary of round 1.
+3. **Structured Bull vs Bear debate:** agents pick evidence IDs, weights and
+   rebuttal reasons from fixed lists (about 15–30 output tokens per stock); Python
+   scores the debate (section 4, Stage 2). Other agents keep strict word caps.
 4. **Lean subagents:** Read/Write tools only, larger batches, outputs written to
    files, one-line "done" replies so the main session stays small.
 5. **Reuse:** macro news summarised once per run; stocks with no news in 7 days
@@ -111,16 +113,29 @@ its source and date, so later stages can cite it.
 
 ### Stage 2: Research debate
 
-- **Bull** argues why the stock can rise in the next 5 trading days.
-- **Bear** argues why it will not, or will fall.
-- **2 rounds**: each side states its case, then rebuts the other.
-- Both must cite the evidence pack; claims without a source are flagged.
+**Structured debate (v1.1): agents choose, Python counts.** No free-text arguments.
+
+- **Menus (Python):** each stock's evidence is split into a **bull menu**
+  (positive signals, positive news/macro/social, bullish mood) and a **bear menu**
+  (the negatives). Catalysts appear in both.
+- **Round 1:** Bull and Bear each pick 1–4 items from their own menu and weight
+  each strong / moderate / weak.
+- **Round 2:** each side rebuts up to 3 opponent picks with one fixed reason:
+  `stale`, `outweighed_by` (+ an item from its own menu), `not_5day_relevant`,
+  `mechanical`, `weak_signal`.
+- **Scoring (Python):** strong 3, moderate 2, weak 1. A rebutted pick counts half;
+  a pick `outweighed_by` an equal-or-stronger item counts zero.
+  Net = Bull total − Bear total. Net ≥ +2 → up, ≤ −2 → down, else flat.
+  Conviction: |net| ≥ 6 high, ≥ 3.5 medium, else low; one step lower if the
+  quant score points the other way.
+- Batched: 5 stocks per call, grouped by sector. All thresholds are in `config/settings.yaml`.
 
 ### Stage 3: Research Manager → Trader
 
-- **Research Manager** (stronger model) judges the debate and writes the
-  investment view: winner, direction (up / flat / down), conviction
-  (low / medium / high), and up to 3 cited points that decided it.
+- **Research Manager** (stronger model) reviews Python's debate score and
+  proposal. It **accepts**, or **overrides by at most one step** in direction
+  and/or conviction with a short reason (Python enforces the limit), and names up
+  to 3 deciding evidence IDs. 5 stocks per call.
 - **Trader** keeps direction and conviction, picks the setup (breakout,
   pullback, momentum, catalyst, mean reversion, or avoid) and states what would
   invalidate the call. Expected move, target and stop are computed by Python from ATR.
@@ -217,18 +232,16 @@ Batching cuts that while keeping every role from the image:
 | Social collector | One web-search agent | 1 |
 | News | 1 macro job + batches of 5 (only stocks that have news) | 3 to 7 |
 | Sentiment | Batches of 5, grouped by sector | 6 |
-| Bull vs Bear, 2 rounds | **Per stock** (the core debate stays unbatched) | 4 × 30 = 120 |
-| Research Manager | Per stock, Sonnet | 30 |
+| Bull vs Bear, 2 rounds | Structured picks, batches of 5 | 2 sides × 2 rounds × 6 = 24 |
+| Research Manager | Reviews Python's proposal, batches of 5, Sonnet | 6 |
 | Trader | Batches of 5 | 6 |
 | Risk debate, 3 roles × 2 rounds | Batches of 5 | 6 × 6 = 36 |
 | Portfolio Manager | Batches of 5, Sonnet; ranking is Python | 6 |
 | Run narrator | One short summary | 1 |
-| **Total** | | **about 210** |
+| **Total** | | **about 90** |
 
-The synthetic test run made 209 calls. The calls are much shorter than in v0.3
-(compact packs, word caps), but the count is dominated by the per-stock debate.
-Setting `batching.debate: 2` in `config/settings.yaml` halves the debate calls
-(about 150 total); `batching.research_manager: 5` saves another 24.
+The synthetic test run made 89 calls (it was 209 before the structured debate).
+The risk debate (36 calls) is now the largest stage; it stays free-form by choice.
 
 - Progress is saved to disk after each stage and each batch. If you hit a usage
   limit, the run resumes from where it stopped.

@@ -14,6 +14,7 @@ from __future__ import annotations
 from pathlib import Path
 from statistics import median
 
+from . import debate as dbt
 from . import scoring
 from .analysts import compact_pack
 from .util import CACHE_DIR, ROOT, read_json, settings, sha256, write_json
@@ -91,6 +92,8 @@ class Ctx:
         ids |= {n["id"] for n in p["news"]}
         ids |= {n["id"] for n in self.snap.get("macro_news", [])}
         ids |= {i["id"] for i in (self.snap.get("social") or {}).get("items", [])}
+        ids |= {d["id"] for d in self.stage("news").get("macro", {}).get("drivers", []) if d.get("id")}
+        ids.add(f"SENT-{sym}")
         return ids
 
     def pack_for_agents(self, sym: str) -> dict:
@@ -212,6 +215,7 @@ class News(Stage):
             allowed = {n["id"] for n in ctx.snap["macro_news"]}
             drivers = [{"text": words(d.get("text"), 25), "tone": d.get("tone") if d.get("tone") in TONES else "neutral",
                         "cites": cites(d.get("cites"), allowed)} for d in (m.get("drivers") or [])[:5] if isinstance(d, dict)]
+            drivers = [dict(d, id=f"MD-{i}") for i, d in enumerate(drivers, 1)]
             return (None, errs) if errs else ({"macro": {"macro_view": view, "drivers": drivers}}, [])
         rows, by = results_by_symbol(out, job["symbols"], errs), {}
         for s, r in rows.items():
@@ -285,73 +289,83 @@ class Sentiment(Stage):
                               for s in job["symbols"]}}
 
 
-# ---------------------------------------------------------------- Bull vs Bear
+# ---------------------------------------------------------------- Bull vs Bear (structured)
 class Debate(Stage):
-    agent = ""
+    """Agents pick evidence IDs (round 1) and rebuttal reasons (round 2). No free text."""
 
     def __init__(self, rnd: int):
         self.rnd = rnd
         self.name = f"debate_r{rnd}"
-        cap = settings()["debate"]["max_words_per_turn"]
+        cfg = settings()["debate"]
         if rnd == 1:
-            self.rules = [f"Make your side's case for the NEXT 5 TRADING DAYS. 2-4 points, each <= 30 words, each citing evidence ids.",
-                          f"Whole turn <= {cap} words. Do not invent facts."]
-            self.output_format = {"results": [{"symbol": "TICKER", "side": "bull|bear",
-                                               "points": [{"claim": "<=30 words", "cites": ["M-TICKER-1"]}],
-                                               "summary": "<=40 words"}]}
+            self.rules = [f"For each stock, pick 1-{cfg['max_picks']} items from YOUR menu that best support your side for the NEXT 5 TRADING DAYS.",
+                          "Weight each pick strong|moderate|weak. Prefer recent, specific, 5-day-relevant items. Use only ids from your menu.",
+                          "If your menu is empty, return an empty picks list."]
+            self.output_format = {"results": [{"symbol": "TICKER", "picks": [{"id": "M-TICKER-2", "weight": "strong|moderate|weak"}]}]}
         else:
-            self.rules = [f"Rebut the opponent's round-1 points (refer to them by index, 0-based). 1-3 rebuttals, each <= 40 words, citing ids.",
-                          f"Whole turn <= {cap} words. Do not invent facts."]
-            self.output_format = {"results": [{"symbol": "TICKER", "side": "bull|bear",
-                                               "rebuttals": [{"target": 0, "response": "<=40 words", "cites": ["F-TICKER-2"]}],
-                                               "summary": "<=40 words"}]}
+            self.rules = [f"For each stock, rebut 0-{cfg['max_rebuttals']} of the opponent's picks (target = their id).",
+                          "reason: " + "|".join(dbt.REBUTTAL_REASONS) + ". For outweighed_by, set 'by' to an id from YOUR menu; otherwise by = null.",
+                          "Only rebut where the reason genuinely applies; zero rebuttals is fine."]
+            self.output_format = {"results": [{"symbol": "TICKER", "rebuttals": [{"target": "F-TICKER-1", "reason": "stale", "by": None}]}]}
 
     def enabled(self, ctx):
         return self.rnd <= ctx.cfg["debate"]["research_rounds"]
 
     def jobs(self, ctx):
         jobs, r1 = [], ctx.stage("debate_r1")
-        for batch in chunks(sorted(ctx.snap["universe"]), ctx.cfg["batching"]["debate"]):
+        for i, batch in enumerate(chunks(sector_order(ctx), ctx.cfg["batching"]["debate"]), 1):
             for side in ("bull", "bear"):
-                stocks = []
+                opp, stocks = ("bear" if side == "bull" else "bull"), []
                 for s in batch:
-                    d = {"pack": ctx.pack_for_agents(s)}
+                    m = dbt.menus(ctx, s)
+                    d = {"symbol": s, "name": ctx.packs[s]["name"], "your_menu": m[side]}
                     if self.rnd == 2:
-                        opp = "bear" if side == "bull" else "bull"
-                        d["your_round1_summary"] = r1.get(s, {}).get(side, {}).get("summary")
-                        d["opponent_round1_points"] = r1.get(s, {}).get(opp, {}).get("points", [])
+                        text = dbt.evidence_text(ctx, s)
+                        d["opponent_picks"] = [{"id": p["id"], "weight": p["weight"], "text": text.get(p["id"], "")}
+                                               for p in r1.get(s, {}).get(opp, {}).get("picks", [])]
+                        d["your_picks"] = r1.get(s, {}).get(side, {}).get("picks", [])
                     stocks.append(d)
-                jobs.append({"job_id": f"{'-'.join(batch)}-{side}", "agent": f"{side}-researcher",
-                             "symbols": batch, "side": side, "data": {"side": side, "stocks": stocks}})
+                jobs.append({"job_id": f"batch{i:02d}-{side}", "agent": f"{side}-researcher", "symbols": batch,
+                             "side": side, "data": {"side": side, "round": self.rnd, "stocks": stocks}})
         return jobs
 
     def validate(self, job, out, ctx):
-        errs, by = [], {}
+        errs, by, cfg = [], {}, ctx.cfg["debate"]
+        side = job["side"]
+        opp = "bear" if side == "bull" else "bull"
+        r1 = ctx.stage("debate_r1")
         for s, r in results_by_symbol(out, job["symbols"], errs).items():
-            allowed = ctx.allowed_ids(s)
+            menu = {x["id"] for x in dbt.menus(ctx, s)[side]}
             if self.rnd == 1:
-                pts = [{"claim": words(p.get("claim"), 30), "cites": cites(p.get("cites"), allowed)}
-                       for p in (r.get("points") or [])[:4] if isinstance(p, dict)]
-                if not pts:
-                    errs.append(f"{s}: no points")
-                by[s] = {job["side"]: {"points": pts, "summary": words(r.get("summary"), 40)}}
+                picks, seen = [], set()
+                for p in (r.get("picks") or []):
+                    if isinstance(p, dict) and p.get("id") in menu and p["id"] not in seen \
+                            and p.get("weight") in dbt.WEIGHTS and len(picks) < cfg["max_picks"]:
+                        seen.add(p["id"])
+                        picks.append({"id": p["id"], "weight": p["weight"]})
+                if menu and not picks:
+                    errs.append(f"{s}: no valid picks from menu")
+                by[s] = {side: {"picks": picks}}
             else:
-                reb = []
-                for p in (r.get("rebuttals") or [])[:3]:
-                    if isinstance(p, dict):
-                        try:
-                            tgt = int(p.get("target", 0))
-                        except (TypeError, ValueError):
-                            tgt = 0
-                        reb.append({"target": tgt, "response": words(p.get("response"), 40),
-                                    "cites": cites(p.get("cites"), allowed)})
-                by[s] = {job["side"]: {"rebuttals": reb, "summary": words(r.get("summary"), 40)}}
+                opp_picks = {p["id"]: p["weight"] for p in r1.get(s, {}).get(opp, {}).get("picks", [])}
+                own_w = {p["id"]: p["weight"] for p in r1.get(s, {}).get(side, {}).get("picks", [])}
+                rebs, seen = [], set()
+                for rb in (r.get("rebuttals") or []):
+                    if not isinstance(rb, dict) or rb.get("target") not in opp_picks or rb["target"] in seen:
+                        continue
+                    reason = rb.get("reason")
+                    if reason not in dbt.REBUTTAL_REASONS or len(rebs) >= cfg["max_rebuttals"]:
+                        continue
+                    by_id = rb.get("by") if reason == "outweighed_by" and rb.get("by") in menu else None
+                    eff = bool(by_id) and dbt.WEIGHTS.index(own_w.get(by_id, "moderate")) >= dbt.WEIGHTS.index(opp_picks[rb["target"]])
+                    seen.add(rb["target"])
+                    rebs.append({"target": rb["target"], "reason": reason, "by": by_id, "effective": eff})
+                by[s] = {side: {"rebuttals": rebs}}
         return (None, errs) if errs else ({"by_symbol": by}, [])
 
     def fallback(self, job, ctx):
-        key = "points" if self.rnd == 1 else "rebuttals"
-        return {"by_symbol": {s: {job["side"]: {key: [], "summary": "(agent failed twice; no argument)", "fallback": True}}
-                              for s in job["symbols"]}}
+        key = "picks" if self.rnd == 1 else "rebuttals"
+        return {"by_symbol": {s: {job["side"]: {key: [], "fallback": True}} for s in job["symbols"]}}
 
     def merge(self, outputs, ctx):
         merged: dict = {}
@@ -364,37 +378,59 @@ class Debate(Stage):
 # ---------------------------------------------------------------- Research Manager
 class ResearchManager(Stage):
     name, agent = "research_manager", "research-manager"
-    rules = ["Judge the Bull vs Bear debate on evidence quality, not on how confident each side sounds.",
-             "Uncited claims count for little. 'flat' is the right call when evidence is balanced or weak.",
-             "Up to 3 deciding points, each <= 30 words, citing ids."]
-    output_format = {"results": [{"symbol": "TICKER", "winner": "bull|bear|draw", "direction": "up|flat|down",
-                                  "conviction": "low|medium|high",
-                                  "deciding_points": [{"text": "<=30 words", "cites": ["M-TICKER-3"]}]}]}
+    rules = ["Python scored the Bull vs Bear debate and proposes direction + conviction. Review it.",
+             "decision 'accept' keeps the proposal. 'override' may move direction and/or conviction by ONE step only, and needs a reason.",
+             "Override only for something the score misses (e.g. one point clearly dominates, or evidence is stale). reason <= 25 words.",
+             "deciding_ids: up to 3 evidence ids that decide the call."]
+    output_format = {"results": [{"symbol": "TICKER", "decision": "accept|override", "direction": "up|flat|down",
+                                  "conviction": "low|medium|high", "reason": "<=25 words", "deciding_ids": ["M-TICKER-3"]}]}
 
     def jobs(self, ctx):
-        r1, r2 = ctx.stage("debate_r1"), ctx.stage("debate_r2")
         jobs = []
-        for batch in chunks(sorted(ctx.snap["universe"]), ctx.cfg["batching"]["research_manager"]):
-            jobs.append({"job_id": "-".join(batch), "agent": self.agent, "symbols": batch,
-                         "data": {"stocks": [{"pack": ctx.pack_for_agents(s),
-                                              "debate": {"round1": r1.get(s, {}), "round2": r2.get(s, {})}}
-                                             for s in batch]}})
+        for i, batch in enumerate(chunks(sector_order(ctx), ctx.cfg["batching"]["research_manager"]), 1):
+            stocks = []
+            for s in batch:
+                t = dbt.tally(ctx, s)
+                stocks.append({"symbol": s, "name": ctx.packs[s]["name"],
+                               "bull": t["bull"], "bear": t["bear"], "net_score": t["net"],
+                               "quant_score": t["quant_score"], "proposal": t["proposal"]})
+            jobs.append({"job_id": f"batch{i:02d}", "agent": self.agent, "symbols": batch, "data": {"stocks": stocks}})
         return jobs
+
+    def _result(self, ctx, s, decision, direction, conviction, reason, ids, notes):
+        t = dbt.tally(ctx, s)
+        text = dbt.evidence_text(ctx, s)
+        winner = {"up": "bull", "down": "bear"}.get(direction, "draw")
+        return {"winner": winner, "direction": direction, "conviction": conviction, "decision": decision,
+                "reason": reason, "proposal": t["proposal"], "net_score": t["net"], "clamp_notes": notes,
+                "deciding_points": [{"text": text.get(i, ""), "cites": [i]} for i in ids]}
 
     def validate(self, job, out, ctx):
         errs, by = [], {}
         for s, r in results_by_symbol(out, job["symbols"], errs).items():
-            allowed = ctx.allowed_ids(s)
-            by[s] = {"winner": enum(r.get("winner"), ["bull", "bear", "draw"], f"{s}.winner", errs),
-                     "direction": enum(r.get("direction"), DIRS, f"{s}.direction", errs),
-                     "conviction": enum(r.get("conviction"), LEVELS, f"{s}.conviction", errs),
-                     "deciding_points": [{"text": words(p.get("text"), 30), "cites": cites(p.get("cites"), allowed)}
-                                         for p in (r.get("deciding_points") or [])[:3] if isinstance(p, dict)]}
+            prop = dbt.tally(ctx, s)["proposal"]
+            decision = enum(r.get("decision"), ["accept", "override"], f"{s}.decision", errs)
+            if decision is None:
+                continue
+            ids = cites(r.get("deciding_ids"), set(dbt.evidence_text(ctx, s)))[:3]
+            reason = words(r.get("reason"), 25)
+            if decision == "accept":
+                by[s] = self._result(ctx, s, "accept", prop["direction"], prop["conviction"], reason, ids, [])
+                continue
+            d = enum(r.get("direction"), DIRS, f"{s}.direction", errs)
+            c = enum(r.get("conviction"), LEVELS, f"{s}.conviction", errs)
+            if d and c:
+                d, c, notes = dbt.clamp_override(prop, d, c)
+                by[s] = self._result(ctx, s, "override", d, c, reason, ids, notes)
         return (None, errs) if errs else ({"by_symbol": by}, [])
 
     def fallback(self, job, ctx):
-        return {"by_symbol": {s: {"winner": "draw", "direction": "flat", "conviction": "low",
-                                  "deciding_points": [], "fallback": True} for s in job["symbols"]}}
+        by = {}
+        for s in job["symbols"]:
+            p = dbt.tally(ctx, s)["proposal"]
+            by[s] = dict(self._result(ctx, s, "accept", p["direction"], p["conviction"],
+                                      "(agent failed twice; Python proposal kept)", [], []), fallback=True)
+        return {"by_symbol": by}
 
 
 # ---------------------------------------------------------------- Trader

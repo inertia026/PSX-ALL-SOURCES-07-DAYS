@@ -22,6 +22,10 @@ Sentiment      ─┘            └─ Bear ─┘                             
    answer is cached by its exact input, so re-running a snapshot replays identical results.
 2. **Token-light.** Two analysts are pure Python, agents see ~300-token evidence packs,
    strict word caps, batching by sector, Haiku/Sonnet tiers, Python-written reports.
+   About 90 agent calls per run.
+3. **Structured Bull vs Bear debate.** Agents pick evidence IDs and weights from
+   Python-built bull/bear menus, then rebut with fixed reasons. Python scores the debate
+   and proposes the call; the Research Manager accepts or adjusts it by one step.
 
 Full strategy: [PLAN.md](PLAN.md).
 

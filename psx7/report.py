@@ -5,6 +5,7 @@ import html
 import re
 from collections import Counter
 
+from . import debate as dbt
 from . import scoring
 from .stages import risk_consensus
 from .util import read_json, settings, write_json
@@ -40,8 +41,7 @@ def build(ctx, state: dict) -> dict:
     rows = scoring.rank(ctx)
     write_json(run / "ranking.json", {"as_of": snap["as_of"], "window": snap["window"],
                                       "fingerprint": snap["fingerprint"], "rows": rows})
-    news, sen, r1, r2_, rm, tr = (ctx.stage(n) for n in ("news", "sentiment", "debate_r1", "debate_r2",
-                                                           "research_manager", "trader"))
+    news, sen, rm, tr = (ctx.stage(n) for n in ("news", "sentiment", "research_manager", "trader"))
     risk1, risk2, pm = ctx.stage("risk_r1"), ctx.stage("risk_r2"), ctx.stage("portfolio_manager")
     social = ctx.stage("social") or snap.get("social") or {}
     narrative = ctx.stage("narrative").get("summary_md", "_Narrative not generated._")
@@ -87,18 +87,23 @@ def build(ctx, state: dict) -> dict:
         sv = sen.get(s, {})
         L += ["", f"### Sentiment (agent): {sv.get('mood')} ({sv.get('strength')})"]
         L += [f"- {x['text']} {_c(x['cites'])}" for x in sv.get("reasons", [])]
-        L += ["", "## 2. Bull vs Bear"]
-        for side in ("bull", "bear"):
-            a, b = r1.get(s, {}).get(side, {}), r2_.get(s, {}).get(side, {})
-            L += ["", f"### {side.title()}: round 1", *[f"- {x['claim']} {_c(x['cites'])}" for x in a.get("points", [])],
-                  f"- _Summary:_ {a.get('summary', '')}"]
-            if b:
-                L += [f"### {side.title()}: round 2 (rebuttals)",
-                      *[f"- re point {x['target']}: {x['response']} {_c(x['cites'])}" for x in b.get("rebuttals", [])],
-                      f"- _Summary:_ {b.get('summary', '')}"]
+        t = dbt.tally(ctx, s)
+        L += ["", "## 2. Bull vs Bear (structured: agents pick evidence, Python scores)"]
+        for side, opp in (("bull", "bear"), ("bear", "bull")):
+            L += ["", f"### {side.title()}: picks (rebuttals by {opp.title()})"]
+            for x in t[side]["points"]:
+                reb = (f" → rebutted: *{x['rebuttal']}*" + (f" by `{x['rebuttal_by']}`" if x["rebuttal_by"] else "")) if x["rebuttal"] else ""
+                L.append(f"- **{x['weight']}** `{x['id']}` {x['text']}{reb} (counts {x['counted']})")
+            if not t[side]["points"]:
+                L.append("- No picks (empty menu or no case).")
+            L.append(f"- **{side.title()} total: {t[side]['total']}**")
+        p = t["proposal"]
+        L += ["", f"Net debate score **{t['net']:+}** → Python proposal: **{p['direction']} / {p['conviction']}**"
+              + (" (lowered one step: quant score disagrees)" if t["quant_disagrees"] else "")]
         v = rm.get(s, {})
         L += ["", "## 3. Research Manager → Trader",
-              f"- Winner **{v.get('winner')}**, direction **{v.get('direction')}**, conviction **{v.get('conviction')}**",
+              f"- Decision **{v.get('decision')}**: direction **{v.get('direction')}**, conviction **{v.get('conviction')}**. {v.get('reason', '')}",
+              *[f"- Clamp: {n}" for n in v.get("clamp_notes", [])],
               *[f"- {x['text']} {_c(x['cites'])}" for x in v.get("deciding_points", [])],
               f"- Trader setup *{tr.get(s, {}).get('setup')}*; invalid if: {tr.get(s, {}).get('invalidation')}",
               f"- Levels (Python, from ATR): {_lv(r['levels'])}", "", "## 4. Risk debate"]
@@ -134,9 +139,13 @@ def build(ctx, state: dict) -> dict:
            *[f"  - Macro: {d['text']} ({d['tone']})" for d in news.get("macro", {}).get("drivers", [])],
            f"- **Sentiment (agent):** moods: {_counts(v.get('mood') for v in sen.values())}. Social market mood: {social.get('market_mood', 'not collected')}.",
            "- **Merge:** all four outputs combined into a compact evidence pack per stock with IDs (M-, F-, N-, MAC-, S-).", "",
-           "## Stage 2: Bull vs Bear",
-           f"- {cfg['debate']['research_rounds']} rounds per stock. Debate winners: {_counts(v.get('winner') for v in rm.values())}.", "",
+           "## Stage 2: Bull vs Bear (structured)",
+           f"- {cfg['debate']['research_rounds']} rounds, {cfg['batching']['debate']} stocks per call. Python split each stock's evidence into a bull menu and a bear menu;",
+           "  round 1 the agents picked and weighted items, round 2 they rebutted opponent picks with fixed reasons. Python scored it:",
+           f"  weights {', '.join(f'{k} {v}' for k, v in cfg['debate']['weights'].items())}, rebutted points count {cfg['debate']['rebutted_factor']}, effectively 'outweighed' points count {cfg['debate']['outweighed_factor']}.",
+           f"- Python proposals: {_counts(dbt.tally(ctx, s)['proposal']['direction'] for s in snap['universe'])}.", "",
            "## Stage 3: Research Manager → Trader",
+           f"- Research Manager decisions: {_counts(v.get('decision') for v in rm.values())} (overrides are limited to one step).",
            f"- Directions: {_counts(v.get('direction') for v in rm.values())}; convictions: {_counts(v.get('conviction') for v in rm.values())}.",
            f"- Trader setups: {_counts(v.get('setup') for v in tr.values())}. Targets and stops come from volatility (ATR), not from the agent.", "",
            "## Stage 4: Risk debate",

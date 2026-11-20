@@ -78,14 +78,32 @@ def fake_agent(job: dict, packs: dict) -> dict:
     if st == "sentiment":
         return {"results": [{"symbol": s["symbol"], "mood": "bullish" if (s["ret5_pct"] or 0) > 0 else "bearish",
                              "strength": "medium", "reasons": [{"text": "price action", "cites": []}]} for s in data["stocks"]]}
-    if st.startswith("debate"):
-        if st == "debate_r1":
-            return {"results": [{"symbol": s, "side": data["side"], "points": [{"claim": "trend", "cites": [ev(s), "FAKE-ID"]}], "summary": "ok"} for s in syms]}
-        return {"results": [{"symbol": s, "side": data["side"], "rebuttals": [{"target": 0, "response": "no", "cites": [ev(s)]}], "summary": "ok"} for s in syms]}
+    if st == "debate_r1":
+        return {"results": [{"symbol": s["symbol"],
+                             "picks": [{"id": x["id"], "weight": w} for x, w in zip(s["your_menu"], ["strong", "moderate"])]
+                             + [{"id": "FAKE-ID", "weight": "strong"}]} for s in data["stocks"]]}
+    if st == "debate_r2":
+        res = []
+        for s in data["stocks"]:
+            opp, own = s["opponent_picks"], s["your_picks"]
+            rebs = []
+            if opp:
+                rebs.append({"target": opp[0]["id"], "reason": "stale", "by": None})
+            if len(opp) > 1 and own:
+                rebs.append({"target": opp[1]["id"], "reason": "outweighed_by", "by": own[0]["id"]})
+            res.append({"symbol": s["symbol"], "rebuttals": rebs})
+        return {"results": res}
     if st == "research_manager":
-        return {"results": [{"symbol": s, "winner": "bull" if q(s) > 0 else "bear",
-                             "direction": "up" if q(s) > 10 else "down" if q(s) < -10 else "flat",
-                             "conviction": "high" if abs(q(s)) > 40 else "medium", "deciding_points": [{"text": "x", "cites": [ev(s)]}]} for s in syms]}
+        out = []
+        for s in data["stocks"]:
+            if s["symbol"] == "T05":   # tries a two-step jump; Python must clamp it
+                jump = {"down": "up", "up": "down", "flat": "up"}[s["proposal"]["direction"]]
+                out.append({"symbol": "T05", "decision": "override", "direction": jump, "conviction": "high",
+                            "reason": "test override", "deciding_ids": ["NOPE"]})
+            else:
+                out.append({"symbol": s["symbol"], "decision": "accept", "reason": "score is fair",
+                            "deciding_ids": [p["id"] for p in s["bull"]["points"][:1]]})
+        return {"results": out}
     if st == "trader":
         return {"results": [{"symbol": s, "setup": "momentum", "invalidation": "close below support"} for s in syms]}
     if st.startswith("risk"):
@@ -151,8 +169,17 @@ def test_full_pipeline_and_replay(repo, capsys):
     ctx = stages.Ctx(run)
     # social output was frozen into the snapshot
     assert ctx.snap["social"]["items"][0]["id"] == "S-1"
-    # invalid cite was dropped
-    assert all("FAKE-ID" not in p["cites"] for v in ctx.stage("debate_r1").values() for p in v["bull"]["points"])
+    # ids outside the menu are dropped; at most max_picks kept
+    assert all(p["id"] != "FAKE-ID" for v in ctx.stage("debate_r1").values() for p in v["bull"]["picks"])
+    # Research Manager: accepts keep the Python proposal; T05's two-step jump is clamped to one step
+    from psx7 import debate as dbt
+    rm_all = ctx.stage("research_manager")
+    for s, v in rm_all.items():
+        if v["decision"] == "accept":
+            assert (v["direction"], v["conviction"]) == (v["proposal"]["direction"], v["proposal"]["conviction"])
+    t05 = rm_all["T05"]
+    assert abs(dbt.DIR_ORDER.index(t05["direction"]) - dbt.DIR_ORDER.index(t05["proposal"]["direction"])) <= 1
+    assert t05["deciding_points"] == []
     # PM may not flip direction: T05 clamped to flat if research said down
     pm, rm = ctx.stage("portfolio_manager"), ctx.stage("research_manager")
     if rm["T05"]["direction"] == "down":
@@ -192,6 +219,22 @@ def test_fallback_after_two_failures(repo, capsys):
         (repo / job["output_path"]).write_text("{}", encoding="utf-8")
     assert read_json(run / "stages" / "social.json")["fallback"] is True
     assert packs  # silence unused
+
+
+def test_debate_tally_scoring(repo, capsys):
+    from psx7 import debate as dbt
+    run = setup_run(repo)
+    drive(repo, run, capsys)
+    ctx = stages.Ctx(run)
+    for s in ctx.snap["universe"]:
+        t = dbt.tally(ctx, s)
+        assert t == dbt.tally(ctx, s)                       # pure function of saved picks
+        assert t["net"] == round(t["bull"]["total"] - t["bear"]["total"], 2)
+        for side in ("bull", "bear"):
+            for p in t[side]["points"]:
+                full = {"strong": 3, "moderate": 2, "weak": 1}[p["weight"]]
+                assert p["counted"] in (full, full * 0.5, 0)
+    assert dbt.clamp_override({"direction": "down", "conviction": "low"}, "up", "high")[:2] == ("flat", "medium")
 
 
 def test_ranking_formula_order():
