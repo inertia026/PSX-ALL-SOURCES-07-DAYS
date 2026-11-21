@@ -1,0 +1,212 @@
+{
+  "AKBL": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "flat",
+    "flag": "none",
+    "reason": "Research flat, avoid setup, high risk, MACD bearish side. No edge."
+  },
+  "ATRL": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "up",
+    "flag": "caution",
+    "reason": "Huge EPS growth and MSCI inclusion news are positive, but quant score is very negative and risk is high. Low conviction, be careful."
+  },
+  "BAFL": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "up",
+    "flag": "caution",
+    "reason": "Momentum setup but annual EPS fell 26.1% and risk trimmed conviction; keep low."
+  },
+  "BAHL": {
+    "clamp_notes": [],
+    "final_conviction": "medium",
+    "final_direction": "up",
+    "flag": "caution",
+    "reason": "Strong quarterly EPS growth and bullish MACD, but RSI 76.4 overbought raises pullback risk within five days."
+  },
+  "BOP": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "flat",
+    "flag": "watch_closely",
+    "reason": "Research flat and high risk, but positive equity injection news from GoPb with bullish sentiment may change the picture."
+  },
+  "DGKC": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "up",
+    "flag": "caution",
+    "reason": "Momentum and relative strength are positive, but high risk rating and an auditor change announcement keep conviction low."
+  },
+  "EFERT": {
+    "clamp_notes": [],
+    "final_conviction": "medium",
+    "final_direction": "up",
+    "flag": "caution",
+    "reason": "Urea price hike and strong relative momentum support upside, but RSI 77 overbought raises near-term pullback risk."
+  },
+  "ENGROH": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "flat",
+    "flag": "watch_closely",
+    "reason": "Board meeting may bring results or payout in window, news negative, risk high; volume strength alone insufficient, so stay flat."
+  },
+  "FABL": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "flat",
+    "flag": "caution",
+    "reason": "Flat research, bearish sentiment, and mixed news linking the bank to an NCCIA money-tracing case; avoid."
+  },
+  "FATIMA": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "down",
+    "flag": "caution",
+    "reason": "Weak relative return and bearish sentiment favor downside, but price still above 20-day average and risk is high."
+  },
+  "FCCL": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "up",
+    "flag": "caution",
+    "reason": "EPS growth, positive news and strong 20-day relative strength favor upside, but high risk and recent five-day weakness limit conviction."
+  },
+  "FFC": {
+    "clamp_notes": [],
+    "final_conviction": "medium",
+    "final_direction": "up",
+    "flag": "none",
+    "reason": "Breakout above 20-day average with high-impact tax relief news supports upside; medium risk."
+  },
+  "HBL": {
+    "clamp_notes": [],
+    "final_conviction": "medium",
+    "final_direction": "up",
+    "flag": "none",
+    "reason": "Uptrend intact, positive deposit-rule news, medium risk; momentum setup supports medium conviction."
+  },
+  "HMB": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "up",
+    "flag": "caution",
+    "reason": "High risk, setup rated avoid, and price still below 200-day average; short-term trend up but low conviction only."
+  },
+  "HUBC": {
+    "clamp_notes": [],
+    "final_conviction": "medium",
+    "final_direction": "up",
+    "flag": "none",
+    "reason": "Bullish MACD, relative strength vs market and positive news back the breakout setup; medium risk. Keep medium upside."
+  },
+  "LUCK": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "flat",
+    "flag": "watch_closely",
+    "reason": "Bearish research view conflicts with positive news on copper-gold discoveries and bullish sentiment; low quant score, so stand aside and monitor."
+  },
+  "MARI": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "flat",
+    "flag": "watch_closely",
+    "reason": "Positive copper-gold discovery news and price above 20-day average, but volume rises on falling price; stay flat."
+  },
+  "MCB": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "up",
+    "flag": "caution",
+    "reason": "Dividend credit catalyst and uptrend, but risk review cut conviction; weak quant score of 31 and possible ex-dividend price drop."
+  },
+  "MEBL": {
+    "clamp_notes": [],
+    "final_conviction": "medium",
+    "final_direction": "up",
+    "flag": "caution",
+    "reason": "Positive news and price above 20/50-day averages, but quant score is very weak at 5; medium conviction kept with caution."
+  },
+  "MLCF": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "flat",
+    "flag": "none",
+    "reason": "Research is flat, EPS fell 18.1%, and the setup is avoid. Low risk, but no clear edge for the five-day window."
+  },
+  "MTL": {
+    "clamp_notes": [],
+    "final_conviction": "medium",
+    "final_direction": "up",
+    "flag": "caution",
+    "reason": "Strong EPS growth and uptrend support the pullback setup, but bearish sentiment and underperformance versus market over five days warrant caution."
+  },
+  "NBP": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "flat",
+    "flag": "watch_closely",
+    "reason": "Research flat, high risk, EPS down 28.8%, below 200-day average; despite short-term bounce no edge for upside."
+  },
+  "OGDC": {
+    "clamp_notes": [],
+    "final_conviction": "medium",
+    "final_direction": "up",
+    "flag": "none",
+    "reason": "EPS +52.6%, short-term trend up and discovery news support an upside catalyst; medium risk."
+  },
+  "POL": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "down",
+    "flag": "caution",
+    "reason": "Strong EPS growth conflicts with bearish MACD, negative quant score and weak relative return; low-conviction down."
+  },
+  "PPL": {
+    "clamp_notes": [],
+    "final_conviction": "medium",
+    "final_direction": "up",
+    "flag": "none",
+    "reason": "EPS growth and price above 20-day average support momentum; risk medium, news neutral. Keep medium upside call."
+  },
+  "PSEL": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "flat",
+    "flag": "watch_closely",
+    "reason": "Sharp 5-day drop after a +28.9% 20-day run, bearish sentiment, high risk; no clear direction."
+  },
+  "PSO": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "flat",
+    "flag": "none",
+    "reason": "Strong EPS growth offset by weak relative return; no edge either way. Stay flat, low conviction."
+  },
+  "SRVI": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "down",
+    "flag": "caution",
+    "reason": "Below 200-day average and lagging market, but MACD is positive and risk is high; keep low-conviction down."
+  },
+  "SYS": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "down",
+    "flag": "caution",
+    "reason": "Below 20-day average with weak relative return and very negative quant score, but high risk and no news; short-term bounce possible."
+  },
+  "UBL": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "up",
+    "flag": "none",
+    "reason": "Modest pullback setup above 20-day average, but EPS down 12.9% year on year limits conviction."
+  }
+}

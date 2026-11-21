@@ -1,0 +1,1042 @@
+{
+  "AKBL": {
+    "bear": {
+      "picks": [
+        {
+          "id": "M-AKBL-6",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-AKBL-C1",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "F-AKBL-3",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-AKBL-3",
+          "weight": "moderate"
+        },
+        {
+          "id": "MD-1",
+          "weight": "weak"
+        }
+      ]
+    }
+  },
+  "ATRL": {
+    "bear": {
+      "picks": [
+        {
+          "id": "M-ATRL-7",
+          "weight": "strong"
+        },
+        {
+          "id": "M-ATRL-8",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-ATRL-6",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-ATRL-1",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "N-ATRL-1",
+          "weight": "strong"
+        },
+        {
+          "id": "N-ATRL-2",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-ATRL-4",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-ATRL-5",
+          "weight": "weak"
+        }
+      ]
+    }
+  },
+  "BAFL": {
+    "bear": {
+      "picks": [
+        {
+          "id": "F-BAFL-2",
+          "weight": "weak"
+        },
+        {
+          "id": "MD-3",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "F-BAFL-1",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-BAFL-3",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-BAFL-6",
+          "weight": "weak"
+        }
+      ]
+    }
+  },
+  "BAHL": {
+    "bear": {
+      "picks": [
+        {
+          "id": "M-BAHL-5",
+          "weight": "strong"
+        },
+        {
+          "id": "N-BAHL-1",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "F-BAHL-4",
+          "weight": "strong"
+        },
+        {
+          "id": "M-BAHL-8",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-BAHL-6",
+          "weight": "weak"
+        }
+      ]
+    }
+  },
+  "BOP": {
+    "bear": {
+      "picks": [
+        {
+          "id": "F-BOP-C1",
+          "weight": "moderate"
+        },
+        {
+          "id": "MD-3",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "F-BOP-1",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-BOP-2",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-BOP-6",
+          "weight": "weak"
+        },
+        {
+          "id": "F-BOP-C2",
+          "weight": "weak"
+        }
+      ]
+    }
+  },
+  "DGKC": {
+    "bear": {
+      "picks": [
+        {
+          "id": "F-DGKC-C1",
+          "weight": "moderate"
+        },
+        {
+          "id": "MD-4",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "M-DGKC-8",
+          "weight": "strong"
+        },
+        {
+          "id": "N-DGKC-2",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-DGKC-1",
+          "weight": "moderate"
+        }
+      ]
+    }
+  },
+  "EFERT": {
+    "bear": {
+      "picks": [
+        {
+          "id": "M-EFERT-5",
+          "weight": "strong"
+        },
+        {
+          "id": "F-EFERT-2",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-EFERT-3",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "M-EFERT-7",
+          "weight": "strong"
+        },
+        {
+          "id": "N-EFERT-1",
+          "weight": "strong"
+        },
+        {
+          "id": "M-EFERT-6",
+          "weight": "moderate"
+        }
+      ]
+    }
+  },
+  "ENGROH": {
+    "bear": {
+      "picks": [
+        {
+          "id": "N-ENGROH-2",
+          "weight": "strong"
+        },
+        {
+          "id": "F-ENGROH-2",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-ENGROH-3",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "M-ENGROH-9",
+          "weight": "strong"
+        },
+        {
+          "id": "M-ENGROH-7",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-ENGROH-C1",
+          "weight": "weak"
+        }
+      ]
+    }
+  },
+  "FABL": {
+    "bear": {
+      "picks": [
+        {
+          "id": "N-FABL-1",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-FABL-C1",
+          "weight": "weak"
+        },
+        {
+          "id": "SENT-FABL",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "F-FABL-3",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-FABL-3",
+          "weight": "moderate"
+        },
+        {
+          "id": "N-FABL-4",
+          "weight": "weak"
+        }
+      ]
+    }
+  },
+  "FATIMA": {
+    "bear": {
+      "picks": [
+        {
+          "id": "M-FATIMA-7",
+          "weight": "strong"
+        },
+        {
+          "id": "F-FATIMA-4",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-FATIMA-4",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "M-FATIMA-1",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-FATIMA-6",
+          "weight": "weak"
+        }
+      ]
+    }
+  },
+  "FCCL": {
+    "bear": {
+      "picks": [
+        {
+          "id": "M-FCCL-7",
+          "weight": "strong"
+        },
+        {
+          "id": "MD-3",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "M-FCCL-8",
+          "weight": "strong"
+        },
+        {
+          "id": "F-FCCL-4",
+          "weight": "strong"
+        },
+        {
+          "id": "N-FCCL-1",
+          "weight": "weak"
+        }
+      ]
+    }
+  },
+  "FFC": {
+    "bear": {
+      "picks": [
+        {
+          "id": "F-FFC-1",
+          "weight": "weak"
+        },
+        {
+          "id": "MD-3",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "N-FFC-1",
+          "weight": "strong"
+        },
+        {
+          "id": "M-FFC-1",
+          "weight": "moderate"
+        }
+      ]
+    }
+  },
+  "HBL": {
+    "bear": {
+      "picks": [
+        {
+          "id": "MD-4",
+          "weight": "moderate"
+        },
+        {
+          "id": "MD-3",
+          "weight": "moderate"
+        },
+        {
+          "id": "N-HBL-1",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "M-HBL-1",
+          "weight": "strong"
+        },
+        {
+          "id": "N-HBL-3",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-HBL-3",
+          "weight": "moderate"
+        },
+        {
+          "id": "MD-1",
+          "weight": "weak"
+        }
+      ]
+    }
+  },
+  "HMB": {
+    "bear": {
+      "picks": [
+        {
+          "id": "F-HMB-4",
+          "weight": "strong"
+        },
+        {
+          "id": "M-HMB-4",
+          "weight": "moderate"
+        },
+        {
+          "id": "MD-4",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "M-HMB-1",
+          "weight": "strong"
+        },
+        {
+          "id": "M-HMB-3",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-HMB-3",
+          "weight": "moderate"
+        },
+        {
+          "id": "MD-1",
+          "weight": "weak"
+        }
+      ]
+    }
+  },
+  "HUBC": {
+    "bear": {
+      "picks": [
+        {
+          "id": "F-HUBC-C1",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-HUBC-1",
+          "weight": "weak"
+        },
+        {
+          "id": "MD-3",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "M-HUBC-7",
+          "weight": "strong"
+        },
+        {
+          "id": "M-HUBC-6",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-HUBC-3",
+          "weight": "moderate"
+        },
+        {
+          "id": "SENT-HUBC",
+          "weight": "weak"
+        }
+      ]
+    }
+  },
+  "LUCK": {
+    "bear": {
+      "picks": [
+        {
+          "id": "M-LUCK-7",
+          "weight": "strong"
+        },
+        {
+          "id": "F-LUCK-1",
+          "weight": "weak"
+        },
+        {
+          "id": "F-LUCK-C1",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "N-LUCK-2",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-LUCK-6",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-LUCK-4",
+          "weight": "moderate"
+        }
+      ]
+    }
+  },
+  "MARI": {
+    "bear": {
+      "picks": [
+        {
+          "id": "M-MARI-9",
+          "weight": "strong"
+        },
+        {
+          "id": "F-MARI-1",
+          "weight": "weak"
+        },
+        {
+          "id": "MD-4",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "N-MARI-1",
+          "weight": "strong"
+        },
+        {
+          "id": "M-MARI-6",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-MARI-1",
+          "weight": "moderate"
+        },
+        {
+          "id": "SENT-MARI",
+          "weight": "weak"
+        }
+      ]
+    }
+  },
+  "MCB": {
+    "bear": {
+      "picks": [
+        {
+          "id": "F-MCB-C2",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-MCB-2",
+          "weight": "weak"
+        },
+        {
+          "id": "MD-4",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "M-MCB-1",
+          "weight": "strong"
+        },
+        {
+          "id": "M-MCB-3",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-MCB-3",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-MCB-6",
+          "weight": "weak"
+        }
+      ]
+    }
+  },
+  "MEBL": {
+    "bear": {
+      "picks": [
+        {
+          "id": "M-MEBL-8",
+          "weight": "strong"
+        },
+        {
+          "id": "M-MEBL-3",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-MEBL-C2",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-MEBL-2",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "F-MEBL-4",
+          "weight": "strong"
+        },
+        {
+          "id": "M-MEBL-1",
+          "weight": "strong"
+        },
+        {
+          "id": "M-MEBL-2",
+          "weight": "moderate"
+        },
+        {
+          "id": "N-MEBL-4",
+          "weight": "moderate"
+        }
+      ]
+    }
+  },
+  "MLCF": {
+    "bear": {
+      "picks": [
+        {
+          "id": "F-MLCF-4",
+          "weight": "strong"
+        },
+        {
+          "id": "F-MLCF-3",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-MLCF-2",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "M-MLCF-7",
+          "weight": "strong"
+        },
+        {
+          "id": "M-MLCF-8",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-MLCF-5",
+          "weight": "weak"
+        }
+      ]
+    }
+  },
+  "MTL": {
+    "bear": {
+      "picks": [
+        {
+          "id": "M-MTL-7",
+          "weight": "strong"
+        },
+        {
+          "id": "F-MTL-1",
+          "weight": "weak"
+        },
+        {
+          "id": "SENT-MTL",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "F-MTL-4",
+          "weight": "strong"
+        },
+        {
+          "id": "M-MTL-3",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-MTL-1",
+          "weight": "moderate"
+        }
+      ]
+    }
+  },
+  "NBP": {
+    "bear": {
+      "picks": [
+        {
+          "id": "F-NBP-4",
+          "weight": "strong"
+        },
+        {
+          "id": "M-NBP-4",
+          "weight": "moderate"
+        },
+        {
+          "id": "MD-3",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "M-NBP-8",
+          "weight": "strong"
+        },
+        {
+          "id": "M-NBP-1",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-NBP-3",
+          "weight": "moderate"
+        },
+        {
+          "id": "MD-1",
+          "weight": "weak"
+        }
+      ]
+    }
+  },
+  "OGDC": {
+    "bear": {
+      "picks": [
+        {
+          "id": "MD-4",
+          "weight": "weak"
+        },
+        {
+          "id": "MD-3",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "N-OGDC-6",
+          "weight": "strong"
+        },
+        {
+          "id": "M-OGDC-6",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-OGDC-3",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-OGDC-4",
+          "weight": "weak"
+        }
+      ]
+    }
+  },
+  "POL": {
+    "bear": {
+      "picks": [
+        {
+          "id": "M-POL-6",
+          "weight": "strong"
+        },
+        {
+          "id": "M-POL-1",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-POL-8",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-POL-5",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "M-POL-4",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-POL-4",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-POL-3",
+          "weight": "weak"
+        }
+      ]
+    }
+  },
+  "PPL": {
+    "bear": {
+      "picks": [
+        {
+          "id": "MD-4",
+          "weight": "moderate"
+        },
+        {
+          "id": "MD-3",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "F-PPL-4",
+          "weight": "strong"
+        },
+        {
+          "id": "M-PPL-1",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-PPL-3",
+          "weight": "moderate"
+        }
+      ]
+    }
+  },
+  "PSEL": {
+    "bear": {
+      "picks": [
+        {
+          "id": "M-PSEL-7",
+          "weight": "strong"
+        },
+        {
+          "id": "SENT-PSEL",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-PSEL-1",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "M-PSEL-6",
+          "weight": "strong"
+        },
+        {
+          "id": "M-PSEL-8",
+          "weight": "strong"
+        },
+        {
+          "id": "M-PSEL-1",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-PSEL-5",
+          "weight": "moderate"
+        }
+      ]
+    }
+  },
+  "PSO": {
+    "bear": {
+      "picks": [
+        {
+          "id": "M-PSO-7",
+          "weight": "strong"
+        },
+        {
+          "id": "M-PSO-6",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-PSO-1",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-PSO-2",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "F-PSO-4",
+          "weight": "strong"
+        },
+        {
+          "id": "M-PSO-3",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-PSO-1",
+          "weight": "weak"
+        }
+      ]
+    }
+  },
+  "SRVI": {
+    "bear": {
+      "picks": [
+        {
+          "id": "M-SRVI-4",
+          "weight": "strong"
+        },
+        {
+          "id": "M-SRVI-3",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-SRVI-8",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-SRVI-5",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "M-SRVI-6",
+          "weight": "strong"
+        },
+        {
+          "id": "M-SRVI-1",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-SRVI-4",
+          "weight": "moderate"
+        }
+      ]
+    }
+  },
+  "SYS": {
+    "bear": {
+      "picks": [
+        {
+          "id": "M-SYS-7",
+          "weight": "strong"
+        },
+        {
+          "id": "F-SYS-4",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-SYS-1",
+          "weight": "moderate"
+        },
+        {
+          "id": "M-SYS-6",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "F-SYS-2",
+          "weight": "moderate"
+        },
+        {
+          "id": "F-SYS-3",
+          "weight": "weak"
+        }
+      ]
+    }
+  },
+  "UBL": {
+    "bear": {
+      "picks": [
+        {
+          "id": "F-UBL-4",
+          "weight": "moderate"
+        },
+        {
+          "id": "MD-3",
+          "weight": "weak"
+        },
+        {
+          "id": "MD-4",
+          "weight": "weak"
+        }
+      ]
+    },
+    "bull": {
+      "picks": [
+        {
+          "id": "M-UBL-1",
+          "weight": "strong"
+        },
+        {
+          "id": "M-UBL-3",
+          "weight": "moderate"
+        },
+        {
+          "id": "MD-1",
+          "weight": "weak"
+        }
+      ]
+    }
+  }
+}

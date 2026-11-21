@@ -1,0 +1,31 @@
+{
+  "agent_calls": 93,
+  "as_of": "2026-11-20",
+  "fallbacks": 0,
+  "fingerprint": "e228cc282020ccd46b1d48a597524ddeaa97553217d99926c7e06c0d8899edcd",
+  "missing_sources": [
+    "FIPI/LIPI numbers (NCCPL blocks scripts; flow headlines used instead)",
+    "Social posts (collector off or found nothing)"
+  ],
+  "models": {
+    "bear": "haiku",
+    "bull": "haiku",
+    "narrative": "haiku",
+    "news": "haiku",
+    "portfolio_manager": "sonnet",
+    "research_manager": "sonnet",
+    "risk": "haiku",
+    "sentiment": "haiku",
+    "social_collector": "haiku",
+    "trader": "haiku"
+  },
+  "prompt_version": "1.2.0",
+  "replayed": 0,
+  "window": [
+    "2026-11-23",
+    "2026-11-24",
+    "2026-11-25",
+    "2026-11-26",
+    "2026-11-27"
+  ]
+}

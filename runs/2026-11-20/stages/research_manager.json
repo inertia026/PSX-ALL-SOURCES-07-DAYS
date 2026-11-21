@@ -1,0 +1,956 @@
+{
+  "AKBL": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "M-AKBL-3"
+        ],
+        "text": "20-day average is above 50-day average (short-term trend up)"
+      },
+      {
+        "cites": [
+          "M-AKBL-6"
+        ],
+        "text": "MACD histogram -0.22 (bearish crossover side)"
+      }
+    ],
+    "decision": "accept",
+    "direction": "flat",
+    "net_score": 1.5,
+    "proposal": {
+      "conviction": "low",
+      "direction": "flat",
+      "winner": "draw"
+    },
+    "reason": "Trend support and MACD weakness roughly offset; low-conviction flat is fair.",
+    "winner": "draw"
+  },
+  "ATRL": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-ATRL-4"
+        ],
+        "text": "Q1 2027 EPS +1184.1% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "N-ATRL-1"
+        ],
+        "text": "News (high impact): MSCI adds Attock Refinery to Pakistan Index in November review"
+      },
+      {
+        "cites": [
+          "N-ATRL-2"
+        ],
+        "text": "News (medium impact): Supreme Court rules Attock Refinery's crude-processing payments are not taxable supplies"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 5.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "MSCI inclusion and court ruling news outweigh weak technicals, but negative quant score keeps conviction low.",
+    "winner": "bull"
+  },
+  "BAFL": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-BAFL-2"
+        ],
+        "text": "Latest annual EPS growth -26.1%"
+      },
+      {
+        "cites": [
+          "M-BAFL-3"
+        ],
+        "text": "20-day average is above 50-day average (short-term trend up)"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 2.5,
+    "proposal": {
+      "conviction": "low",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Short-term trend up is the only live evidence; bear points are stale or weak. Low conviction fits.",
+    "winner": "bull"
+  },
+  "BAHL": {
+    "clamp_notes": [],
+    "conviction": "medium",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-BAHL-4"
+        ],
+        "text": "Q3 2026 EPS +39.4% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "M-BAHL-5"
+        ],
+        "text": "RSI(14) 76.4: overbought, pullback risk"
+      },
+      {
+        "cites": [
+          "M-BAHL-6"
+        ],
+        "text": "MACD histogram +1.05 (bullish crossover side)"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 4.5,
+    "proposal": {
+      "conviction": "medium",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Strong Q3 EPS growth outweighs overbought RSI; medium conviction up is justified.",
+    "winner": "bull"
+  },
+  "BOP": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-BOP-C1"
+        ],
+        "text": "Announcement 2026-11-20: ISSUANCE OF SHARES TO GOVERNMENT OF THE PUNJAB (GoPb), FIRST TRANCHE"
+      },
+      {
+        "cites": [
+          "F-BOP-C2"
+        ],
+        "text": "Announcement 2026-11-17: RECEIPT OF FIRST TRANCHE - EQUITY INJECTION BY GOVERNMENT OF THE PUNJAB (GoPb)"
+      }
+    ],
+    "decision": "accept",
+    "direction": "flat",
+    "net_score": 1.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "flat",
+      "winner": "draw"
+    },
+    "reason": "Share issuance to GoPb offsets equity injection receipt; valuation points not 5-day relevant. Flat low.",
+    "winner": "draw"
+  },
+  "DGKC": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-DGKC-C1"
+        ],
+        "text": "Announcement 2026-11-16: CHANGE OFOF EXTERNAL AUDITORSNAME"
+      },
+      {
+        "cites": [
+          "M-DGKC-1"
+        ],
+        "text": "Close 204.00 is above 20-day average 194.75"
+      },
+      {
+        "cites": [
+          "M-DGKC-8"
+        ],
+        "text": "20-day return +14.5% vs market +8.2% (relative +6.3 pts)"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 3.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Close above 20-day average supports up; other bull evidence is stale or weak, so low conviction fits.",
+    "winner": "bull"
+  },
+  "EFERT": {
+    "clamp_notes": [],
+    "conviction": "medium",
+    "deciding_points": [
+      {
+        "cites": [
+          "M-EFERT-5"
+        ],
+        "text": "RSI(14) 77.2: overbought, pullback risk"
+      },
+      {
+        "cites": [
+          "M-EFERT-7"
+        ],
+        "text": "5-day return +5.9% vs market -0.3% (relative +6.2 pts)"
+      },
+      {
+        "cites": [
+          "N-EFERT-1"
+        ],
+        "text": "News (high impact): Engro Fertilizers Raises Urea Price by Rs. 150 per Bag"
+      }
+    ],
+    "decision": "override",
+    "direction": "up",
+    "net_score": 6.0,
+    "proposal": {
+      "conviction": "high",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Urea price news is strong, but RSI 77 overbought was zeroed by a stale 5-day return point; trim conviction one step.",
+    "winner": "bull"
+  },
+  "ENGROH": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-ENGROH-C1"
+        ],
+        "text": "Board meeting notice (2026-11-16): results or payout may land in the window"
+      },
+      {
+        "cites": [
+          "M-ENGROH-9"
+        ],
+        "text": "5-day volume is 1.87x the 20-day average on a rising price"
+      },
+      {
+        "cites": [
+          "N-ENGROH-2"
+        ],
+        "text": "News (medium impact): Engro Holdings’ First Half Profit Falls 41%"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 2.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Volume surge on rising price leads; weak profit news and board meeting uncertainty justify low conviction.",
+    "winner": "bull"
+  },
+  "FABL": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "M-FABL-3"
+        ],
+        "text": "20-day average is above 50-day average (short-term trend up)"
+      },
+      {
+        "cites": [
+          "N-FABL-1"
+        ],
+        "text": "News (medium impact): NCCIA Traces Rs240 Billion Through Faysal Bank, Habib Metro, and UBL in Karachi Gambling Bust"
+      }
+    ],
+    "decision": "accept",
+    "direction": "flat",
+    "net_score": 0.5,
+    "proposal": {
+      "conviction": "low",
+      "direction": "flat",
+      "winner": "draw"
+    },
+    "reason": "Uptrend balanced by medium-impact negative news; dividend items stale. Flat low.",
+    "winner": "draw"
+  },
+  "FATIMA": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "M-FATIMA-1"
+        ],
+        "text": "Close 145.25 is above 20-day average 142.58"
+      },
+      {
+        "cites": [
+          "M-FATIMA-7"
+        ],
+        "text": "5-day return -5.0% vs market -0.3% (relative -4.7 pts)"
+      }
+    ],
+    "decision": "accept",
+    "direction": "down",
+    "net_score": -2.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "down",
+      "winner": "bear"
+    },
+    "reason": "Sharp relative 5-day underperformance leads; close above 20-day average limits the margin, so low conviction fits.",
+    "winner": "bear"
+  },
+  "FCCL": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-FCCL-4"
+        ],
+        "text": "Q1 2027 EPS +50.7% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "M-FCCL-7"
+        ],
+        "text": "5-day return -2.9% vs market -0.3% (relative -2.6 pts)"
+      },
+      {
+        "cites": [
+          "M-FCCL-8"
+        ],
+        "text": "20-day return +19.8% vs market +8.2% (relative +11.6 pts)"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 3.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "EPS growth and strong 20-day relative return favor bulls, but evidence is stale or not 5-day relevant.",
+    "winner": "bull"
+  },
+  "FFC": {
+    "clamp_notes": [],
+    "conviction": "medium",
+    "deciding_points": [
+      {
+        "cites": [
+          "M-FFC-1"
+        ],
+        "text": "Close 571.30 is above 20-day average 554.89"
+      },
+      {
+        "cites": [
+          "N-FFC-1"
+        ],
+        "text": "News (high impact): Fauji Fertilizer And 10 Other PSX Companies Get Huge Tax Relief"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 4.0,
+    "proposal": {
+      "conviction": "medium",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "High-impact tax relief news plus price above 20-day average; bear points are weak and not 5-day relevant.",
+    "winner": "bull"
+  },
+  "HBL": {
+    "clamp_notes": [],
+    "conviction": "medium",
+    "deciding_points": [
+      {
+        "cites": [
+          "M-HBL-1"
+        ],
+        "text": "Close 303.47 is above 20-day average 296.47"
+      },
+      {
+        "cites": [
+          "M-HBL-3"
+        ],
+        "text": "20-day average is above 50-day average (short-term trend up)"
+      },
+      {
+        "cites": [
+          "N-HBL-3"
+        ],
+        "text": "News (medium impact): HBL, UBL, Meezan Bank Among Biggest Winners From SBP’s New Deposit Rule"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 4.0,
+    "proposal": {
+      "conviction": "medium",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Price above 20-day average, uptrend and deposit-rule news outweigh weak bear points.",
+    "winner": "bull"
+  },
+  "HMB": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "M-HMB-1"
+        ],
+        "text": "Close 103.94 is above 20-day average 98.84"
+      },
+      {
+        "cites": [
+          "M-HMB-3"
+        ],
+        "text": "20-day average is above 50-day average (short-term trend up)"
+      },
+      {
+        "cites": [
+          "M-HMB-4"
+        ],
+        "text": "Close is below 200-day average 104.52"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 2.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Short-term trend up, but below 200-day average limits conviction; low-conviction up is fair.",
+    "winner": "bull"
+  },
+  "HUBC": {
+    "clamp_notes": [],
+    "conviction": "medium",
+    "deciding_points": [
+      {
+        "cites": [
+          "M-HUBC-6"
+        ],
+        "text": "MACD histogram +0.92 (bullish crossover side)"
+      },
+      {
+        "cites": [
+          "M-HUBC-7"
+        ],
+        "text": "5-day return +2.7% vs market -0.3% (relative +3.0 pts)"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 4.5,
+    "proposal": {
+      "conviction": "medium",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Strong relative outperformance and positive MACD support the bull case; bear points are stale or weak.",
+    "winner": "bull"
+  },
+  "LUCK": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-LUCK-C1"
+        ],
+        "text": "Announcement 2026-11-16: Material Information"
+      },
+      {
+        "cites": [
+          "M-LUCK-7"
+        ],
+        "text": "5-day return -3.2% vs market -0.3% (relative -2.9 pts)"
+      },
+      {
+        "cites": [
+          "N-LUCK-2"
+        ],
+        "text": "News (medium impact): Lucky Cement-backed NRL confirms 8 copper-gold discoveries"
+      }
+    ],
+    "decision": "accept",
+    "direction": "down",
+    "net_score": -2.5,
+    "proposal": {
+      "conviction": "low",
+      "direction": "down",
+      "winner": "bear"
+    },
+    "reason": "Unrebutted 5-day underperformance dominates; bull points are not 5-day relevant, but margin is modest.",
+    "winner": "bear"
+  },
+  "MARI": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "M-MARI-1"
+        ],
+        "text": "Close 718.51 is above 20-day average 670.91"
+      },
+      {
+        "cites": [
+          "M-MARI-9"
+        ],
+        "text": "5-day volume is 1.51x the 20-day average on a falling price"
+      },
+      {
+        "cites": [
+          "N-MARI-1"
+        ],
+        "text": "News (medium impact): Mari Energies Announces Major Copper-Gold Discovery in Balochistan"
+      }
+    ],
+    "decision": "accept",
+    "direction": "flat",
+    "net_score": 0.5,
+    "proposal": {
+      "conviction": "low",
+      "direction": "flat",
+      "winner": "draw"
+    },
+    "reason": "Heavy volume on falling price balances price above 20-day average and stale discovery news.",
+    "winner": "draw"
+  },
+  "MCB": {
+    "clamp_notes": [],
+    "conviction": "medium",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-MCB-C2"
+        ],
+        "text": "Announcement 2026-11-13: Credit of Third Interim Cash Dividend (D-95) 2026"
+      },
+      {
+        "cites": [
+          "M-MCB-1"
+        ],
+        "text": "Close 404.31 is above 20-day average 395.68"
+      },
+      {
+        "cites": [
+          "M-MCB-3"
+        ],
+        "text": "20-day average is above 50-day average (short-term trend up)"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 4.0,
+    "proposal": {
+      "conviction": "medium",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Clear technical lead; bear points are mechanical dividend credit or weak.",
+    "winner": "bull"
+  },
+  "MEBL": {
+    "clamp_notes": [],
+    "conviction": "medium",
+    "deciding_points": [
+      {
+        "cites": [
+          "M-MEBL-1"
+        ],
+        "text": "Close 547.54 is above 20-day average 540.08"
+      },
+      {
+        "cites": [
+          "M-MEBL-2"
+        ],
+        "text": "Close is above 50-day average 540.12"
+      },
+      {
+        "cites": [
+          "N-MEBL-4"
+        ],
+        "text": "News (medium impact): HBL, UBL, Meezan Bank Among Biggest Winners From SBP’s New Deposit Rule"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 4.0,
+    "proposal": {
+      "conviction": "medium",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Above both averages with supportive deposit-rule news; bear relative-return point is stale.",
+    "winner": "bull"
+  },
+  "MLCF": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-MLCF-4"
+        ],
+        "text": "Q1 2027 EPS -18.1% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "M-MLCF-5"
+        ],
+        "text": "RSI(14) 67.0: positive momentum"
+      },
+      {
+        "cites": [
+          "M-MLCF-7"
+        ],
+        "text": "5-day return +1.8% vs market -0.3% (relative +2.1 pts)"
+      }
+    ],
+    "decision": "accept",
+    "direction": "flat",
+    "net_score": 0.5,
+    "proposal": {
+      "conviction": "low",
+      "direction": "flat",
+      "winner": "draw"
+    },
+    "reason": "Strong EPS decline balances 5-day outperformance and momentum; near draw, flat is appropriate.",
+    "winner": "draw"
+  },
+  "MTL": {
+    "clamp_notes": [],
+    "conviction": "medium",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-MTL-4"
+        ],
+        "text": "Q1 2027 EPS +90.7% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "M-MTL-3"
+        ],
+        "text": "20-day average is above 50-day average (short-term trend up)"
+      },
+      {
+        "cites": [
+          "M-MTL-7"
+        ],
+        "text": "5-day return -3.1% vs market -0.3% (relative -2.8 pts)"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 4.0,
+    "proposal": {
+      "conviction": "medium",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Strong EPS growth and uptrend outweigh the weak 5-day underperformance; bull lead is clear.",
+    "winner": "bull"
+  },
+  "NBP": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-NBP-4"
+        ],
+        "text": "Q3 2026 EPS -28.8% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "M-NBP-1"
+        ],
+        "text": "Close 176.03 is above 20-day average 168.95"
+      },
+      {
+        "cites": [
+          "M-NBP-4"
+        ],
+        "text": "Close is below 200-day average 190.46"
+      }
+    ],
+    "decision": "accept",
+    "direction": "flat",
+    "net_score": 1.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "flat",
+      "winner": "draw"
+    },
+    "reason": "Near-balanced debate: short-term strength offset by price below 200-day average; flat is reasonable.",
+    "winner": "draw"
+  },
+  "OGDC": {
+    "clamp_notes": [],
+    "conviction": "medium",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-OGDC-4"
+        ],
+        "text": "Q1 2027 EPS +52.6% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "M-OGDC-3"
+        ],
+        "text": "20-day average is above 50-day average (short-term trend up)"
+      },
+      {
+        "cites": [
+          "N-OGDC-6"
+        ],
+        "text": "News (medium impact): OGDCL makes Lower Goru Basal Sands discovery in Sindh"
+      }
+    ],
+    "decision": "override",
+    "direction": "up",
+    "net_score": 6.0,
+    "proposal": {
+      "conviction": "high",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Lead rests largely on one news item; technical support is modest, so high conviction is too strong. Lower one step.",
+    "winner": "bull"
+  },
+  "POL": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-POL-4"
+        ],
+        "text": "Q1 2027 EPS +50.9% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "M-POL-6"
+        ],
+        "text": "MACD histogram -0.66 (bearish crossover side)"
+      },
+      {
+        "cites": [
+          "M-POL-8"
+        ],
+        "text": "20-day return -0.9% vs market +8.2% (relative -9.1 pts)"
+      }
+    ],
+    "decision": "accept",
+    "direction": "down",
+    "net_score": -2.5,
+    "proposal": {
+      "conviction": "low",
+      "direction": "down",
+      "winner": "bear"
+    },
+    "reason": "Bearish MACD and relative weakness outweigh strong earnings, which matter less over five days.",
+    "winner": "bear"
+  },
+  "PPL": {
+    "clamp_notes": [],
+    "conviction": "medium",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-PPL-4"
+        ],
+        "text": "Q1 2027 EPS +25.5% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "M-PPL-1"
+        ],
+        "text": "Close 223.35 is above 20-day average 218.10"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 3.5,
+    "proposal": {
+      "conviction": "medium",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Strong unrebutted EPS growth and price above 20-day average outweigh the moderate macro outflow concern.",
+    "winner": "bull"
+  },
+  "PSEL": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "M-PSEL-6"
+        ],
+        "text": "MACD histogram +9.26 (bullish crossover side)"
+      },
+      {
+        "cites": [
+          "M-PSEL-7"
+        ],
+        "text": "5-day return -8.8% vs market -0.3% (relative -8.5 pts)"
+      },
+      {
+        "cites": [
+          "M-PSEL-8"
+        ],
+        "text": "20-day return +28.9% vs market +8.2% (relative +20.7 pts)"
+      }
+    ],
+    "decision": "accept",
+    "direction": "flat",
+    "net_score": 1.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "flat",
+      "winner": "draw"
+    },
+    "reason": "Sharp 5-day underperformance offsets positive MACD and stale 20-day gain; balanced, so flat.",
+    "winner": "draw"
+  },
+  "PSO": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-PSO-4"
+        ],
+        "text": "Q1 2027 EPS +172.2% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "M-PSO-7"
+        ],
+        "text": "5-day return -2.7% vs market -0.3% (relative -2.5 pts)"
+      }
+    ],
+    "decision": "accept",
+    "direction": "flat",
+    "net_score": -1.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "flat",
+      "winner": "draw"
+    },
+    "reason": "Strong EPS growth offsets weak relative 5-day return; evidence is balanced, so flat with low conviction.",
+    "winner": "draw"
+  },
+  "SRVI": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "M-SRVI-4"
+        ],
+        "text": "Close is below 200-day average 1326.47"
+      },
+      {
+        "cites": [
+          "M-SRVI-6"
+        ],
+        "text": "MACD histogram +8.50 (bullish crossover side)"
+      },
+      {
+        "cites": [
+          "M-SRVI-8"
+        ],
+        "text": "20-day return +2.2% vs market +8.2% (relative -6.0 pts)"
+      }
+    ],
+    "decision": "accept",
+    "direction": "down",
+    "net_score": -2.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "down",
+      "winner": "bear"
+    },
+    "reason": "Below 200-day average and lagging market outweigh MACD; bear leads modestly.",
+    "winner": "bear"
+  },
+  "SYS": {
+    "clamp_notes": [],
+    "conviction": "medium",
+    "deciding_points": [
+      {
+        "cites": [
+          "M-SYS-1"
+        ],
+        "text": "Close 110.69 is below 20-day average 112.50"
+      },
+      {
+        "cites": [
+          "M-SYS-7"
+        ],
+        "text": "5-day return -3.4% vs market -0.3% (relative -3.1 pts)"
+      }
+    ],
+    "decision": "accept",
+    "direction": "down",
+    "net_score": -3.5,
+    "proposal": {
+      "conviction": "medium",
+      "direction": "down",
+      "winner": "bear"
+    },
+    "reason": "Price below 20-day average with weak momentum; bull points are stale or weak, so bear win stands.",
+    "winner": "bear"
+  },
+  "UBL": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-UBL-4"
+        ],
+        "text": "Q3 2026 EPS -12.9% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "M-UBL-1"
+        ],
+        "text": "Close 431.44 is above 20-day average 423.44"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 3.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Price above 20-day average outweighs stale EPS decline; modest edge keeps low conviction.",
+    "winner": "bull"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "AKBL": {
+    "invalidation": "Close above resistance 126.0 or below support 101.39 would invalidate the flat view.",
+    "setup": "avoid"
+  },
+  "ATRL": {
+    "invalidation": "Daily close below stop 889.08 or loss of the MSCI-driven rerating would invalidate it.",
+    "setup": "catalyst"
+  },
+  "BAFL": {
+    "invalidation": "Close below stop 58.26 or loss of sma20 58.15 invalidates the uptrend.",
+    "setup": "momentum"
+  },
+  "BAHL": {
+    "invalidation": "Close below stop 165.53 or failure at 171.97 resistance invalidates the call.",
+    "setup": "momentum"
+  },
+  "BOP": {
+    "invalidation": "Close above resistance 32.62 or below support 26.66 would invalidate the flat view.",
+    "setup": "avoid"
+  },
+  "DGKC": {
+    "invalidation": "Close below 20-day average 194.75 or stop 197.14 breaks the momentum call.",
+    "setup": "momentum"
+  },
+  "EFERT": {
+    "invalidation": "Close below 214.77 stop or RSI rolling over with volume fading would prove the move wrong.",
+    "setup": "momentum"
+  },
+  "ENGROH": {
+    "invalidation": "A strong results print with volume follow-through above 307.66 would prove avoiding wrong.",
+    "setup": "avoid"
+  },
+  "FABL": {
+    "invalidation": "Close above resistance 97.8 or below support 87.07 would invalidate the flat view.",
+    "setup": "avoid"
+  },
+  "FATIMA": {
+    "invalidation": "Stock is down with material announcement; a close above 157 resistance would prove the downside call wrong.",
+    "setup": "avoid"
+  },
+  "FCCL": {
+    "invalidation": "Close below stop 57.63 or 20-day average 57.08 breaks the pullback thesis.",
+    "setup": "pullback"
+  },
+  "FFC": {
+    "invalidation": "Close below 561.78 stop, or failure to clear 580 resistance on volume, invalidates the breakout.",
+    "setup": "breakout"
+  },
+  "HBL": {
+    "invalidation": "Daily close below stop 296.09 or loss of 20-day average 296.47.",
+    "setup": "momentum"
+  },
+  "HMB": {
+    "invalidation": "Thin volume persists and close falls below stop 101.28.",
+    "setup": "avoid"
+  },
+  "HUBC": {
+    "invalidation": "Daily close below stop 205.17 would prove the breakout wrong and end the call.",
+    "setup": "breakout"
+  },
+  "LUCK": {
+    "invalidation": "Close back above resistance 454.50 would contradict the down call.",
+    "setup": "avoid"
+  },
+  "MARI": {
+    "invalidation": "Wrong if price rallies through 761.9 resistance on volume, or breaks below support 622.25.",
+    "setup": "avoid"
+  },
+  "MCB": {
+    "invalidation": "Daily close below stop 395.48 or loss of 20-day average 395.68.",
+    "setup": "catalyst"
+  },
+  "MEBL": {
+    "invalidation": "Daily close below stop 533.76 or loss of 20-day average 540.08.",
+    "setup": "momentum"
+  },
+  "MLCF": {
+    "invalidation": "Close above resistance 108.87 on rising volume would contradict the flat call.",
+    "setup": "avoid"
+  },
+  "MTL": {
+    "invalidation": "Daily close below stop 288.51 or below 20-day average 290.45 invalidates the pullback.",
+    "setup": "pullback"
+  },
+  "NBP": {
+    "invalidation": "Earnings decline reverses and price clears 200-day average 190.46.",
+    "setup": "avoid"
+  },
+  "OGDC": {
+    "invalidation": "Call fails if close breaks stop 306.39 or falls below 20-day average 307.0 on rising volume.",
+    "setup": "catalyst"
+  },
+  "POL": {
+    "invalidation": "Becomes tradeable only if close reclaims resistance 690 with volume; avoid while below 664.22.",
+    "setup": "avoid"
+  },
+  "PPL": {
+    "invalidation": "Daily close below stop 217.27 or below 20-day average 218.10 would prove the call wrong.",
+    "setup": "momentum"
+  },
+  "PSEL": {
+    "invalidation": "Becomes tradeable if close breaks above resistance 1470 on volume once the auditor change clears.",
+    "setup": "avoid"
+  },
+  "PSO": {
+    "invalidation": "Daily close above resistance 382.5 with rising volume would revive the upside case.",
+    "setup": "avoid"
+  },
+  "SRVI": {
+    "invalidation": "Reverses if close reclaims resistance 181.8 with rising volume and MACD stays positive.",
+    "setup": "avoid"
+  },
+  "SYS": {
+    "invalidation": "Reclaim of 20-day average 112.50 on a daily close would prove the downside call wrong.",
+    "setup": "avoid"
+  },
+  "UBL": {
+    "invalidation": "Close below 419.12 stop, or a confirmed EPS downgrade, invalidates the rebound.",
+    "setup": "pullback"
+  }
+}

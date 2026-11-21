@@ -1,0 +1,1488 @@
+{
+  "as_of": "2026-11-20",
+  "benchmark_members": [
+    [
+      "FFC",
+      791462794.0,
+      571.3
+    ],
+    [
+      "UBL",
+      876486713.0,
+      431.44
+    ],
+    [
+      "ENGROH",
+      903173996.0,
+      297.18
+    ],
+    [
+      "MEBL",
+      451774112.0,
+      547.54
+    ],
+    [
+      "HUBC",
+      972865790.0,
+      209.81
+    ],
+    [
+      "OGDC",
+      645139260.0,
+      312.55
+    ],
+    [
+      "LUCK",
+      439500000.0,
+      429.0
+    ],
+    [
+      "HBL",
+      586741003.0,
+      303.47
+    ],
+    [
+      "MARI",
+      240124500.0,
+      718.51
+    ],
+    [
+      "MCB",
+      414771002.0,
+      404.31
+    ],
+    [
+      "PPL",
+      669603651.0,
+      223.35
+    ],
+    [
+      "BAHL",
+      833569062.0,
+      169.9
+    ],
+    [
+      "EFERT",
+      600884719.0,
+      220.48
+    ],
+    [
+      "SYS",
+      995138856.0,
+      110.69
+    ],
+    [
+      "NBP",
+      510225185.0,
+      176.03
+    ],
+    [
+      "POL",
+      129983206.0,
+      659.24
+    ],
+    [
+      "BAFL",
+      1419448607.0,
+      59.7
+    ],
+    [
+      "PSO",
+      234736650.0,
+      358.81
+    ],
+    [
+      "MTL",
+      179564352.0,
+      295.35
+    ],
+    [
+      "FCCL",
+      858496527.0,
+      59.93
+    ],
+    [
+      "AKBL",
+      434789762.0,
+      115.81
+    ],
+    [
+      "FABL",
+      531193784.0,
+      94.05
+    ],
+    [
+      "MLCF",
+      471403174.0,
+      105.81
+    ],
+    [
+      "HMB",
+      471524166.0,
+      103.94
+    ],
+    [
+      "FATIMA",
+      315000000.0,
+      145.25
+    ],
+    [
+      "DGKC",
+      219059559.0,
+      204.0
+    ],
+    [
+      "BOP",
+      1382198904.0,
+      31.26
+    ],
+    [
+      "ATRL",
+      42646500.0,
+      928.66
+    ],
+    [
+      "PSEL",
+      30820000.0,
+      1249.78
+    ],
+    [
+      "SRVI",
+      211443543.0,
+      179.93
+    ],
+    [
+      "CHCC",
+      116577023.0,
+      294.11
+    ],
+    [
+      "NESTLE",
+      4534958.0,
+      7020.51
+    ],
+    [
+      "SAZEW",
+      21156087.0,
+      1441.21
+    ],
+    [
+      "COLG",
+      24277327.0,
+      1209.39
+    ],
+    [
+      "ILP",
+      280341894.0,
+      100.07
+    ],
+    [
+      "BWCL",
+      59625278.0,
+      461.23
+    ],
+    [
+      "PTC",
+      593342676.0,
+      44.64
+    ],
+    [
+      "INDU",
+      13999773.0,
+      1840.31
+    ],
+    [
+      "JVDC",
+      190430224.0,
+      132.87
+    ],
+    [
+      "SEARL",
+      294109294.0,
+      79.69
+    ],
+    [
+      "SNGP",
+      253686666.0,
+      91.38
+    ],
+    [
+      "DCR",
+      555925000.0,
+      39.32
+    ],
+    [
+      "KOHC",
+      229826621.0,
+      95.05
+    ],
+    [
+      "ABOT",
+      21183943.0,
+      1013.28
+    ],
+    [
+      "PSX",
+      480885960.0,
+      43.99
+    ],
+    [
+      "GLAXO",
+      63693456.0,
+      332.02
+    ],
+    [
+      "HINOON",
+      21193345.0,
+      976.84
+    ],
+    [
+      "NML",
+      158219932.0,
+      130.72
+    ],
+    [
+      "ATLH",
+      12408794.0,
+      1593.76
+    ],
+    [
+      "ABL",
+      114507383.0,
+      171.62
+    ],
+    [
+      "PAKT",
+      12620904.0,
+      1513.39
+    ],
+    [
+      "NATF",
+      58278856.0,
+      324.62
+    ],
+    [
+      "TRG",
+      354503932.0,
+      52.81
+    ],
+    [
+      "APL",
+      31104000.0,
+      570.0
+    ],
+    [
+      "GHNI",
+      14913095.0,
+      1187.35
+    ],
+    [
+      "PAEL",
+      508007226.0,
+      34.24
+    ],
+    [
+      "THALL",
+      32411964.0,
+      535.0
+    ],
+    [
+      "LCI",
+      92359050.0,
+      185.49
+    ],
+    [
+      "KEL",
+      2761519425.0,
+      6.08
+    ],
+    [
+      "AICL",
+      210000000.0,
+      79.93
+    ],
+    [
+      "CNERGY",
+      1373361893.0,
+      11.73
+    ],
+    [
+      "TPLRF1",
+      1651500000.0,
+      8.71
+    ],
+    [
+      "GHGL",
+      349900193.0,
+      40.01
+    ],
+    [
+      "UPFL",
+      521215.0,
+      26355.0
+    ],
+    [
+      "AIRLINK",
+      118580769.0,
+      110.13
+    ],
+    [
+      "THCCL",
+      174506719.0,
+      73.1
+    ],
+    [
+      "AGP",
+      84000000.0,
+      151.65
+    ],
+    [
+      "SHFA",
+      28446472.0,
+      447.02
+    ],
+    [
+      "ISL",
+      152250000.0,
+      82.82
+    ],
+    [
+      "BML",
+      205577694.0,
+      61.3
+    ],
+    [
+      "TGL",
+      68866875.0,
+      180.1
+    ],
+    [
+      "KAPCO",
+      456658765.0,
+      26.69
+    ],
+    [
+      "PIBTL",
+      893046386.0,
+      13.62
+    ],
+    [
+      "GAL",
+      22801000.0,
+      527.88
+    ],
+    [
+      "SCBPL",
+      193579251.0,
+      60.55
+    ],
+    [
+      "PKGS",
+      17875901.0,
+      636.75
+    ],
+    [
+      "KTML",
+      269299456.0,
+      42.21
+    ],
+    [
+      "HALEON",
+      15737642.0,
+      687.73
+    ],
+    [
+      "NCPL",
+      202040816.0,
+      50.81
+    ],
+    [
+      "MUREB",
+      11065452.0,
+      903.68
+    ],
+    [
+      "POWER",
+      452534874.0,
+      21.99
+    ],
+    [
+      "LOTCHEM",
+      378551802.0,
+      25.73
+    ],
+    [
+      "PIOC",
+      34072319.0,
+      277.5
+    ],
+    [
+      "INIL",
+      59346846.0,
+      157.97
+    ],
+    [
+      "NPL",
+      173079122.0,
+      52.72
+    ],
+    [
+      "AHCL",
+      632545121.0,
+      13.52
+    ],
+    [
+      "SSGC",
+      336892131.0,
+      23.91
+    ],
+    [
+      "JDWS",
+      8666499.0,
+      923.02
+    ],
+    [
+      "FFL",
+      503992628.0,
+      14.28
+    ],
+    [
+      "CPHL",
+      114230600.0,
+      62.18
+    ],
+    [
+      "HCAR",
+      28560000.0,
+      206.58
+    ],
+    [
+      "IBFL",
+      15525350.0,
+      253.0
+    ],
+    [
+      "HGFA",
+      265345719.0,
+      13.65
+    ],
+    [
+      "IMAGE",
+      149740273.0,
+      21.98
+    ],
+    [
+      "FHAM",
+      94205925.0,
+      28.64
+    ],
+    [
+      "GADT",
+      8408875.0,
+      300.27
+    ],
+    [
+      "SSOM",
+      1397700.0,
+      415.81
+    ],
+    [
+      "YOUW",
+      86176250.0,
+      5.31
+    ],
+    [
+      "BNWM",
+      4753125.0,
+      61.97
+    ],
+    [
+      "PGLC",
+      9894222.0,
+      22.43
+    ]
+  ],
+  "fingerprint": "e228cc282020ccd46b1d48a597524ddeaa97553217d99926c7e06c0d8899edcd",
+  "rows": [
+    {
+      "atr_pct": 2.27,
+      "close": 223.35,
+      "deciding_points": [
+        "Q1 2027 EPS +25.5% vs same quarter last year",
+        "Close 223.35 is above 20-day average 218.10"
+      ],
+      "expected_move_pct": 2.54,
+      "final_conviction": "medium",
+      "final_direction": "up",
+      "flag": "none",
+      "fundamental_score": 25,
+      "hybrid_score": 1.903,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 223.35,
+        "expected_move_pct": 2.54,
+        "stop": 217.27,
+        "target": 229.02
+      },
+      "market_score": 55,
+      "name": "Pakistan Petroleum Limited",
+      "pm_reason": "EPS growth and price above 20-day average support momentum; risk medium, news neutral. Keep medium upside call.",
+      "quant_score": 43.0,
+      "rank": 1,
+      "risk_rating": "medium",
+      "sector": "OIL & GAS EXPLORATION COMPANIES",
+      "setup": "momentum",
+      "symbol": "PPL",
+      "top": true,
+      "winner": "bull"
+    },
+    {
+      "atr_pct": 2.16,
+      "close": 220.48,
+      "deciding_points": [
+        "RSI(14) 77.2: overbought, pullback risk",
+        "5-day return +5.9% vs market -0.3% (relative +6.2 pts)",
+        "News (high impact): Engro Fertilizers Raises Urea Price by Rs. 150 per Bag"
+      ],
+      "expected_move_pct": 2.41,
+      "final_conviction": "medium",
+      "final_direction": "up",
+      "flag": "caution",
+      "fundamental_score": -15,
+      "hybrid_score": 1.811,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 220.48,
+        "expected_move_pct": 2.41,
+        "stop": 214.77,
+        "target": 225.8
+      },
+      "market_score": 55,
+      "name": "Engro Fertilizers Limited",
+      "pm_reason": "Urea price hike and strong relative momentum support upside, but RSI 77 overbought raises near-term pullback risk.",
+      "quant_score": 27.0,
+      "rank": 2,
+      "risk_rating": "medium",
+      "sector": "FERTILIZER",
+      "setup": "momentum",
+      "symbol": "EFERT",
+      "top": true,
+      "winner": "bull"
+    },
+    {
+      "atr_pct": 2.14,
+      "close": 169.9,
+      "deciding_points": [
+        "Q3 2026 EPS +39.4% vs same quarter last year",
+        "RSI(14) 76.4: overbought, pullback risk",
+        "MACD histogram +1.05 (bullish crossover side)"
+      ],
+      "expected_move_pct": 2.39,
+      "final_conviction": "medium",
+      "final_direction": "up",
+      "flag": "caution",
+      "fundamental_score": 0,
+      "hybrid_score": 1.794,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 169.9,
+        "expected_move_pct": 2.39,
+        "stop": 165.53,
+        "target": 173.97
+      },
+      "market_score": 45,
+      "name": "Bank AL Habib Limited",
+      "pm_reason": "Strong quarterly EPS growth and bullish MACD, but RSI 76.4 overbought raises pullback risk within five days.",
+      "quant_score": 27.0,
+      "rank": 3,
+      "risk_rating": "medium",
+      "sector": "COMMERCIAL BANKS",
+      "setup": "momentum",
+      "symbol": "BAHL",
+      "top": true,
+      "winner": "bull"
+    },
+    {
+      "atr_pct": 2.1,
+      "close": 547.54,
+      "deciding_points": [
+        "Close 547.54 is above 20-day average 540.08",
+        "Close is above 50-day average 540.12",
+        "News (medium impact): HBL, UBL, Meezan Bank Among Biggest Winners From SBP’s New Deposit Rule"
+      ],
+      "expected_move_pct": 2.35,
+      "final_conviction": "medium",
+      "final_direction": "up",
+      "flag": "caution",
+      "fundamental_score": -10,
+      "hybrid_score": 1.761,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 547.54,
+        "expected_move_pct": 2.35,
+        "stop": 533.76,
+        "target": 560.4
+      },
+      "market_score": 15,
+      "name": "Meezan Bank Limited",
+      "pm_reason": "Positive news and price above 20/50-day averages, but quant score is very weak at 5; medium conviction kept with caution.",
+      "quant_score": 5.0,
+      "rank": 4,
+      "risk_rating": "medium",
+      "sector": "COMMERCIAL BANKS",
+      "setup": "momentum",
+      "symbol": "MEBL",
+      "top": true,
+      "winner": "bull"
+    },
+    {
+      "atr_pct": 2.03,
+      "close": 303.47,
+      "deciding_points": [
+        "Close 303.47 is above 20-day average 296.47",
+        "20-day average is above 50-day average (short-term trend up)",
+        "News (medium impact): HBL, UBL, Meezan Bank Among Biggest Winners From SBP’s New Deposit Rule"
+      ],
+      "expected_move_pct": 2.27,
+      "final_conviction": "medium",
+      "final_direction": "up",
+      "flag": "none",
+      "fundamental_score": 5,
+      "hybrid_score": 1.702,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 303.47,
+        "expected_move_pct": 2.27,
+        "stop": 296.09,
+        "target": 310.36
+      },
+      "market_score": 55,
+      "name": "Habib Bank Limited",
+      "pm_reason": "Uptrend intact, positive deposit-rule news, medium risk; momentum setup supports medium conviction.",
+      "quant_score": 35.0,
+      "rank": 5,
+      "risk_rating": "medium",
+      "sector": "COMMERCIAL BANKS",
+      "setup": "momentum",
+      "symbol": "HBL",
+      "top": true,
+      "winner": "bull"
+    },
+    {
+      "atr_pct": 1.93,
+      "close": 295.35,
+      "deciding_points": [
+        "Q1 2027 EPS +90.7% vs same quarter last year",
+        "20-day average is above 50-day average (short-term trend up)",
+        "5-day return -3.1% vs market -0.3% (relative -2.8 pts)"
+      ],
+      "expected_move_pct": 2.16,
+      "final_conviction": "medium",
+      "final_direction": "up",
+      "flag": "caution",
+      "fundamental_score": 10,
+      "hybrid_score": 1.618,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 295.35,
+        "expected_move_pct": 2.16,
+        "stop": 288.51,
+        "target": 301.72
+      },
+      "market_score": 45,
+      "name": "Millat Tractors Limited",
+      "pm_reason": "Strong EPS growth and uptrend support the pullback setup, but bearish sentiment and underperformance versus market over five days warrant caution.",
+      "quant_score": 31.0,
+      "rank": 6,
+      "risk_rating": "medium",
+      "sector": "AUTOMOBILE ASSEMBLER",
+      "setup": "pullback",
+      "symbol": "MTL",
+      "top": false,
+      "winner": "bull"
+    },
+    {
+      "atr_pct": 1.84,
+      "close": 209.81,
+      "deciding_points": [
+        "MACD histogram +0.92 (bullish crossover side)",
+        "5-day return +2.7% vs market -0.3% (relative +3.0 pts)"
+      ],
+      "expected_move_pct": 2.06,
+      "final_conviction": "medium",
+      "final_direction": "up",
+      "flag": "none",
+      "fundamental_score": 0,
+      "hybrid_score": 1.543,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 209.81,
+        "expected_move_pct": 2.06,
+        "stop": 205.17,
+        "target": 214.13
+      },
+      "market_score": 65,
+      "name": "The Hub Power Company Limited",
+      "pm_reason": "Bullish MACD, relative strength vs market and positive news back the breakout setup; medium risk. Keep medium upside.",
+      "quant_score": 39.0,
+      "rank": 7,
+      "risk_rating": "medium",
+      "sector": "POWER GENERATION & DISTRIBUTION",
+      "setup": "breakout",
+      "symbol": "HUBC",
+      "top": false,
+      "winner": "bull"
+    },
+    {
+      "atr_pct": 1.64,
+      "close": 312.55,
+      "deciding_points": [
+        "Q1 2027 EPS +52.6% vs same quarter last year",
+        "20-day average is above 50-day average (short-term trend up)",
+        "News (medium impact): OGDCL makes Lower Goru Basal Sands discovery in Sindh"
+      ],
+      "expected_move_pct": 1.83,
+      "final_conviction": "medium",
+      "final_direction": "up",
+      "flag": "none",
+      "fundamental_score": 40,
+      "hybrid_score": 1.375,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 312.55,
+        "expected_move_pct": 1.83,
+        "stop": 306.39,
+        "target": 318.28
+      },
+      "market_score": 55,
+      "name": "Oil & Gas Development Company Limited",
+      "pm_reason": "EPS +52.6%, short-term trend up and discovery news support an upside catalyst; medium risk.",
+      "quant_score": 49.0,
+      "rank": 8,
+      "risk_rating": "medium",
+      "sector": "OIL & GAS EXPLORATION COMPANIES",
+      "setup": "catalyst",
+      "symbol": "OGDC",
+      "top": false,
+      "winner": "bull"
+    },
+    {
+      "atr_pct": 1.39,
+      "close": 571.3,
+      "deciding_points": [
+        "Close 571.30 is above 20-day average 554.89",
+        "News (high impact): Fauji Fertilizer And 10 Other PSX Companies Get Huge Tax Relief"
+      ],
+      "expected_move_pct": 1.55,
+      "final_conviction": "medium",
+      "final_direction": "up",
+      "flag": "none",
+      "fundamental_score": 0,
+      "hybrid_score": 1.166,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 571.3,
+        "expected_move_pct": 1.55,
+        "stop": 561.78,
+        "target": 580.18
+      },
+      "market_score": 55,
+      "name": "Fauji Fertilizer Company Limited",
+      "pm_reason": "Breakout above 20-day average with high-impact tax relief news supports upside; medium risk.",
+      "quant_score": 33.0,
+      "rank": 9,
+      "risk_rating": "medium",
+      "sector": "FERTILIZER",
+      "setup": "breakout",
+      "symbol": "FFC",
+      "top": false,
+      "winner": "bull"
+    },
+    {
+      "atr_pct": 2.38,
+      "close": 431.44,
+      "deciding_points": [
+        "Q3 2026 EPS -12.9% vs same quarter last year",
+        "Close 431.44 is above 20-day average 423.44"
+      ],
+      "expected_move_pct": 1.33,
+      "final_conviction": "low",
+      "final_direction": "up",
+      "flag": "none",
+      "fundamental_score": 5,
+      "hybrid_score": 0.998,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 431.44,
+        "expected_move_pct": 1.33,
+        "stop": 419.12,
+        "target": 437.18
+      },
+      "market_score": 55,
+      "name": "United Bank Limited",
+      "pm_reason": "Modest pullback setup above 20-day average, but EPS down 12.9% year on year limits conviction.",
+      "quant_score": 35.0,
+      "rank": 10,
+      "risk_rating": "medium",
+      "sector": "COMMERCIAL BANKS",
+      "setup": "pullback",
+      "symbol": "UBL",
+      "top": false,
+      "winner": "bull"
+    },
+    {
+      "atr_pct": 3.55,
+      "close": 928.66,
+      "deciding_points": [
+        "Q1 2027 EPS +1184.1% vs same quarter last year",
+        "News (high impact): MSCI adds Attock Refinery to Pakistan Index in November review",
+        "News (medium impact): Supreme Court rules Attock Refinery's crude-processing payments are not taxable supplies"
+      ],
+      "expected_move_pct": 1.95,
+      "final_conviction": "low",
+      "final_direction": "up",
+      "flag": "caution",
+      "fundamental_score": 40,
+      "hybrid_score": 0.975,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 928.66,
+        "expected_move_pct": 1.95,
+        "stop": 889.08,
+        "target": 946.78
+      },
+      "market_score": -60,
+      "name": "Attock Refinery Limited",
+      "pm_reason": "Huge EPS growth and MSCI inclusion news are positive, but quant score is very negative and risk is high. Low conviction, be careful.",
+      "quant_score": -20.0,
+      "rank": 11,
+      "risk_rating": "high",
+      "sector": "REFINERY",
+      "setup": "catalyst",
+      "symbol": "ATRL",
+      "top": false,
+      "winner": "bull"
+    },
+    {
+      "atr_pct": 3.2,
+      "close": 59.93,
+      "deciding_points": [
+        "Q1 2027 EPS +50.7% vs same quarter last year",
+        "5-day return -2.9% vs market -0.3% (relative -2.6 pts)",
+        "20-day return +19.8% vs market +8.2% (relative +11.6 pts)"
+      ],
+      "expected_move_pct": 1.79,
+      "final_conviction": "low",
+      "final_direction": "up",
+      "flag": "caution",
+      "fundamental_score": 25,
+      "hybrid_score": 0.894,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 59.93,
+        "expected_move_pct": 1.79,
+        "stop": 57.63,
+        "target": 61.0
+      },
+      "market_score": 55,
+      "name": "Fauji Cement Company Limited",
+      "pm_reason": "EPS growth, positive news and strong 20-day relative strength favor upside, but high risk and recent five-day weakness limit conviction.",
+      "quant_score": 43.0,
+      "rank": 12,
+      "risk_rating": "high",
+      "sector": "CEMENT",
+      "setup": "pullback",
+      "symbol": "FCCL",
+      "top": false,
+      "winner": "bull"
+    },
+    {
+      "atr_pct": 2.01,
+      "close": 59.7,
+      "deciding_points": [
+        "Latest annual EPS growth -26.1%",
+        "20-day average is above 50-day average (short-term trend up)"
+      ],
+      "expected_move_pct": 1.12,
+      "final_conviction": "low",
+      "final_direction": "up",
+      "flag": "caution",
+      "fundamental_score": 5,
+      "hybrid_score": 0.843,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 59.7,
+        "expected_move_pct": 1.12,
+        "stop": 58.26,
+        "target": 60.37
+      },
+      "market_score": 55,
+      "name": "Bank Alfalah Limited",
+      "pm_reason": "Momentum setup but annual EPS fell 26.1% and risk trimmed conviction; keep low.",
+      "quant_score": 35.0,
+      "rank": 13,
+      "risk_rating": "medium",
+      "sector": "COMMERCIAL BANKS",
+      "setup": "momentum",
+      "symbol": "BAFL",
+      "top": false,
+      "winner": "bull"
+    },
+    {
+      "atr_pct": 2.8,
+      "close": 204.0,
+      "deciding_points": [
+        "Announcement 2026-11-16: CHANGE OFOF EXTERNAL AUDITORSNAME",
+        "Close 204.00 is above 20-day average 194.75",
+        "20-day return +14.5% vs market +8.2% (relative +6.3 pts)"
+      ],
+      "expected_move_pct": 1.57,
+      "final_conviction": "low",
+      "final_direction": "up",
+      "flag": "caution",
+      "fundamental_score": 15,
+      "hybrid_score": 0.783,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 204.0,
+        "expected_move_pct": 1.57,
+        "stop": 197.14,
+        "target": 207.19
+      },
+      "market_score": 65,
+      "name": "D.G. Khan Cement Company Limited",
+      "pm_reason": "Momentum and relative strength are positive, but high risk rating and an auditor change announcement keep conviction low.",
+      "quant_score": 45.0,
+      "rank": 14,
+      "risk_rating": "high",
+      "sector": "CEMENT",
+      "setup": "momentum",
+      "symbol": "DGKC",
+      "top": false,
+      "winner": "bull"
+    },
+    {
+      "atr_pct": 1.82,
+      "close": 404.31,
+      "deciding_points": [
+        "Announcement 2026-11-13: Credit of Third Interim Cash Dividend (D-95) 2026",
+        "Close 404.31 is above 20-day average 395.68",
+        "20-day average is above 50-day average (short-term trend up)"
+      ],
+      "expected_move_pct": 1.02,
+      "final_conviction": "low",
+      "final_direction": "up",
+      "flag": "caution",
+      "fundamental_score": -5,
+      "hybrid_score": 0.763,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 404.31,
+        "expected_move_pct": 1.02,
+        "stop": 395.48,
+        "target": 408.42
+      },
+      "market_score": 55,
+      "name": "MCB Bank Limited",
+      "pm_reason": "Dividend credit catalyst and uptrend, but risk review cut conviction; weak quant score of 31 and possible ex-dividend price drop.",
+      "quant_score": 31.0,
+      "rank": 15,
+      "risk_rating": "medium",
+      "sector": "COMMERCIAL BANKS",
+      "setup": "catalyst",
+      "symbol": "MCB",
+      "top": false,
+      "winner": "bull"
+    },
+    {
+      "atr_pct": 2.14,
+      "close": 103.94,
+      "deciding_points": [
+        "Close 103.94 is above 20-day average 98.84",
+        "20-day average is above 50-day average (short-term trend up)",
+        "Close is below 200-day average 104.52"
+      ],
+      "expected_move_pct": 1.2,
+      "final_conviction": "low",
+      "final_direction": "up",
+      "flag": "caution",
+      "fundamental_score": 0,
+      "hybrid_score": 0.598,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 103.94,
+        "expected_move_pct": 1.2,
+        "stop": 101.28,
+        "target": 105.18
+      },
+      "market_score": 45,
+      "name": "Habib Metropolitan Bank Limited",
+      "pm_reason": "High risk, setup rated avoid, and price still below 200-day average; short-term trend up but low conviction only.",
+      "quant_score": 27.0,
+      "rank": 16,
+      "risk_rating": "high",
+      "sector": "COMMERCIAL BANKS",
+      "setup": "avoid",
+      "symbol": "HMB",
+      "top": false,
+      "winner": "bull"
+    },
+    {
+      "atr_pct": 2.7,
+      "close": 31.26,
+      "deciding_points": [
+        "Announcement 2026-11-20: ISSUANCE OF SHARES TO GOVERNMENT OF THE PUNJAB (GoPb), FIRST TRANCHE",
+        "Announcement 2026-11-17: RECEIPT OF FIRST TRANCHE - EQUITY INJECTION BY GOVERNMENT OF THE PUNJAB (GoPb)"
+      ],
+      "expected_move_pct": 0.0,
+      "final_conviction": "low",
+      "final_direction": "flat",
+      "flag": "watch_closely",
+      "fundamental_score": 30,
+      "hybrid_score": 0.0,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 31.26,
+        "expected_move_pct": 0.0,
+        "target": 31.26
+      },
+      "market_score": 55,
+      "name": "The Bank of Punjab",
+      "pm_reason": "Research flat and high risk, but positive equity injection news from GoPb with bullish sentiment may change the picture.",
+      "quant_score": 45.0,
+      "rank": 17,
+      "risk_rating": "high",
+      "sector": "COMMERCIAL BANKS",
+      "setup": "avoid",
+      "symbol": "BOP",
+      "top": false,
+      "winner": "draw"
+    },
+    {
+      "atr_pct": 2.68,
+      "close": 297.18,
+      "deciding_points": [
+        "Board meeting notice (2026-11-16): results or payout may land in the window",
+        "5-day volume is 1.87x the 20-day average on a rising price",
+        "News (medium impact): Engro Holdings’ First Half Profit Falls 41%"
+      ],
+      "expected_move_pct": 0.0,
+      "final_conviction": "low",
+      "final_direction": "flat",
+      "flag": "watch_closely",
+      "fundamental_score": -15,
+      "hybrid_score": 0.0,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 297.18,
+        "expected_move_pct": 0.0,
+        "target": 297.18
+      },
+      "market_score": 85,
+      "name": "Engro Holdings Limited",
+      "pm_reason": "Board meeting may bring results or payout in window, news negative, risk high; volume strength alone insufficient, so stay flat.",
+      "quant_score": 45.0,
+      "rank": 18,
+      "risk_rating": "high",
+      "sector": "INV. BANKS / INV. COS. / SECURITIES COS.",
+      "setup": "avoid",
+      "symbol": "ENGROH",
+      "top": false,
+      "winner": "bull"
+    },
+    {
+      "atr_pct": 2.86,
+      "close": 176.03,
+      "deciding_points": [
+        "Q3 2026 EPS -28.8% vs same quarter last year",
+        "Close 176.03 is above 20-day average 168.95",
+        "Close is below 200-day average 190.46"
+      ],
+      "expected_move_pct": 0.0,
+      "final_conviction": "low",
+      "final_direction": "flat",
+      "flag": "watch_closely",
+      "fundamental_score": 20,
+      "hybrid_score": 0.0,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 176.03,
+        "expected_move_pct": 0.0,
+        "target": 176.03
+      },
+      "market_score": 55,
+      "name": "National Bank of Pakistan",
+      "pm_reason": "Research flat, high risk, EPS down 28.8%, below 200-day average; despite short-term bounce no edge for upside.",
+      "quant_score": 41.0,
+      "rank": 19,
+      "risk_rating": "high",
+      "sector": "COMMERCIAL BANKS",
+      "setup": "avoid",
+      "symbol": "NBP",
+      "top": false,
+      "winner": "draw"
+    },
+    {
+      "atr_pct": 2.58,
+      "close": 718.51,
+      "deciding_points": [
+        "Close 718.51 is above 20-day average 670.91",
+        "5-day volume is 1.51x the 20-day average on a falling price",
+        "News (medium impact): Mari Energies Announces Major Copper-Gold Discovery in Balochistan"
+      ],
+      "expected_move_pct": 0.0,
+      "final_conviction": "low",
+      "final_direction": "flat",
+      "flag": "watch_closely",
+      "fundamental_score": 15,
+      "hybrid_score": 0.0,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 718.51,
+        "expected_move_pct": 0.0,
+        "target": 718.51
+      },
+      "market_score": 55,
+      "name": "Mari Energies Limited",
+      "pm_reason": "Positive copper-gold discovery news and price above 20-day average, but volume rises on falling price; stay flat.",
+      "quant_score": 39.0,
+      "rank": 20,
+      "risk_rating": "medium",
+      "sector": "OIL & GAS EXPLORATION COMPANIES",
+      "setup": "avoid",
+      "symbol": "MARI",
+      "top": false,
+      "winner": "draw"
+    },
+    {
+      "atr_pct": 1.89,
+      "close": 94.05,
+      "deciding_points": [
+        "20-day average is above 50-day average (short-term trend up)",
+        "News (medium impact): NCCIA Traces Rs240 Billion Through Faysal Bank, Habib Metro, and UBL in Karachi Gambling Bust"
+      ],
+      "expected_move_pct": 0.0,
+      "final_conviction": "low",
+      "final_direction": "flat",
+      "flag": "caution",
+      "fundamental_score": -5,
+      "hybrid_score": 0.0,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 94.05,
+        "expected_move_pct": 0.0,
+        "target": 94.05
+      },
+      "market_score": 55,
+      "name": "Faysal Bank Limited",
+      "pm_reason": "Flat research, bearish sentiment, and mixed news linking the bank to an NCCIA money-tracing case; avoid.",
+      "quant_score": 31.0,
+      "rank": 21,
+      "risk_rating": "medium",
+      "sector": "COMMERCIAL BANKS",
+      "setup": "avoid",
+      "symbol": "FABL",
+      "top": false,
+      "winner": "draw"
+    },
+    {
+      "atr_pct": 2.92,
+      "close": 105.81,
+      "deciding_points": [
+        "Q1 2027 EPS -18.1% vs same quarter last year",
+        "RSI(14) 67.0: positive momentum",
+        "5-day return +1.8% vs market -0.3% (relative +2.1 pts)"
+      ],
+      "expected_move_pct": 0.0,
+      "final_conviction": "low",
+      "final_direction": "flat",
+      "flag": "none",
+      "fundamental_score": -35,
+      "hybrid_score": 0.0,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 105.81,
+        "expected_move_pct": 0.0,
+        "target": 105.81
+      },
+      "market_score": 75,
+      "name": "Maple Leaf Cement Factory Limited",
+      "pm_reason": "Research is flat, EPS fell 18.1%, and the setup is avoid. Low risk, but no clear edge for the five-day window.",
+      "quant_score": 31.0,
+      "rank": 22,
+      "risk_rating": "low",
+      "sector": "CEMENT",
+      "setup": "avoid",
+      "symbol": "MLCF",
+      "top": false,
+      "winner": "draw"
+    },
+    {
+      "atr_pct": 2.76,
+      "close": 429.0,
+      "deciding_points": [
+        "Announcement 2026-11-16: Material Information",
+        "5-day return -3.2% vs market -0.3% (relative -2.9 pts)",
+        "News (medium impact): Lucky Cement-backed NRL confirms 8 copper-gold discoveries"
+      ],
+      "expected_move_pct": 0.0,
+      "final_conviction": "low",
+      "final_direction": "flat",
+      "flag": "watch_closely",
+      "fundamental_score": 15,
+      "hybrid_score": 0.0,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 429.0,
+        "expected_move_pct": 0.0,
+        "target": 429.0
+      },
+      "market_score": 35,
+      "name": "Lucky Cement Limited",
+      "pm_reason": "Bearish research view conflicts with positive news on copper-gold discoveries and bullish sentiment; low quant score, so stand aside and monitor.",
+      "quant_score": 27.0,
+      "rank": 23,
+      "risk_rating": "medium",
+      "sector": "CEMENT",
+      "setup": "avoid",
+      "symbol": "LUCK",
+      "top": false,
+      "winner": "bear"
+    },
+    {
+      "atr_pct": 2.91,
+      "close": 115.81,
+      "deciding_points": [
+        "20-day average is above 50-day average (short-term trend up)",
+        "MACD histogram -0.22 (bearish crossover side)"
+      ],
+      "expected_move_pct": 0.0,
+      "final_conviction": "low",
+      "final_direction": "flat",
+      "flag": "none",
+      "fundamental_score": 5,
+      "hybrid_score": 0.0,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 115.81,
+        "expected_move_pct": 0.0,
+        "target": 115.81
+      },
+      "market_score": 35,
+      "name": "Askari Bank Limited",
+      "pm_reason": "Research flat, avoid setup, high risk, MACD bearish side. No edge.",
+      "quant_score": 23.0,
+      "rank": 24,
+      "risk_rating": "high",
+      "sector": "COMMERCIAL BANKS",
+      "setup": "avoid",
+      "symbol": "AKBL",
+      "top": false,
+      "winner": "draw"
+    },
+    {
+      "atr_pct": 2.26,
+      "close": 358.81,
+      "deciding_points": [
+        "Q1 2027 EPS +172.2% vs same quarter last year",
+        "5-day return -2.7% vs market -0.3% (relative -2.5 pts)"
+      ],
+      "expected_move_pct": 0.0,
+      "final_conviction": "low",
+      "final_direction": "flat",
+      "flag": "none",
+      "fundamental_score": 15,
+      "hybrid_score": 0.0,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 358.81,
+        "expected_move_pct": 0.0,
+        "target": 358.81
+      },
+      "market_score": -15,
+      "name": "Pakistan State Oil Company Limited",
+      "pm_reason": "Strong EPS growth offset by weak relative return; no edge either way. Stay flat, low conviction.",
+      "quant_score": -3.0,
+      "rank": 25,
+      "risk_rating": "low",
+      "sector": "OIL & GAS MARKETING COMPANIES",
+      "setup": "avoid",
+      "symbol": "PSO",
+      "top": false,
+      "winner": "draw"
+    },
+    {
+      "atr_pct": 7.32,
+      "close": 1249.78,
+      "deciding_points": [
+        "MACD histogram +9.26 (bullish crossover side)",
+        "5-day return -8.8% vs market -0.3% (relative -8.5 pts)",
+        "20-day return +28.9% vs market +8.2% (relative +20.7 pts)"
+      ],
+      "expected_move_pct": 0.0,
+      "final_conviction": "low",
+      "final_direction": "flat",
+      "flag": "watch_closely",
+      "fundamental_score": 15,
+      "hybrid_score": -0.5,
+      "illiquid": true,
+      "levels": {
+        "entry_ref": 1249.78,
+        "expected_move_pct": 0.0,
+        "target": 1249.78
+      },
+      "market_score": 55,
+      "name": "Pakistan Services Limited",
+      "pm_reason": "Sharp 5-day drop after a +28.9% 20-day run, bearish sentiment, high risk; no clear direction.",
+      "quant_score": 39.0,
+      "rank": 26,
+      "risk_rating": "high",
+      "sector": "MISCELLANEOUS",
+      "setup": "avoid",
+      "symbol": "PSEL",
+      "top": false,
+      "winner": "draw"
+    },
+    {
+      "atr_pct": 1.33,
+      "close": 659.24,
+      "deciding_points": [
+        "Q1 2027 EPS +50.9% vs same quarter last year",
+        "MACD histogram -0.66 (bearish crossover side)",
+        "20-day return -0.9% vs market +8.2% (relative -9.1 pts)"
+      ],
+      "expected_move_pct": -0.74,
+      "final_conviction": "low",
+      "final_direction": "down",
+      "flag": "caution",
+      "fundamental_score": 40,
+      "hybrid_score": -0.558,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 659.24,
+        "expected_move_pct": -0.74,
+        "note": "Short selling is limited on PSX; a 'down' call means avoid/reduce.",
+        "stop": 669.73,
+        "target": 654.34
+      },
+      "market_score": -50,
+      "name": "Pakistan Oilfields Limited",
+      "pm_reason": "Strong EPS growth conflicts with bearish MACD, negative quant score and weak relative return; low-conviction down.",
+      "quant_score": -14.0,
+      "rank": 27,
+      "risk_rating": "medium",
+      "sector": "OIL & GAS EXPLORATION COMPANIES",
+      "setup": "avoid",
+      "symbol": "POL",
+      "top": false,
+      "winner": "bear"
+    },
+    {
+      "atr_pct": 2.97,
+      "close": 110.69,
+      "deciding_points": [
+        "Close 110.69 is below 20-day average 112.50",
+        "5-day return -3.4% vs market -0.3% (relative -3.1 pts)"
+      ],
+      "expected_move_pct": -1.66,
+      "final_conviction": "low",
+      "final_direction": "down",
+      "flag": "caution",
+      "fundamental_score": -5,
+      "hybrid_score": -0.83,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 110.69,
+        "expected_move_pct": -1.66,
+        "note": "Short selling is limited on PSX; a 'down' call means avoid/reduce.",
+        "stop": 114.64,
+        "target": 108.85
+      },
+      "market_score": -75,
+      "name": "Systems Limited",
+      "pm_reason": "Below 20-day average with weak relative return and very negative quant score, but high risk and no news; short-term bounce possible.",
+      "quant_score": -47.0,
+      "rank": 28,
+      "risk_rating": "high",
+      "sector": "TECHNOLOGY & COMMUNICATION",
+      "setup": "avoid",
+      "symbol": "SYS",
+      "top": false,
+      "winner": "bear"
+    },
+    {
+      "atr_pct": 3.64,
+      "close": 145.25,
+      "deciding_points": [
+        "Close 145.25 is above 20-day average 142.58",
+        "5-day return -5.0% vs market -0.3% (relative -4.7 pts)"
+      ],
+      "expected_move_pct": -1.95,
+      "final_conviction": "low",
+      "final_direction": "down",
+      "flag": "caution",
+      "fundamental_score": -25,
+      "hybrid_score": -0.975,
+      "illiquid": false,
+      "levels": {
+        "entry_ref": 145.25,
+        "expected_move_pct": -1.95,
+        "note": "Short selling is limited on PSX; a 'down' call means avoid/reduce.",
+        "stop": 151.6,
+        "target": 142.42
+      },
+      "market_score": 25,
+      "name": "Fatima Fertilizer Company Limited",
+      "pm_reason": "Weak relative return and bearish sentiment favor downside, but price still above 20-day average and risk is high.",
+      "quant_score": 5.0,
+      "rank": 29,
+      "risk_rating": "high",
+      "sector": "FERTILIZER",
+      "setup": "avoid",
+      "symbol": "FATIMA",
+      "top": false,
+      "winner": "bear"
+    },
+    {
+      "atr_pct": 4.12,
+      "close": 179.93,
+      "deciding_points": [
+        "Close is below 200-day average 1326.47",
+        "MACD histogram +8.50 (bullish crossover side)",
+        "20-day return +2.2% vs market +8.2% (relative -6.0 pts)"
+      ],
+      "expected_move_pct": -1.95,
+      "final_conviction": "low",
+      "final_direction": "down",
+      "flag": "caution",
+      "fundamental_score": 25,
+      "hybrid_score": -1.475,
+      "illiquid": true,
+      "levels": {
+        "entry_ref": 179.93,
+        "expected_move_pct": -1.95,
+        "note": "Short selling is limited on PSX; a 'down' call means avoid/reduce.",
+        "stop": 188.83,
+        "target": 176.42
+      },
+      "market_score": -5,
+      "name": "Service Industries Limited",
+      "pm_reason": "Below 200-day average and lagging market, but MACD is positive and risk is high; keep low-conviction down.",
+      "quant_score": 7.0,
+      "rank": 30,
+      "risk_rating": "high",
+      "sector": "LEATHER & TANNERIES",
+      "setup": "avoid",
+      "symbol": "SRVI",
+      "top": false,
+      "winner": "bear"
+    }
+  ],
+  "window": [
+    "2026-11-23",
+    "2026-11-24",
+    "2026-11-25",
+    "2026-11-26",
+    "2026-11-27"
+  ]
+}

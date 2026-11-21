@@ -1,0 +1,1019 @@
+{
+  "macro": {
+    "drivers": [
+      {
+        "cites": [
+          "MAC-8"
+        ],
+        "id": "MD-1",
+        "text": "KSE-100 closed up 610 points at 177,382, extending recovery; supportive for equity sentiment.",
+        "tone": "positive"
+      },
+      {
+        "cites": [
+          "MAC-4"
+        ],
+        "id": "MD-2",
+        "text": "Rupee gained marginally to 276.51 per dollar in the interbank market, signalling a stable currency.",
+        "tone": "positive"
+      },
+      {
+        "cites": [
+          "MAC-6"
+        ],
+        "id": "MD-3",
+        "text": "Short-term inflation reached 10.41% year-on-year, led by wheat flour prices, adding pressure on policy and households.",
+        "tone": "negative"
+      },
+      {
+        "cites": [
+          "MAC-11"
+        ],
+        "id": "MD-4",
+        "text": "Foreign investors repatriated $1.16 billion from Pakistan in July-October FY27, weighing on external flows.",
+        "tone": "negative"
+      },
+      {
+        "cites": [
+          "MAC-9"
+        ],
+        "id": "MD-5",
+        "text": "SBP's revised financing framework for builders and developers adds new valuation requirements, a mixed credit-sector signal.",
+        "tone": "neutral"
+      }
+    ],
+    "macro_view": "mixed"
+  },
+  "stocks": {
+    "AKBL": {
+      "items": [],
+      "news_view": "none"
+    },
+    "ATRL": {
+      "items": [
+        {
+          "id": "N-ATRL-1",
+          "impact": "high",
+          "tone": "positive",
+          "why": "Fresh MSCI Pakistan Index inclusion; passive buying flows likely fall within the 5-day window."
+        },
+        {
+          "id": "N-ATRL-2",
+          "impact": "medium",
+          "tone": "positive",
+          "why": "Supreme Court ruling that crude-processing payments are not taxable supplies; reduces tax exposure."
+        },
+        {
+          "id": "N-ATRL-3",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Duplicate coverage of the same Supreme Court sales tax ruling."
+        },
+        {
+          "id": "N-ATRL-4",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Duplicate coverage of the same Supreme Court sales tax ruling."
+        },
+        {
+          "id": "N-ATRL-5",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Duplicate of the MSCI index inclusion news already covered in N-ATRL-1."
+        },
+        {
+          "id": "N-ATRL-6",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Duplicate of the MSCI index inclusion news already covered in N-ATRL-1."
+        },
+        {
+          "id": "N-ATRL-7",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Routine appointment of a company secretary; no earnings or price relevance."
+        },
+        {
+          "id": "N-ATRL-8",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Routine change of company secretary; no earnings or price relevance."
+        }
+      ],
+      "news_view": "positive"
+    },
+    "BAFL": {
+      "items": [
+        {
+          "id": "N-BAFL-1",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Routine instalment promotion for consumer electronics; no material earnings effect."
+        },
+        {
+          "id": "N-BAFL-2",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Cash dividend already credited; modest positive, largely known from prior declaration."
+        },
+        {
+          "id": "N-BAFL-3",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Routine card fee notice comparing a rival bank's charges; not material to Bank Alfalah."
+        },
+        {
+          "id": "N-BAFL-4",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Routine handset instalment promotion with no material earnings effect."
+        },
+        {
+          "id": "N-BAFL-5",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Governance and risk-tool upgrade; a modest positive, not a near-term earnings driver."
+        },
+        {
+          "id": "N-BAFL-6",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Duplicate of the CreditLens report; same modest governance positive, no new information."
+        },
+        {
+          "id": "N-BAFL-7",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Afghanistan exit reported 10 days ago; likely already in the price."
+        },
+        {
+          "id": "N-BAFL-8",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Repeat coverage of the Afghanistan exit reported 11 days ago; likely already priced."
+        }
+      ],
+      "news_view": "neutral"
+    },
+    "BAHL": {
+      "items": [
+        {
+          "id": "N-BAHL-1",
+          "impact": "low",
+          "tone": "negative",
+          "why": "Executive share sales are a minor negative signal; two sales, size not stated."
+        },
+        {
+          "id": "N-BAHL-2",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Cash dividend Rs 3.50 credited 7 days ago; modest support, largely already in the price."
+        }
+      ],
+      "news_view": "neutral"
+    },
+    "BOP": {
+      "items": [
+        {
+          "id": "N-BOP-1",
+          "impact": "low",
+          "tone": "positive",
+          "why": "International SME financing award; reputational positive with little direct earnings effect."
+        },
+        {
+          "id": "N-BOP-2",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Same SME financing award reported by a second outlet; no new information."
+        },
+        {
+          "id": "N-BOP-3",
+          "impact": "medium",
+          "tone": "positive",
+          "why": "Rs20bn capital injection supports the bank; share issuance dilutes existing holders."
+        },
+        {
+          "id": "N-BOP-4",
+          "impact": "medium",
+          "tone": "positive",
+          "why": "Duplicate report of the same government share issuance; same capital and dilution effects."
+        },
+        {
+          "id": "N-BOP-5",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Product innovation award; positive for brand, minimal near-term earnings impact."
+        },
+        {
+          "id": "N-BOP-6",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Global SME finance award; minor brand positive, little earnings effect."
+        },
+        {
+          "id": "N-BOP-7",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Duplicate of the global SME finance award report; no new information."
+        },
+        {
+          "id": "N-BOP-8",
+          "impact": "low",
+          "tone": "positive",
+          "why": "First Pakistani bank to win Asian SME finance award; brand positive, limited earnings effect."
+        }
+      ],
+      "news_view": "positive"
+    },
+    "DGKC": {
+      "items": [
+        {
+          "id": "N-DGKC-1",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Routine change of external audit firm name; no effect on fundamentals."
+        },
+        {
+          "id": "N-DGKC-2",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Director bought 25,000 shares, a mild confidence signal, but 10 days old."
+        }
+      ],
+      "news_view": "neutral"
+    },
+    "EFERT": {
+      "items": [
+        {
+          "id": "N-EFERT-1",
+          "impact": "high",
+          "tone": "positive",
+          "why": "Rs150 per bag urea hike lifts EFERT pricing and near-term margins; direct earnings tailwind."
+        },
+        {
+          "id": "N-EFERT-2",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Farmer-support partnership is routine marketing with limited effect on earnings."
+        },
+        {
+          "id": "N-EFERT-3",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Repeat of the partnership news already reported; routine, neutral effect."
+        }
+      ],
+      "news_view": "positive"
+    },
+    "ENGROH": {
+      "items": [
+        {
+          "id": "N-ENGROH-1",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Board meeting notice for November 24; routine, with no content on results."
+        },
+        {
+          "id": "N-ENGROH-2",
+          "impact": "medium",
+          "tone": "negative",
+          "why": "First-half profit fell 41%; negative earnings signal, partly digested after a week."
+        },
+        {
+          "id": "N-ENGROH-3",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Director share purchase is a mild positive insider signal; nine days old."
+        },
+        {
+          "id": "N-ENGROH-4",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Share purchases by an insider are a mild positive signal, but older and small."
+        }
+      ],
+      "news_view": "negative"
+    },
+    "FABL": {
+      "items": [
+        {
+          "id": "N-FABL-1",
+          "impact": "medium",
+          "tone": "negative",
+          "why": "Rs240bn traced through bank in NCCIA gambling probe; reputational and regulatory risk still unfolding."
+        },
+        {
+          "id": "N-FABL-2",
+          "impact": "low",
+          "tone": "positive",
+          "why": "IRBA 2026 dual honours; positive for reputation, little earnings effect."
+        },
+        {
+          "id": "N-FABL-3",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Duplicate of the IRBA dual-honours report; no new information."
+        },
+        {
+          "id": "N-FABL-4",
+          "impact": "medium",
+          "tone": "positive",
+          "why": "15% Q3 interim cash dividend announced 4 days ago; supportive near-term income for holders."
+        },
+        {
+          "id": "N-FABL-5",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Financial inclusion collaboration with SBP for persons with disabilities; routine, no earnings effect."
+        },
+        {
+          "id": "N-FABL-6",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Name clash: cricket records of National Bank of Pakistan team, not Faysal Bank; no relevance."
+        }
+      ],
+      "news_view": "mixed"
+    },
+    "FATIMA": {
+      "items": [
+        {
+          "id": "N-FATIMA-1",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Generic material-information notice with no stated financial content; routine."
+        },
+        {
+          "id": "N-FATIMA-2",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Mineral find at Chagai project; Fatima's stake and scale unclear, so limited near-term impact."
+        }
+      ],
+      "news_view": "neutral"
+    },
+    "FCCL": {
+      "items": [
+        {
+          "id": "N-FCCL-1",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Early Rs3.37bn loan repayment lowers finance costs; 10 days old, likely priced in."
+        },
+        {
+          "id": "N-FCCL-2",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Same early debt repayment story; older than 7 days and likely priced in."
+        },
+        {
+          "id": "N-FCCL-3",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Duplicate report of the Rs3bn early repayment; already in the price."
+        }
+      ],
+      "news_view": "positive"
+    },
+    "FFC": {
+      "items": [
+        {
+          "id": "N-FFC-1",
+          "impact": "high",
+          "tone": "positive",
+          "why": "Tax relief for FFC and ten other PSX firms may lift after-tax earnings; positive near-term signal."
+        },
+        {
+          "id": "N-FFC-2",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Urea price hikes from 13 days ago are likely already priced in."
+        }
+      ],
+      "news_view": "positive"
+    },
+    "HBL": {
+      "items": [
+        {
+          "id": "N-HBL-1",
+          "impact": "low",
+          "tone": "negative",
+          "why": "Temporary branch banking disruption, said to normalise within 3 days; minor operational negative."
+        },
+        {
+          "id": "N-HBL-2",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Government support for expanding trade links in four countries; modest positive for trade finance."
+        },
+        {
+          "id": "N-HBL-3",
+          "impact": "medium",
+          "tone": "positive",
+          "why": "Named among biggest winners from SBP's new deposit rule; positive for earnings while the rule stays in force."
+        }
+      ],
+      "news_view": "positive"
+    },
+    "HMB": {
+      "items": [
+        {
+          "id": "N-HMB-1",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Dividend headline 10 days old; cash credit likely already priced in."
+        }
+      ],
+      "news_view": "positive"
+    },
+    "HUBC": {
+      "items": [
+        {
+          "id": "N-HUBC-1",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Names WT Financial Hubco, not clearly Hub Power; possible name clash."
+        },
+        {
+          "id": "N-HUBC-2",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Subsidiary aluminium smelter feasibility study; early-stage, not material within 5 days."
+        },
+        {
+          "id": "N-HUBC-3",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Repeat coverage of the same smelter feasibility agreement; no new information."
+        },
+        {
+          "id": "N-HUBC-4",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Repeat coverage of the smelter exploration; no new information."
+        },
+        {
+          "id": "N-HUBC-5",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Repeat coverage of the Chinese institute smelter study; no new information."
+        },
+        {
+          "id": "N-HUBC-6",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Repeat coverage of the smelter feasibility agreement; no new information."
+        },
+        {
+          "id": "N-HUBC-7",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Repeat coverage of the smelter feasibility agreement; no new information."
+        },
+        {
+          "id": "N-HUBC-8",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Repeat headline on the 300,000-tonne smelter plan; no new information."
+        }
+      ],
+      "news_view": "positive"
+    },
+    "LUCK": {
+      "items": [
+        {
+          "id": "N-LUCK-1",
+          "impact": "medium",
+          "tone": "positive",
+          "why": "Fresh copper-gold discoveries at Lucky-backed NRL project; indirect but still unfolding."
+        },
+        {
+          "id": "N-LUCK-2",
+          "impact": "medium",
+          "tone": "positive",
+          "why": "Confirmation of eight discoveries; positive, though the mining stake is peripheral to cement."
+        },
+        {
+          "id": "N-LUCK-3",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Repeat of the same Chagai discovery report; little new information."
+        },
+        {
+          "id": "N-LUCK-4",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Repeat report of mineralisation at the Chagai project; largely already known."
+        }
+      ],
+      "news_view": "positive"
+    },
+    "MARI": {
+      "items": [
+        {
+          "id": "N-MARI-1",
+          "impact": "medium",
+          "tone": "positive",
+          "why": "Fresh announcement of a major copper-gold discovery; positive for the stock if it is confirmed."
+        },
+        {
+          "id": "N-MARI-2",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Same copper-gold discovery reported again; repeat coverage adds little new information."
+        },
+        {
+          "id": "N-MARI-3",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Repeat report of the copper-gold discovery in Chagai; already in the news cycle."
+        },
+        {
+          "id": "N-MARI-4",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Repeat report of copper and gold deposits in Chagai; older and largely priced in."
+        },
+        {
+          "id": "N-MARI-5",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Repeat report of the Reko Diq area discovery; duplicate of earlier coverage."
+        },
+        {
+          "id": "N-MARI-6",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "MOU with Ivanhoe Atlantic; a partnership step with no stated financial terms."
+        },
+        {
+          "id": "N-MARI-7",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Repeat report of the Balochistan copper-gold discovery; duplicate coverage."
+        },
+        {
+          "id": "N-MARI-8",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Repeat report of significant copper-gold finds; duplicate coverage of the same event."
+        }
+      ],
+      "news_view": "positive"
+    },
+    "MCB": {
+      "items": [
+        {
+          "id": "N-MCB-1",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Leadership change at MCB Islamic Bank subsidiary; no direct earnings effect."
+        },
+        {
+          "id": "N-MCB-2",
+          "impact": "low",
+          "tone": "positive",
+          "why": "AdalFi cash-flow lending partnership; small, early-stage growth option."
+        },
+        {
+          "id": "N-MCB-3",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Routine dividend credit notice; no new information."
+        },
+        {
+          "id": "N-MCB-4",
+          "impact": "low",
+          "tone": "positive",
+          "why": "PKR 9.00 dividend credited 7 days ago; already priced in."
+        },
+        {
+          "id": "N-MCB-5",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Seasonal returns chart from Yahoo Finance; no fundamental content."
+        }
+      ],
+      "news_view": "positive"
+    },
+    "MEBL": {
+      "items": [
+        {
+          "id": "N-MEBL-1",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Shariah credit card launch planned for 2027; benefit is distant."
+        },
+        {
+          "id": "N-MEBL-2",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Index most-active list; market activity only, no company news."
+        },
+        {
+          "id": "N-MEBL-3",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Routine dividend notice for Rs 8 per share; already announced."
+        },
+        {
+          "id": "N-MEBL-4",
+          "impact": "medium",
+          "tone": "positive",
+          "why": "SBP deposit rule named Meezan among biggest winners; sector-wide earnings tailwind."
+        },
+        {
+          "id": "N-MEBL-5",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Rs 8 dividend credited 4 days ago; mostly priced in."
+        },
+        {
+          "id": "N-MEBL-6",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Visa debit card annual charges comparison; minor product detail."
+        },
+        {
+          "id": "N-MEBL-7",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Sukuk milestone with Finance Ministry and SBP; older than 7 days."
+        }
+      ],
+      "news_view": "positive"
+    },
+    "MLCF": {
+      "items": [
+        {
+          "id": "N-MLCF-1",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Name clash: Maple Leaf Strategies and Lighthouse Counsel news, unrelated to this company."
+        },
+        {
+          "id": "N-MLCF-2",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Name clash: a Dallas restaurant story, unrelated to this company."
+        },
+        {
+          "id": "N-MLCF-3",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Name clash: China Maple Leaf Educational Systems, unrelated to this company."
+        },
+        {
+          "id": "N-MLCF-4",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Name clash: Canadian Maple Leaf Foods (TSX:MFI), unrelated to this company."
+        },
+        {
+          "id": "N-MLCF-5",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Name clash: China Maple Leaf Educational Systems guidance, not this company."
+        },
+        {
+          "id": "N-MLCF-6",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Name clash: Maple Leaf Foods sponsorship story, unrelated to this company."
+        },
+        {
+          "id": "N-MLCF-7",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Name clash: Maple Leaf Foods sponsorship story, unrelated to this company."
+        },
+        {
+          "id": "N-MLCF-8",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Name clash: Maple Leaf Foods (MFI.TO) brokerage commentary, unrelated."
+        }
+      ],
+      "news_view": "neutral"
+    },
+    "MTL": {
+      "items": [
+        {
+          "id": "N-MTL-1",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Routine scheduling of a results briefing; no new financial information."
+        }
+      ],
+      "news_view": "neutral"
+    },
+    "NBP": {
+      "items": [
+        {
+          "id": "N-NBP-1",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Community AI and robotics lab for a school; CSR, no earnings effect."
+        },
+        {
+          "id": "N-NBP-2",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Generic company announcements page; no specific news."
+        },
+        {
+          "id": "N-NBP-3",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Routine daily currency rate notice."
+        },
+        {
+          "id": "N-NBP-4",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Routine daily exchange rate notice."
+        },
+        {
+          "id": "N-NBP-5",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Routine foreign exchange rate notice."
+        },
+        {
+          "id": "N-NBP-6",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Routine major currency rates notice."
+        },
+        {
+          "id": "N-NBP-7",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Routine US dollar rate notice; no company-specific effect."
+        },
+        {
+          "id": "N-NBP-8",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Routine currency rate notice; older than 7 days."
+        }
+      ],
+      "news_view": "neutral"
+    },
+    "OGDC": {
+      "items": [
+        {
+          "id": "N-OGDC-1",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Industry-wide environmental report; not specific to OGDC's operations or earnings."
+        },
+        {
+          "id": "N-OGDC-2",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Partnership with a Canadian firm to boost heavy oil output; a modest positive for production."
+        },
+        {
+          "id": "N-OGDC-3",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Alberta landowner activism on oil and gas; not about OGDC, a name-clash style topic."
+        },
+        {
+          "id": "N-OGDC-4",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Alberta landowners dispute with province; about Canadian oil and gas, not OGDC."
+        },
+        {
+          "id": "N-OGDC-5",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Alberta landowners group urges resistance to oil and gas; not about OGDC."
+        },
+        {
+          "id": "N-OGDC-6",
+          "impact": "medium",
+          "tone": "positive",
+          "why": "Lower Goru Basal Sands discovery in Sindh; new reserves potential, though it is at the edge of the window."
+        },
+        {
+          "id": "N-OGDC-7",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Orphan well cleanup dispute in another jurisdiction; not about OGDC."
+        },
+        {
+          "id": "N-OGDC-8",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Gas and condensate discovery in Khairpur; positive but older and small in scale."
+        }
+      ],
+      "news_view": "positive"
+    },
+    "POL": {
+      "items": [
+        {
+          "id": "N-POL-1",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Corporate briefing session scheduled; routine notice with no stated financial change."
+        }
+      ],
+      "news_view": "neutral"
+    },
+    "PPL": {
+      "items": [
+        {
+          "id": "N-PPL-1",
+          "impact": "low",
+          "tone": "positive",
+          "why": "60% final dividend credited; positive but routine and already reflected in the price."
+        }
+      ],
+      "news_view": "neutral"
+    },
+    "PSEL": {
+      "items": [
+        {
+          "id": "N-PSEL-1",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Routine change of external auditor firm name; no operating or valuation effect."
+        },
+        {
+          "id": "N-PSEL-2",
+          "impact": "medium",
+          "tone": "neutral",
+          "why": "Parent group splitting its Pearl Continental empire after legal battle; ownership uncertainty, direction unclear."
+        },
+        {
+          "id": "N-PSEL-3",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Owner says it is not a party to the Thatta Cement-Fauji deal; older and mostly a denial."
+        },
+        {
+          "id": "N-PSEL-4",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Company denies role in restructuring deal; repeats the same story and adds little new."
+        },
+        {
+          "id": "N-PSEL-5",
+          "impact": "medium",
+          "tone": "neutral",
+          "why": "Major shake-up as Thatta Cement and Fauji Foundation ink deal; restructuring still unfolding."
+        },
+        {
+          "id": "N-PSEL-6",
+          "impact": "medium",
+          "tone": "neutral",
+          "why": "Definitive agreement for proposed restructuring of the company; terms and outcome still pending."
+        }
+      ],
+      "news_view": "mixed"
+    },
+    "PSO": {
+      "items": [
+        {
+          "id": "N-PSO-1",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Generic company announcements page with no specific content; routine notice."
+        },
+        {
+          "id": "N-PSO-2",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Continued diesel and jet fuel supply deal; 8 days old and likely priced in."
+        },
+        {
+          "id": "N-PSO-3",
+          "impact": "low",
+          "tone": "positive",
+          "why": "Kuwait storage-use agreement; 8 days old and modest in scale for near-term earnings."
+        },
+        {
+          "id": "N-PSO-4",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "LPG price-setting authority shared with SSGC; older regulatory housekeeping item."
+        }
+      ],
+      "news_view": "neutral"
+    },
+    "SRVI": {
+      "items": [
+        {
+          "id": "N-SRVI-1",
+          "impact": "medium",
+          "tone": "neutral",
+          "why": "Subsidiary exploring a clothing-chain acquisition; uncertain terms, so impact is moderate and neutral."
+        },
+        {
+          "id": "N-SRVI-2",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Repeat report of the same exploratory acquisition; low incremental information."
+        },
+        {
+          "id": "N-SRVI-3",
+          "impact": "medium",
+          "tone": "neutral",
+          "why": "Headline says 'to acquire' but reads as exploratory; deal terms unknown, moderate impact."
+        },
+        {
+          "id": "N-SRVI-4",
+          "impact": "medium",
+          "tone": "neutral",
+          "why": "Subsidiary exploring acquisition of a Pakistani clothing retail chain; deal not yet agreed."
+        },
+        {
+          "id": "N-SRVI-5",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Repeat of the same exploratory acquisition report; low incremental information."
+        },
+        {
+          "id": "N-SRVI-6",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Repeat of the exploratory retail-chain acquisition report; low incremental information."
+        },
+        {
+          "id": "N-SRVI-7",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Corporate briefing session notice; routine and neutral."
+        },
+        {
+          "id": "N-SRVI-8",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Generic company announcements listing; routine and neutral."
+        }
+      ],
+      "news_view": "neutral"
+    },
+    "SYS": {
+      "items": [],
+      "news_view": "none"
+    },
+    "UBL": {
+      "items": [
+        {
+          "id": "N-UBL-1",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Name clash: United Bank for Africa (Nigeria) results, not this bank."
+        },
+        {
+          "id": "N-UBL-2",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Name clash: United Bank for Africa group profit, not this bank."
+        },
+        {
+          "id": "N-UBL-3",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Name clash: First United Bank and Trust hire; unrelated institution."
+        },
+        {
+          "id": "N-UBL-4",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Name clash: Cathay United Bank (Taiwan) deal; unrelated institution."
+        },
+        {
+          "id": "N-UBL-5",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Name clash: Cathay United Bank Vietnam award; unrelated institution."
+        },
+        {
+          "id": "N-UBL-6",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Name clash: Cathay United Bank loan to MWG; unrelated institution."
+        },
+        {
+          "id": "N-UBL-7",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Name clash: MWG loan with Cathay United Bank; unrelated institution."
+        },
+        {
+          "id": "N-UBL-8",
+          "impact": "low",
+          "tone": "neutral",
+          "why": "Name clash: Cathay United Bank loan in Vietnam; unrelated institution."
+        }
+      ],
+      "news_view": "neutral"
+    }
+  }
+}
