@@ -103,7 +103,7 @@ tokens). Claude is used only where reading or arguing over text adds value.
 
 | Role | Inputs | Output |
 |---|---|---|
-| **Market** (Python) | Daily OHLCV for about 1 year, KSE-100 proxy | Trend (20/50/200-day averages), momentum (RSI, MACD), volatility (ATR), 20-day support/resistance, volume spikes, relative strength vs the KSE-100 proxy, 52-week position, ex-dividend flags. Rule-based signals with points; score −100 to +100. |
+| **Market** (Python) | Daily OHLCV for about 1 year, KSE-100 proxy | Points only for rules the backtest supports (v1.3): calm volatility (+), very high volatility (−), stretched above the 20-day average (−), RSI > 70 (−), ran > 4 pts ahead of the market in 5 days (−), volume surge (−). Trend items (averages, MACD, 52-week position, 20-day relative return) are context only, with 0 points. Score −100 to +100. |
 | **Fundamentals** (Python) | PSX company page: P/E (TTM), ratios, annual and quarterly EPS, announcements | P/E vs top-30 median, EPS growth, margin trend, latest quarter vs a year earlier, and **catalysts**: board-meeting notices (last 14 days), results and other announcements (last 7 days). Score −100 to +100. |
 | **News** | Company headlines (last 14 days, matched by title), macro headlines | Company-specific and macro drivers: SBP policy rate, PKR/USD, IMF reviews, oil prices, budget, circulars. Each item tagged positive / negative / neutral with an expected impact. |
 | **Sentiment** | Headline tone, market breadth (advancers/decliners, volume), social posts, foreign-flow headlines (+ NCCPL numbers if supplied) | Mood score for the stock and the market, and whether foreign and local investors are buying or selling. |
@@ -138,7 +138,7 @@ its source and date, so later stages can cite it.
   to 3 deciding evidence IDs. 5 stocks per call.
 - **Trader** keeps direction and conviction, picks the setup (breakout,
   pullback, momentum, catalyst, mean reversion, or avoid) and states what would
-  invalidate the call. Expected move, target and stop are computed by Python from ATR.
+  invalidate the call. Expected move and target come from the backtested edge; the stop comes from ATR.
 
 ### Stage 4: Risk debate
 
@@ -179,19 +179,20 @@ under "Missing or blocked sources" instead of filling in guesses.
 Every data point records its source and fetch time. If a source fails, the
 report says so instead of filling in guesses.
 
-## 6. Hybrid scoring (first draft, tune later)
+## 6. Hybrid scoring (v1.3, calibrated by the backtest)
 
 ```
 direction_sign   = { up: +1, flat: 0, down: −1 }
 conviction_mult  = { low: 0.5, medium: 1.0, high: 1.5 }
-expected_5d_move = direction_sign × conviction_mult × min(ATR%(14), 1.5 × top-30 median) × √5 × 0.5
-hybrid_score     = expected_5d_move × conviction_weight
-                   − risk_penalty × |expected_5d_move|
-                   − liquidity_penalty (if 20-day avg traded value < PKR 20m)
+quant_score      = 0.8 × market score + 0.2 × fundamental score
+expected_5d_move = direction_sign × conviction_mult × 0.5%   (edge vs market, sized from the backtest)
+hybrid_score     = expected_5d_move × (1 − risk_penalty)
+                   − 0.25 (if 20-day avg traded value < PKR 20m)
 tie-break        = higher quant score, then ticker A→Z
 ```
 
 The Portfolio Manager does not reorder; it may flag stocks with a reason.
+The move no longer scales with ATR: in the backtest, volatile stocks lagged the market over 5 days.
 All weights live in `config/settings.yaml`.
 
 ## 7. Output of every run
@@ -222,8 +223,15 @@ with a "not financial advice" note at the top.
   return vs KSE-100.
 - The scores add up in `runs/scorecard.md` so we can see if the strategy works
   over time.
-- Backtesting on past weeks is possible later, but LLMs may "know" past prices,
-  so results need care.
+- **Backtest (`python -m psx7 backtest`, zero tokens).** A weekly walk-forward over about 3 years of PSX
+  files for all KSE-100 members (about 111 test weeks). It runs the live Market Analyst code and raw candidate features,
+  and reports each one's weekly rank correlation with next-5-day return vs market, its t-stat, the share of weeks
+  positive, the top-minus-bottom spread (returns clipped at ±20%) and both halves of the period separately.
+  Output: `runs/backtest/backtest.md`. A market rule gets points only if this test supports it.
+  Agents, news and fundamentals are not backtested: LLMs may "know" past prices, and there is no point-in-time history.
+- **First result (2026-11-27).** The v1.2 market score had no edge (IC −0.011, t −0.7). The v1.3 rules
+  score IC +0.057, t +3.3, positive in 64% of weeks and in both halves. The edge is real but small:
+  it mainly picks out stocks to avoid.
 
 ## 9. Usage per run and batching
 
@@ -268,8 +276,10 @@ PSX-ALL-SOURCES-07-DAYS/
 │   ├── stages.py        agent stages, validation, replay cache, fallbacks
 │   ├── scoring.py       expected move, levels, hybrid score, ranking
 │   ├── scorecard.py     scoring of past runs
+│   ├── backtest.py      walk-forward test of the Python market signals
+│   ├── pdf_report.py    large-font PDF of each run
 │   ├── report.py        Markdown + HTML reports
-│   └── cli.py           snapshot / step / finish / status / sync-agents
+│   └── cli.py           snapshot / step / finish / status / pdf / backtest / sync-agents
 ├── tests/               offline tests (saved PSX pages, synthetic pipeline)
 ├── runs/                one folder per run date (reports published)
 └── PLAN.md              this document

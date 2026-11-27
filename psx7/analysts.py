@@ -17,6 +17,13 @@ def _sig(out: list, prefix: str, text: str, pts: int) -> None:
 
 
 # ----------------------------------------------------------------- market analyst
+# Thresholds chosen from the backtest; re-check them with `python -m psx7 backtest`.
+STRETCH_SMA20_PCT = 8.0     # close this far above the 20-day average = stretched
+RSI_HOT = 70.0
+RAN_AHEAD_PCT = 4.0         # 5-day return this many points above the market
+CALM_ATR_PCT, CALM_POINTS = 2.5, 15
+WILD_ATR_PCT = 4.8
+VOLUME_SURGE = 1.5
 def market_analyst(sym: str, rows: list[dict], proxy: list[dict], adjustments: list[dict] | None = None) -> dict:
     closes = [r["close"] for r in rows]
     highs = [r["high"] or r["close"] for r in rows]
@@ -26,7 +33,7 @@ def market_analyst(sym: str, rows: list[dict], proxy: list[dict], adjustments: l
     p_lv = {p["date"]: p["level"] for p in proxy}
     mkt = [p_lv[r["date"]] for r in rows if r["date"] in p_lv]
 
-    sma20, sma50, sma200 = ind.sma(closes, 20), ind.sma(closes, 50), ind.sma(closes, 200)
+    sma20, sma50 = ind.sma(closes, 20), ind.sma(closes, 50)
     rsi = ind.rsi(closes)
     macd = ind.macd(closes)
     atr = ind.atr(highs, lows, closes)
@@ -41,48 +48,49 @@ def market_analyst(sym: str, rows: list[dict], proxy: list[dict], adjustments: l
     sup20, res20 = min(lows[-20:]), max(highs[-20:])
 
     pre, s = f"M-{sym}-", []
+    # Points come from the walk-forward backtest (python -m psx7 backtest, runs/backtest/backtest.md):
+    # over 111 weeks x 100 KSE-100 stocks, trend signals (moving averages, MACD, 52-week position)
+    # showed no 5-day edge, so they are context only (0 points, kept out of the debate menus).
+    # What did repeat in both halves of the period: stocks stretched far above their 20-day average
+    # or far ahead of the market lagged the next week, high-volatility stocks lagged, and calm
+    # low-volatility stocks did best.
     if sma20:
-        _sig(s, pre, f"Close {c:.2f} is {'above' if c > sma20 else 'below'} 20-day average {sma20:.2f}",
-             10 if c > sma20 else -10)
+        d20 = (c / sma20 - 1) * 100
+        stretched = d20 > STRETCH_SMA20_PCT
+        _sig(s, pre, f"Close {c:.2f} is {d20:+.1f}% from its 20-day average {sma20:.2f}"
+             + ("; stretched stocks lagged the market the next week in the backtest" if stretched else ""),
+             -15 if stretched else 0)
     if sma50:
-        _sig(s, pre, f"Close is {'above' if c > sma50 else 'below'} 50-day average {sma50:.2f}",
-             10 if c > sma50 else -10)
+        _sig(s, pre, f"Close is {'above' if c > sma50 else 'below'} 50-day average {sma50:.2f} (context only)", 0)
     if sma20 and sma50:
-        _sig(s, pre, f"20-day average is {'above' if sma20 > sma50 else 'below'} 50-day average (short-term trend {'up' if sma20 > sma50 else 'down'})",
-             10 if sma20 > sma50 else -10)
-    if sma200:
-        _sig(s, pre, f"Close is {'above' if c > sma200 else 'below'} 200-day average {sma200:.2f}",
-             5 if c > sma200 else -5)
+        _sig(s, pre, f"20-day average is {'above' if sma20 > sma50 else 'below'} 50-day average "
+             f"(short-term trend {'up' if sma20 > sma50 else 'down'}; context only)", 0)
     if rsi is not None:
-        if rsi > 75:
-            t, p = "overbought, pullback risk", -10
-        elif rsi >= 55:
-            t, p = "positive momentum", 10
-        elif rsi >= 45:
-            t, p = "neutral momentum", 0
-        elif rsi >= 30:
-            t, p = "weak momentum", -5
-        else:
-            t, p = "oversold, bounce possible", 5
-        _sig(s, pre, f"RSI(14) {rsi:.1f}: {t}", p)
+        hot = rsi > RSI_HOT
+        _sig(s, pre, f"RSI(14) {rsi:.1f}" + (": stretched, such stocks lagged the next week in the backtest" if hot else ""),
+             -10 if hot else 0)
     if macd:
-        _sig(s, pre, f"MACD histogram {macd[2]:+.2f} ({'bullish' if macd[2] > 0 else 'bearish'} crossover side)",
-             10 if macd[2] > 0 else -10)
+        _sig(s, pre, f"MACD histogram {macd[2]:+.2f} (context only)", 0)
     if ret5 is not None and m5 is not None:
         rel = ret5 - m5
-        _sig(s, pre, f"5-day return {ret5:+.1f}% vs market {m5:+.1f}% (relative {rel:+.1f} pts)",
-             10 if rel > 2 else -10 if rel < -2 else 0)
+        ahead = rel > RAN_AHEAD_PCT
+        _sig(s, pre, f"5-day return {ret5:+.1f}% vs market {m5:+.1f}% (relative {rel:+.1f} pts)"
+             + ("; stocks that ran this far ahead tended to give some back" if ahead else ""),
+             -10 if ahead else 0)
     if ret20 is not None and m20 is not None:
-        rel = ret20 - m20
-        _sig(s, pre, f"20-day return {ret20:+.1f}% vs market {m20:+.1f}% (relative {rel:+.1f} pts)",
-             10 if rel > 5 else -10 if rel < -5 else 0)
-    if vr is not None and ret5 is not None:
-        p = (10 if ret5 > 0 else -10) if vr > 1.5 else 0
+        _sig(s, pre, f"20-day return {ret20:+.1f}% vs market {m20:+.1f}% (relative {ret20 - m20:+.1f} pts; context only)", 0)
+    if atr and c:
+        ap = atr / c * 100
+        p = CALM_POINTS if ap < CALM_ATR_PCT else -10 if ap > WILD_ATR_PCT else 0
+        _sig(s, pre, f"Daily range (ATR) {ap:.1f}% of price: "
+             + ("calm; low-volatility stocks did best in the backtest" if p > 0 else
+                "very volatile; such stocks lagged in the backtest" if p < 0 else "normal volatility"), p)
+    if vr is not None:
+        surge = vr > VOLUME_SURGE
         _sig(s, pre, f"5-day volume is {vr:.2f}x the 20-day average"
-             + (f" on a {'rising' if ret5 > 0 else 'falling'} price" if vr > 1.5 else ""), p)
+             + ("; volume surges were followed by weaker weeks in the backtest" if surge else ""), -5 if surge else 0)
     if pos52 is not None:
-        p = 5 if pos52 > 0.9 else -5 if pos52 < 0.1 else 0
-        _sig(s, pre, f"Price sits at {pos52 * 100:.0f}% of its 52-week range ({lo52:.2f} to {hi52:.2f})", p)
+        _sig(s, pre, f"Price sits at {pos52 * 100:.0f}% of its 52-week range ({lo52:.2f} to {hi52:.2f}; context only)", 0)
     _sig(s, pre, f"20-day support {sup20:.2f}, resistance {res20:.2f}", 0)
     if ex_recent:
         _sig(s, pre, "Dividend/bonus/rights adjustment on " + ", ".join(f"{a['date']} (x{a['factor']})" for a in ex_recent)
@@ -175,7 +183,8 @@ def run(snap: dict) -> dict:
     for s in snap["universe"]:
         m = market_analyst(s, snap["prices"][s], snap["market_proxy"], snap.get("price_adjustments", {}).get(s))
         f = fundamentals_analyst(s, snap["companies"][s], pe_med, snap["as_of"])
-        quant = round(0.6 * m["score"] + 0.4 * f["score"], 1)
+        qw = settings()["scoring"]["quant_weights"]
+        quant = round(qw["market"] * m["score"] + qw["fundamentals"] * f["score"], 1)
         packs[s] = {
             "symbol": s, "name": names.get(s, s),
             "sector": f["facts"].get("sector") or snap["sector_code"].get(s),

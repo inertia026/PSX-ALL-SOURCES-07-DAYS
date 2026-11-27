@@ -12,3 +12,5 @@ Research Manager → Trader → Risk debate → Portfolio Manager).
   replay cache for that role (intended).
 - After editing `models:` in `config/settings.yaml`, run `python -m psx7 sync-agents`.
 - Tests: `python -m pytest -q` (offline, uses fixtures).
+- Before changing market-signal points or thresholds, run `python -m psx7 backtest`;
+  keep only rules it supports.

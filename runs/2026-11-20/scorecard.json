@@ -1,0 +1,252 @@
+{
+  "as_of": "2026-11-20",
+  "hit_rate_pct": 46.67,
+  "kse100_proxy_ret_pct": 0.16,
+  "n": 30,
+  "rows": [
+    {
+      "actual_ret_pct": -0.52,
+      "direction": "up",
+      "hit": false,
+      "hybrid_score": 1.903,
+      "rank": 1,
+      "symbol": "PPL"
+    },
+    {
+      "actual_ret_pct": 0.44,
+      "direction": "up",
+      "hit": true,
+      "hybrid_score": 1.811,
+      "rank": 2,
+      "symbol": "EFERT"
+    },
+    {
+      "actual_ret_pct": -0.01,
+      "direction": "up",
+      "hit": false,
+      "hybrid_score": 1.794,
+      "rank": 3,
+      "symbol": "BAHL"
+    },
+    {
+      "actual_ret_pct": 0.22,
+      "direction": "up",
+      "hit": true,
+      "hybrid_score": 1.761,
+      "rank": 4,
+      "symbol": "MEBL"
+    },
+    {
+      "actual_ret_pct": 0.21,
+      "direction": "up",
+      "hit": true,
+      "hybrid_score": 1.702,
+      "rank": 5,
+      "symbol": "HBL"
+    },
+    {
+      "actual_ret_pct": 0.31,
+      "direction": "up",
+      "hit": true,
+      "hybrid_score": 1.618,
+      "rank": 6,
+      "symbol": "MTL"
+    },
+    {
+      "actual_ret_pct": 1.05,
+      "direction": "up",
+      "hit": true,
+      "hybrid_score": 1.543,
+      "rank": 7,
+      "symbol": "HUBC"
+    },
+    {
+      "actual_ret_pct": -0.81,
+      "direction": "up",
+      "hit": false,
+      "hybrid_score": 1.375,
+      "rank": 8,
+      "symbol": "OGDC"
+    },
+    {
+      "actual_ret_pct": 0.42,
+      "direction": "up",
+      "hit": true,
+      "hybrid_score": 1.166,
+      "rank": 9,
+      "symbol": "FFC"
+    },
+    {
+      "actual_ret_pct": -0.97,
+      "direction": "up",
+      "hit": false,
+      "hybrid_score": 0.998,
+      "rank": 10,
+      "symbol": "UBL"
+    },
+    {
+      "actual_ret_pct": -1.42,
+      "direction": "up",
+      "hit": false,
+      "hybrid_score": 0.975,
+      "rank": 11,
+      "symbol": "ATRL"
+    },
+    {
+      "actual_ret_pct": -0.33,
+      "direction": "up",
+      "hit": false,
+      "hybrid_score": 0.894,
+      "rank": 12,
+      "symbol": "FCCL"
+    },
+    {
+      "actual_ret_pct": 0.3,
+      "direction": "up",
+      "hit": true,
+      "hybrid_score": 0.843,
+      "rank": 13,
+      "symbol": "BAFL"
+    },
+    {
+      "actual_ret_pct": -1.35,
+      "direction": "up",
+      "hit": false,
+      "hybrid_score": 0.783,
+      "rank": 14,
+      "symbol": "DGKC"
+    },
+    {
+      "actual_ret_pct": 0.32,
+      "direction": "up",
+      "hit": true,
+      "hybrid_score": 0.763,
+      "rank": 15,
+      "symbol": "MCB"
+    },
+    {
+      "actual_ret_pct": 0.06,
+      "direction": "up",
+      "hit": true,
+      "hybrid_score": 0.598,
+      "rank": 16,
+      "symbol": "HMB"
+    },
+    {
+      "actual_ret_pct": -1.06,
+      "direction": "flat",
+      "hit": false,
+      "hybrid_score": 0.0,
+      "rank": 17,
+      "symbol": "BOP"
+    },
+    {
+      "actual_ret_pct": 2.8,
+      "direction": "flat",
+      "hit": false,
+      "hybrid_score": 0.0,
+      "rank": 18,
+      "symbol": "ENGROH"
+    },
+    {
+      "actual_ret_pct": 0.47,
+      "direction": "flat",
+      "hit": true,
+      "hybrid_score": 0.0,
+      "rank": 19,
+      "symbol": "NBP"
+    },
+    {
+      "actual_ret_pct": -0.09,
+      "direction": "flat",
+      "hit": true,
+      "hybrid_score": 0.0,
+      "rank": 20,
+      "symbol": "MARI"
+    },
+    {
+      "actual_ret_pct": -1.15,
+      "direction": "flat",
+      "hit": false,
+      "hybrid_score": 0.0,
+      "rank": 21,
+      "symbol": "FABL"
+    },
+    {
+      "actual_ret_pct": 1.42,
+      "direction": "flat",
+      "hit": false,
+      "hybrid_score": 0.0,
+      "rank": 22,
+      "symbol": "MLCF"
+    },
+    {
+      "actual_ret_pct": -1.26,
+      "direction": "flat",
+      "hit": false,
+      "hybrid_score": 0.0,
+      "rank": 23,
+      "symbol": "LUCK"
+    },
+    {
+      "actual_ret_pct": 0.87,
+      "direction": "flat",
+      "hit": true,
+      "hybrid_score": 0.0,
+      "rank": 24,
+      "symbol": "AKBL"
+    },
+    {
+      "actual_ret_pct": 0.04,
+      "direction": "flat",
+      "hit": true,
+      "hybrid_score": 0.0,
+      "rank": 25,
+      "symbol": "PSO"
+    },
+    {
+      "actual_ret_pct": -7.71,
+      "direction": "flat",
+      "hit": false,
+      "hybrid_score": -0.5,
+      "rank": 26,
+      "symbol": "PSEL"
+    },
+    {
+      "actual_ret_pct": 0.43,
+      "direction": "down",
+      "hit": false,
+      "hybrid_score": -0.558,
+      "rank": 27,
+      "symbol": "POL"
+    },
+    {
+      "actual_ret_pct": 0.78,
+      "direction": "down",
+      "hit": false,
+      "hybrid_score": -0.83,
+      "rank": 28,
+      "symbol": "SYS"
+    },
+    {
+      "actual_ret_pct": 0.94,
+      "direction": "down",
+      "hit": false,
+      "hybrid_score": -0.975,
+      "rank": 29,
+      "symbol": "FATIMA"
+    },
+    {
+      "actual_ret_pct": -1.95,
+      "direction": "down",
+      "hit": true,
+      "hybrid_score": -1.475,
+      "rank": 30,
+      "symbol": "SRVI"
+    }
+  ],
+  "spearman_score_vs_return": -0.026,
+  "top5_avg_ret_pct": 0.07,
+  "top5_excess_pct": -0.09,
+  "window_end": "2026-11-27"
+}

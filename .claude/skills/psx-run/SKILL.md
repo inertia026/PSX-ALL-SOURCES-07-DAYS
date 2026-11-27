@@ -51,7 +51,8 @@ Read `runs/<as_of>/how_it_worked.md` and `runs/<as_of>/ranking.md` (only these t
 and give the user a short walk-through: the market backdrop, each stage's result,
 the top 5 with reasons, disagreements, missing data, agent calls / replays /
 fallbacks, and the last scorecard if there is one. Always include the
-not-financial-advice line.
+not-financial-advice line. Then send the user the large-font PDF
+`runs/<as_of>/PSX_report_<as_of>.pdf` (written by `finish`; rebuild with `python -m psx7 pdf`).
 
 ## 5. Publish (the repo is public by the user's choice)
 

@@ -143,3 +143,33 @@ def test_scorecard_without_snapshot(tmp_path, monkeypatch):
     scorecard.write_markdown()
     assert "2026-11-20" in (runs / "scorecard.md").read_text(encoding="utf-8")
     assert read_json(runs / "2026-11-20" / "scorecard.json")["n"] == 2
+
+
+def test_pdf_report(tmp_path):
+    from psx7 import pdf_report
+    run = tmp_path / "2026-11-20"
+    rows = [{"symbol": f"S{i:02d}", "name": f"Sample {i}", "sector": "BANKS", "rank": i + 1, "top": i < 5,
+             "final_direction": ("up", "flat", "down")[i % 3], "final_conviction": "low", "risk_rating": "medium",
+             "setup": "momentum", "expected_move_pct": 1.0, "hybrid_score": 0.5, "quant_score": 10.0,
+             "flag": "caution" if i == 1 else "none", "illiquid": i == 2, "deciding_points": ["RSI ≥ 70 → *risk*"],
+             "pm_reason": "ok", "levels": {"entry_ref": 10, "target": 11, "stop": 9}} for i in range(30)]
+    write_json(run / "ranking.json", {"as_of": AS_OF, "window": ["2026-11-23", "2026-11-27"], "fingerprint": "ab" * 32, "rows": rows})
+    write_json(run / "run_meta.json", {"agent_calls": 93, "fallbacks": 0, "prompt_version": "x", "missing_sources": []})
+    (run / "how_it_worked.md").write_text("# t\n\n## Summary (agent narrative)\nskip\n\n## Stage 1: Analysts\n- **Market:** ok\n", encoding="utf-8")
+    first = pdf_report.build_pdf(run).read_bytes()
+    assert first.startswith(b"%PDF") and pdf_report.build_pdf(run).read_bytes() == first    # deterministic
+
+
+def test_backtest_offline(tmp_path, monkeypatch):
+    from psx7 import backtest
+    hist = fake_history(n_syms=12, n_days=320)
+    adj = {s: sources.adjust_history(r)[0] for s, r in hist.items()}
+    members = [{"symbol": s, "free_float_shares": 1e6, "close": r[-1]["close"]} for s, r in adj.items()]
+    monkeypatch.setattr(backtest, "OUT", tmp_path / "bt")
+    monkeypatch.setattr(backtest, "load", lambda to, n, log=print: (adj, members, snapshot.market_proxy(adj, members)))
+    a = backtest.run(date(2026, 11, 20), 320, log=lambda *_: None)
+    assert a["weeks"] >= 20 and a["observations"] == a["weeks"] * 12
+    ics = [s["mean_ic"] for s in a["signals"] if "mean_ic" in s]
+    assert ics and all(-1 <= x <= 1 for x in ics) and len(a["market_score_buckets"]) == 5
+    assert backtest.run(date(2026, 11, 20), 320, log=lambda *_: None) == a          # deterministic
+    assert (tmp_path / "bt" / "backtest.md").exists()

@@ -238,8 +238,8 @@ def test_debate_tally_scoring(repo, capsys):
 def test_ranking_formula_order():
     from psx7.util import settings
     s = settings()["scoring"]
-    up_high = scoring.expected_move(2.0, "up", "high")
-    up_low = scoring.expected_move(2.0, "up", "low")
-    assert up_high == pytest.approx(2.0 * s["conviction_mult"]["high"] * 5 ** 0.5 * s["move_k"])
-    assert up_high > up_low > 0 == scoring.expected_move(2.0, "flat", "high")
-    assert scoring.expected_move(2.0, "down", "medium") < 0
+    up_high = scoring.expected_move("up", "high")
+    up_low = scoring.expected_move("up", "low")
+    assert up_high == pytest.approx(s["conviction_mult"]["high"] * s["base_edge_pct"])
+    assert up_high > up_low > 0 == scoring.expected_move("flat", "high")
+    assert scoring.expected_move("down", "medium") < 0

@@ -3,6 +3,8 @@
     python -m psx7 snapshot [--date YYYY-MM-DD] [--refresh]   # Stage 0 + Python analysts + scorecard
     python -m psx7 step                                       # repeat: prints agent jobs to run, or DONE
     python -m psx7 finish                                     # ranking + reports
+    python -m psx7 backtest [--days 760]                    # walk-forward test of Python signals
+    python -m psx7 pdf                                        # large-font PDF of the latest run
     python -m psx7 status | sync-agents
 """
 from __future__ import annotations
@@ -12,7 +14,7 @@ import re
 import sys
 from datetime import date
 
-from . import analysts, report, scorecard, snapshot, stages
+from . import analysts, backtest, pdf_report, report, scorecard, snapshot, stages
 from .util import ROOT, RUNS_DIR, read_json, settings, write_json
 
 AGENT_MODEL_KEY = {
@@ -88,8 +90,22 @@ def cmd_finish(a) -> None:
         sys.exit("Agent stages not finished. Run: python -m psx7 step")
     meta = report.build(stages.Ctx(run), state)
     scorecard.write_markdown()
-    print(f"Reports written to runs/{as_of}/ (ranking.md, ranking.html, how_it_worked.md, stocks/)")
+    pdf = pdf_report.build_pdf(run)
+    print(f"Reports written to runs/{as_of}/ (ranking.md, ranking.html, {pdf.name}, how_it_worked.md, stocks/)")
     print(f"Agent calls {meta['agent_calls']}, replayed {meta['replayed']}, fallbacks {meta['fallbacks']}")
+
+
+def cmd_pdf(a) -> None:
+    as_of = a.as_of or latest_run()
+    print(f"PDF written: {pdf_report.build_pdf(RUNS_DIR / as_of)}")
+
+
+def cmd_backtest(a) -> None:
+    to = date.fromisoformat(a.to) if a.to else date.today()
+    res = backtest.run(to, a.days)
+    ms = next((s for s in res["signals"] if s["signal"] == "market_score"), {})
+    print(f"market_score: mean weekly IC {ms.get('mean_ic')}, t {ms.get('t_stat')}, "
+          f"top-bottom {ms.get('top_minus_bottom_pct')}% over {res['weeks']} weeks")
 
 
 def cmd_status(a) -> None:
@@ -117,9 +133,12 @@ def main(argv=None) -> None:
     s = sub.add_parser("snapshot")
     s.add_argument("--date")
     s.add_argument("--refresh", action="store_true")
-    for name in ("step", "finish", "status"):
+    for name in ("step", "finish", "status", "pdf"):
         sub.add_parser(name).add_argument("--as-of", dest="as_of")
     sub.add_parser("sync-agents")
+    b = sub.add_parser("backtest")
+    b.add_argument("--to")
+    b.add_argument("--days", type=int, default=760)
     a = ap.parse_args(argv)
-    {"snapshot": cmd_snapshot, "step": cmd_step, "finish": cmd_finish, "status": cmd_status,
+    {"snapshot": cmd_snapshot, "step": cmd_step, "finish": cmd_finish, "status": cmd_status, "pdf": cmd_pdf, "backtest": cmd_backtest,
      "sync-agents": cmd_sync_agents}[a.cmd](a)

@@ -41,7 +41,13 @@ Ask Claude Code to "do this week's run" (uses the `psx-run` skill), or by hand:
 ```bash
 python -m psx7 snapshot            # Stage 0: fetch + freeze data, Python analysts, score past runs
 python -m psx7 step                # prints agent jobs; Claude launches them; repeat until DONE
-python -m psx7 finish              # ranking + reports
+python -m psx7 finish              # ranking + reports (+ PDF)
+```
+
+Check the Python signals against history (zero tokens, about 3 years of PSX files):
+
+```bash
+python -m psx7 backtest            # writes runs/backtest/backtest.md
 ```
 
 Outputs land in `runs/<as-of date>/`:
@@ -49,11 +55,13 @@ Outputs land in `runs/<as-of date>/`:
 | File | What |
 |---|---|
 | `ranking.md` / `ranking.html` | All 30 ranked, top 5 explained |
+| `PSX_report_<date>.pdf` | Large-font PDF: key numbers, top 5, all 30, how it worked, glossary (`python -m psx7 pdf`) |
 | `how_it_worked.md` | Stage-by-stage explanation of this run |
 | `stocks/<TICKER>.md` | Full trail per stock: analysts, debate, trader, risk, PM |
 | `stages/*.json` | Validated agent results per stage |
 | `run_meta.json` | Models, agent calls, cache replays, missing sources |
 | `runs/scorecard.md` | Past runs scored against actual prices |
+| `runs/backtest/backtest.md` | Walk-forward test of every Python market signal (`python -m psx7 backtest`) |
 
 ## Data sources (free)
 
@@ -70,7 +78,8 @@ Outputs land in `runs/<as-of date>/`:
 
 Prices are **back-adjusted** for dividends, bonus and rights using PSX's own adjusted previous close (LDCP) on
 ex-dates. The scorecard chains close ÷ LDCP day by day, so payouts inside a window aren't counted as losses.
-The volatility used for the expected move is capped at 1.5× the top-30 median.
+The expected move is a fixed, backtest-sized edge (0.5% for a medium-conviction call), not a volatility multiple:
+in the backtest, volatile stocks lagged the market over 5 days.
 
 ## Settings
 
