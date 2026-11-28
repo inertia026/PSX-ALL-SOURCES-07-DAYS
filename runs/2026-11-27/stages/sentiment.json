@@ -1,0 +1,642 @@
+{
+  "AKBL": {
+    "mood": "neutral",
+    "reasons": [
+      {
+        "cites": [
+          "N-AKBL-1",
+          "N-AKBL-2"
+        ],
+        "text": "Both news items are low-impact and neutral; no social chatter to tilt sentiment."
+      },
+      {
+        "cites": [
+          "N-AKBL-1"
+        ],
+        "text": "Five-day gain of 0.87% beats the market's 0.16%, but volume is thin (0.34 ratio)."
+      }
+    ],
+    "strength": "low"
+  },
+  "ATRL": {
+    "mood": "bearish",
+    "reasons": [
+      {
+        "cites": [
+          "N-ATRL-1",
+          "N-ATRL-3"
+        ],
+        "text": "Two high-impact negative news items dominate the sentiment."
+      },
+      {
+        "cites": [
+          "N-ATRL-2",
+          "N-ATRL-4",
+          "N-ATRL-5"
+        ],
+        "text": "Three medium-impact news items are also negative."
+      },
+      {
+        "cites": [
+          "N-ATRL-6"
+        ],
+        "text": "Only one positive item; five-day return of -1.42 percent confirms weakness."
+      }
+    ],
+    "strength": "high"
+  },
+  "BAFL": {
+    "mood": "neutral",
+    "reasons": [
+      {
+        "cites": [
+          "N-BAFL-4"
+        ],
+        "text": "Mostly neutral low-impact news, with one positive item (N-BAFL-4); no social mentions."
+      },
+      {
+        "cites": [
+          "FL-1",
+          "FL-2"
+        ],
+        "text": "Foreign confidence weakened and outflows continue, capping the crowd's appetite."
+      }
+    ],
+    "strength": "low"
+  },
+  "BAHL": {
+    "mood": "neutral",
+    "reasons": [
+      {
+        "cites": [
+          "N-BAHL-1"
+        ],
+        "text": "Single low-impact negative news item (N-BAHL-1); no social mentions."
+      },
+      {
+        "cites": [
+          "FL-2"
+        ],
+        "text": "Flat five-day move (-0.01%) with weak volume (0.68) shows no clear crowd conviction."
+      }
+    ],
+    "strength": "low"
+  },
+  "BOP": {
+    "mood": "bearish",
+    "reasons": [
+      {
+        "cites": [
+          "N-BOP-1"
+        ],
+        "text": "Positive low-impact tones (N-BOP-2, N-BOP-3) do not lift the price; it fell 1.06%."
+      },
+      {
+        "cites": [
+          "FL-1"
+        ],
+        "text": "Weak foreign confidence and no social support point to cautious crowd positioning."
+      }
+    ],
+    "strength": "low"
+  },
+  "DGKC": {
+    "mood": "neutral",
+    "reasons": [
+      {
+        "cites": [
+          "N-DGKC-1",
+          "N-DGKC-2",
+          "N-DGKC-3"
+        ],
+        "text": "Three low-impact news items, all neutral in tone."
+      },
+      {
+        "cites": [
+          "FL-1"
+        ],
+        "text": "Weak market breadth and negative flow headlines add caution."
+      }
+    ],
+    "strength": "low"
+  },
+  "EFERT": {
+    "mood": "bullish",
+    "reasons": [
+      {
+        "cites": [
+          "N-EFERT-1",
+          "N-EFERT-4"
+        ],
+        "text": "Medium-impact positive news and two further positive low-impact items."
+      },
+      {
+        "cites": [
+          "FL-1"
+        ],
+        "text": "Negative foreign confidence headline tempers the bullish news read."
+      },
+      {
+        "cites": [
+          "MAC-4"
+        ],
+        "text": "Outperformed the market (+0.44 vs +0.16) on below-average volume (0.56)."
+      }
+    ],
+    "strength": "low"
+  },
+  "ENGROH": {
+    "mood": "bullish",
+    "reasons": [
+      {
+        "cites": [
+          "N-ENGROH-3"
+        ],
+        "text": "High-impact positive news item supports the bullish read."
+      },
+      {
+        "cites": [
+          "N-ENGROH-4",
+          "N-ENGROH-8"
+        ],
+        "text": "Five further positive low-impact items reinforce the news tone."
+      },
+      {
+        "cites": [
+          "MAC-4"
+        ],
+        "text": "Strong 5-day return (+2.80) on rising volume (ratio 1.75) versus market +0.16."
+      }
+    ],
+    "strength": "medium"
+  },
+  "FABL": {
+    "mood": "bearish",
+    "reasons": [
+      {
+        "cites": [
+          "N-FABL-2"
+        ],
+        "text": "Medium-impact negative news (N-FABL-2) outweighs the mostly positive low-impact items."
+      },
+      {
+        "cites": [
+          "FL-1"
+        ],
+        "text": "Stock fell 1.15% in five days, well behind the market's 0.16% gain."
+      }
+    ],
+    "strength": "low"
+  },
+  "FATIMA": {
+    "mood": "neutral",
+    "reasons": [
+      {
+        "cites": [
+          "N-FATIMA-1",
+          "N-FATIMA-3"
+        ],
+        "text": "Mostly neutral low-impact news; only one positive item among four."
+      },
+      {
+        "cites": [
+          "MAC-4"
+        ],
+        "text": "Strong 5-day move (+0.94) on low volume (0.53) with no social mood."
+      },
+      {
+        "cites": [
+          "FL-1"
+        ],
+        "text": "Negative foreign confidence headline limits conviction for further gains."
+      }
+    ],
+    "strength": "low"
+  },
+  "FCCL": {
+    "mood": "neutral",
+    "reasons": [
+      {
+        "cites": [
+          "N-FCCL-1",
+          "N-FCCL-2"
+        ],
+        "text": "Two low-impact news items, both neutral in tone."
+      },
+      {
+        "cites": [
+          "FL-1"
+        ],
+        "text": "No social signal; negative flow headlines offset any upside."
+      }
+    ],
+    "strength": "low"
+  },
+  "FFC": {
+    "mood": "bullish",
+    "reasons": [
+      {
+        "cites": [
+          "N-FFC-2",
+          "N-FFC-3"
+        ],
+        "text": "Two positive low-impact news items; no negative tone recorded."
+      },
+      {
+        "cites": [
+          "MAC-4"
+        ],
+        "text": "Modest outperformance (+0.42 vs +0.16) on below-average volume (0.63)."
+      },
+      {
+        "cites": [
+          "FL-1"
+        ],
+        "text": "Foreign confidence headline is negative, so conviction stays low."
+      }
+    ],
+    "strength": "low"
+  },
+  "HBL": {
+    "mood": "bullish",
+    "reasons": [
+      {
+        "cites": [
+          "N-HBL-1",
+          "N-HBL-2"
+        ],
+        "text": "Two low-impact positive news tones support a constructive crowd view."
+      },
+      {
+        "cites": [
+          "FL-1"
+        ],
+        "text": "Foreign confidence turned negative, tempering the positive tone; volume is light."
+      }
+    ],
+    "strength": "low"
+  },
+  "HMB": {
+    "mood": "neutral",
+    "reasons": [
+      {
+        "cites": [
+          "FL-1"
+        ],
+        "text": "No stock news and a lagging five-day return give no positive crowd signal."
+      },
+      {
+        "cites": [
+          "FL-1"
+        ],
+        "text": "Negative foreign sentiment backdrop offers no offsetting catalyst."
+      }
+    ],
+    "strength": "low"
+  },
+  "HUBC": {
+    "mood": "bullish",
+    "reasons": [
+      {
+        "cites": [
+          "N-HUBC-1",
+          "N-HUBC-2",
+          "N-HUBC-3"
+        ],
+        "text": "Medium and low-impact news is predominantly positive."
+      },
+      {
+        "cites": [
+          "N-HUBC-4",
+          "N-HUBC-5",
+          "N-HUBC-6"
+        ],
+        "text": "Remaining low-impact items are neutral, with no negatives."
+      },
+      {
+        "cites": [
+          "FL-1"
+        ],
+        "text": "Five-day return of 1.05 percent outpaces market; flows remain weak."
+      }
+    ],
+    "strength": "medium"
+  },
+  "LUCK": {
+    "mood": "bullish",
+    "reasons": [
+      {
+        "cites": [
+          "N-LUCK-1",
+          "N-LUCK-2"
+        ],
+        "text": "High and medium impact news both positive in tone."
+      },
+      {
+        "cites": [
+          "FL-1",
+          "FL-2"
+        ],
+        "text": "Price fell over five days despite positive news; flows are negative."
+      }
+    ],
+    "strength": "low"
+  },
+  "MARI": {
+    "mood": "neutral",
+    "reasons": [
+      {
+        "cites": [
+          "N-MARI-1"
+        ],
+        "text": "One low-impact positive news item, while the price is flat over five days."
+      },
+      {
+        "cites": [
+          "N-MARI-1"
+        ],
+        "text": "Volume ratio of 0.33 shows thin crowd participation."
+      }
+    ],
+    "strength": "low"
+  },
+  "MCB": {
+    "mood": "neutral",
+    "reasons": [
+      {
+        "cites": [
+          "N-MCB-1",
+          "N-MCB-2"
+        ],
+        "text": "Eight low-impact news items, mostly neutral with one negative tone."
+      },
+      {
+        "cites": [
+          "FL-1"
+        ],
+        "text": "Negative foreign sentiment offers no clear positive crowd catalyst."
+      }
+    ],
+    "strength": "low"
+  },
+  "MEBL": {
+    "mood": "bullish",
+    "reasons": [
+      {
+        "cites": [
+          "N-MEBL-1",
+          "N-MEBL-3"
+        ],
+        "text": "Four positive tones outweigh one medium-impact negative item."
+      },
+      {
+        "cites": [
+          "N-MEBL-3"
+        ],
+        "text": "The medium-impact negative item tempers the constructive news flow."
+      },
+      {
+        "cites": [
+          "FL-2"
+        ],
+        "text": "Large foreign repatriation weighs on overall foreign sentiment."
+      }
+    ],
+    "strength": "low"
+  },
+  "MLCF": {
+    "mood": "neutral",
+    "reasons": [
+      {
+        "cites": [
+          "N-MLCF-1",
+          "N-MLCF-2"
+        ],
+        "text": "Eight low-impact news items, all neutral in tone."
+      },
+      {
+        "cites": [
+          "FL-1"
+        ],
+        "text": "Five-day gain is not backed by news; flows are negative."
+      }
+    ],
+    "strength": "low"
+  },
+  "MTL": {
+    "mood": "bullish",
+    "reasons": [
+      {
+        "cites": [
+          "N-MTL-1",
+          "N-MTL-7"
+        ],
+        "text": "Eight news items all positive, two at medium impact."
+      },
+      {
+        "cites": [
+          "FL-1",
+          "FL-2"
+        ],
+        "text": "Negative foreign flow headlines temper the bullish news tone."
+      }
+    ],
+    "strength": "low"
+  },
+  "NBP": {
+    "mood": "neutral",
+    "reasons": [
+      {
+        "cites": [
+          "N-NBP-7"
+        ],
+        "text": "Eight news items are all neutral; the medium-impact item has no direction."
+      },
+      {
+        "cites": [
+          "FL-1"
+        ],
+        "text": "Strong five-day gain is not matched by news-driven crowd enthusiasm."
+      }
+    ],
+    "strength": "low"
+  },
+  "OGDC": {
+    "mood": "neutral",
+    "reasons": [
+      {
+        "cites": [
+          "N-OGDC-1",
+          "N-OGDC-8"
+        ],
+        "text": "News is mixed: three positive and one negative, all low impact."
+      },
+      {
+        "cites": [
+          "N-OGDC-2"
+        ],
+        "text": "Shares slipped 0.81% over five days on a thin 0.5 volume ratio."
+      }
+    ],
+    "strength": "low"
+  },
+  "POL": {
+    "mood": "neutral",
+    "reasons": [
+      {
+        "cites": [
+          "N-POL-1"
+        ],
+        "text": "One low-impact positive news item and a small 0.43% gain."
+      },
+      {
+        "cites": [
+          "FL-1",
+          "N-POL-1"
+        ],
+        "text": "Thin 0.4 volume ratio and weak market sentiment limit conviction."
+      }
+    ],
+    "strength": "low"
+  },
+  "PPL": {
+    "mood": "bearish",
+    "reasons": [
+      {
+        "cites": [
+          "N-PPL-2",
+          "N-PPL-3",
+          "N-PPL-4"
+        ],
+        "text": "Three low-impact negative news items outweigh one neutral item."
+      },
+      {
+        "cites": [
+          "N-PPL-1"
+        ],
+        "text": "Medium-impact news is neutral; no offsetting positive catalyst."
+      },
+      {
+        "cites": [
+          "FL-1"
+        ],
+        "text": "Weak foreign sentiment and no social chatter add to caution."
+      }
+    ],
+    "strength": "low"
+  },
+  "PSEL": {
+    "mood": "bearish",
+    "reasons": [
+      {
+        "cites": [
+          "N-PSEL-1",
+          "N-PSEL-2"
+        ],
+        "text": "Shares fell 7.71% over five days with no supportive news."
+      },
+      {
+        "cites": [
+          "N-PSEL-2"
+        ],
+        "text": "Neutral low-impact news offers no offset to selling pressure."
+      }
+    ],
+    "strength": "low"
+  },
+  "PSO": {
+    "mood": "bullish",
+    "reasons": [
+      {
+        "cites": [
+          "N-PSO-4",
+          "N-PSO-6",
+          "N-PSO-7",
+          "N-PSO-8"
+        ],
+        "text": "Four medium-impact positive news items dominate the tone."
+      },
+      {
+        "cites": [
+          "N-PSO-3"
+        ],
+        "text": "One low-impact negative item is the only adverse signal."
+      },
+      {
+        "cites": [
+          "FL-1"
+        ],
+        "text": "Negative flow backdrop and empty social mood cap conviction."
+      }
+    ],
+    "strength": "low"
+  },
+  "SRVI": {
+    "mood": "neutral",
+    "reasons": [
+      {
+        "cites": [
+          "N-SRVI-8"
+        ],
+        "text": "Five-day return of -1.95% with only neutral news, one medium-impact item."
+      },
+      {
+        "cites": [
+          "FL-1"
+        ],
+        "text": "Foreign confidence turned negative on 24 Nov, so the backdrop is weak."
+      }
+    ],
+    "strength": "low"
+  },
+  "SYS": {
+    "mood": "neutral",
+    "reasons": [
+      {
+        "cites": [
+          "N-SYS-1",
+          "N-SYS-3"
+        ],
+        "text": "Low-impact news is neutral; no material catalyst visible."
+      },
+      {
+        "cites": [
+          "N-SYS-2"
+        ],
+        "text": "One low-impact positive item is offset by no negatives."
+      },
+      {
+        "cites": [
+          "FL-1"
+        ],
+        "text": "Social mood is absent and flows are weak; conviction stays low."
+      }
+    ],
+    "strength": "low"
+  },
+  "UBL": {
+    "mood": "neutral",
+    "reasons": [
+      {
+        "cites": [
+          "N-UBL-1",
+          "N-UBL-8"
+        ],
+        "text": "All eight news items are neutral and low impact, giving no directional catalyst."
+      },
+      {
+        "cites": [
+          "FL-1"
+        ],
+        "text": "Foreign confidence turned negative on 2026-11-24, weighing on large-cap sentiment."
+      },
+      {
+        "cites": [
+          "MAC-4"
+        ],
+        "text": "Stock lagged the market 5-day return (-0.97 vs +0.16) with no social mood."
+      }
+    ],
+    "strength": "low"
+  }
+}

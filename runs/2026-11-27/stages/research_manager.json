@@ -1,0 +1,902 @@
+{
+  "AKBL": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-AKBL-C1"
+        ],
+        "text": "Announcement 2026-11-26: Disclosure of Material Information"
+      },
+      {
+        "cites": [
+          "MD-1"
+        ],
+        "text": "Macro: Political tensions and profit-taking pushed PSX below 178,000, making sentiment cautious into the next week."
+      }
+    ],
+    "decision": "accept",
+    "direction": "down",
+    "net_score": -2.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "down",
+      "winner": "bear"
+    },
+    "reason": "Bear leads on material disclosure and cautious market; score is modest, low conviction fits.",
+    "winner": "bear"
+  },
+  "ATRL": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-ATRL-4"
+        ],
+        "text": "Q1 2027 EPS +1184.1% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "N-ATRL-1"
+        ],
+        "text": "News (high impact): Attock Refinery to Shut Major Crude Processing Unit"
+      },
+      {
+        "cites": [
+          "N-ATRL-3"
+        ],
+        "text": "News (high impact): Attock Refinery to shut down main crude distillation unit for up to six days from November 29"
+      }
+    ],
+    "decision": "override",
+    "direction": "down",
+    "net_score": -1.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "flat",
+      "winner": "draw"
+    },
+    "reason": "Main crude unit shutdown starts Nov 29, inside the window, with two high-impact news items and bearish crowd mood. Earnings growth is backward-looking.",
+    "winner": "bear"
+  },
+  "BAFL": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "M-BAFL-8"
+        ],
+        "text": "Daily range (ATR) 1.7% of price: calm; low-volatility stocks did best in the backtest"
+      },
+      {
+        "cites": [
+          "MD-1"
+        ],
+        "text": "Macro: Political tensions and profit-taking pushed PSX below 178,000, making sentiment cautious into the next week."
+      }
+    ],
+    "decision": "accept",
+    "direction": "down",
+    "net_score": -2.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "down",
+      "winner": "bear"
+    },
+    "reason": "Bear edge rests on macro caution; bull valuation point is not 5-day relevant. Low conviction fits.",
+    "winner": "bear"
+  },
+  "BAHL": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-BAHL-4"
+        ],
+        "text": "Q3 2026 EPS +39.4% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "M-BAHL-4"
+        ],
+        "text": "RSI(14) 72.9: stretched, such stocks lagged the next week in the backtest"
+      },
+      {
+        "cites": [
+          "N-BAHL-1"
+        ],
+        "text": "News (low impact): Bank AL Habib Executive Syed Anser Abbas Zaidi Reports Two Share Sales"
+      }
+    ],
+    "decision": "accept",
+    "direction": "flat",
+    "net_score": -1.5,
+    "proposal": {
+      "conviction": "low",
+      "direction": "flat",
+      "winner": "draw"
+    },
+    "reason": "Strong RSI and EPS points cancel; small bear lean from insider sales does not justify a call.",
+    "winner": "draw"
+  },
+  "BOP": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-BOP-C1"
+        ],
+        "text": "Announcement 2026-11-20: ISSUANCE OF SHARES TO GOVERNMENT OF THE PUNJAB (GoPb), FIRST TRANCHE"
+      },
+      {
+        "cites": [
+          "MD-1"
+        ],
+        "text": "Macro: Political tensions and profit-taking pushed PSX below 178,000, making sentiment cautious into the next week."
+      }
+    ],
+    "decision": "accept",
+    "direction": "down",
+    "net_score": -3.5,
+    "proposal": {
+      "conviction": "low",
+      "direction": "down",
+      "winner": "bear"
+    },
+    "reason": "Share issuance announcement plus weak market gives clear bear lead; bull points are not 5-day relevant. Low conviction kept.",
+    "winner": "bear"
+  },
+  "DGKC": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-DGKC-3"
+        ],
+        "text": "Net margin 14.4% vs 12.1% a year earlier"
+      },
+      {
+        "cites": [
+          "MD-2"
+        ],
+        "text": "Macro: KSE-100 fell nearly 400 points on geopolitical concerns and volatile trade, adding near-term pressure."
+      }
+    ],
+    "decision": "accept",
+    "direction": "flat",
+    "net_score": 0.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "flat",
+      "winner": "draw"
+    },
+    "reason": "Balanced debate; margin gain offset by weak market tone.",
+    "winner": "draw"
+  },
+  "EFERT": {
+    "clamp_notes": [],
+    "conviction": "medium",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-EFERT-4"
+        ],
+        "text": "Q3 2026 EPS +73.7% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "N-EFERT-1"
+        ],
+        "text": "News (medium impact): Engro Fertilizers Raises Urea Price by Rs. 150 per Bag"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 4.0,
+    "proposal": {
+      "conviction": "medium",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Urea price hike and strong quarterly EPS outweigh the weak bear points.",
+    "winner": "bull"
+  },
+  "ENGROH": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-ENGROH-C1"
+        ],
+        "text": "Announcement 2026-11-24: Purchase (Buy-back) of the shares under Section 88 of the Companies Act, 2017 read with Li"
+      },
+      {
+        "cites": [
+          "M-ENGROH-1"
+        ],
+        "text": "Close 305.50 is +8.3% from its 20-day average 282.12; stretched stocks lagged the market the next week in the backtest"
+      },
+      {
+        "cites": [
+          "N-ENGROH-3"
+        ],
+        "text": "News (high impact): Engro Holdings board proposes buyback of 60 million shares"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 4.5,
+    "proposal": {
+      "conviction": "low",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Buyback is a strong catalyst, but price is stretched and the quant score is very negative, so conviction stays low.",
+    "winner": "bull"
+  },
+  "FABL": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "MD-1"
+        ],
+        "text": "Macro: Political tensions and profit-taking pushed PSX below 178,000, making sentiment cautious into the next week."
+      },
+      {
+        "cites": [
+          "N-FABL-2"
+        ],
+        "text": "News (medium impact): NCCIA Traces Rs240 Billion Through Faysal Bank, Habib Metro, and UBL in Karachi Gambling Bust"
+      }
+    ],
+    "decision": "accept",
+    "direction": "down",
+    "net_score": -2.5,
+    "proposal": {
+      "conviction": "low",
+      "direction": "down",
+      "winner": "bear"
+    },
+    "reason": "Bust-related news and macro caution outweigh a small dividend credit; low conviction appropriate.",
+    "winner": "bear"
+  },
+  "FATIMA": {
+    "clamp_notes": [],
+    "conviction": "medium",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-FATIMA-4"
+        ],
+        "text": "Q3 2026 EPS -25.6% vs same quarter last year"
+      }
+    ],
+    "decision": "accept",
+    "direction": "down",
+    "net_score": -3.5,
+    "proposal": {
+      "conviction": "medium",
+      "direction": "down",
+      "winner": "bear"
+    },
+    "reason": "Sharp quarterly EPS decline dominates; bull case is weak.",
+    "winner": "bear"
+  },
+  "FCCL": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-FCCL-3"
+        ],
+        "text": "Net margin 17.3% vs 15.0% a year earlier"
+      },
+      {
+        "cites": [
+          "F-FCCL-4"
+        ],
+        "text": "Q1 2027 EPS +50.7% vs same quarter last year"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 2.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Strong Q1 EPS growth outweighs macro and minor director change.",
+    "winner": "bull"
+  },
+  "FFC": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-FFC-4"
+        ],
+        "text": "Q3 2026 EPS +15.1% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "M-FFC-4"
+        ],
+        "text": "RSI(14) 70.8: stretched, such stocks lagged the next week in the backtest"
+      },
+      {
+        "cites": [
+          "N-FFC-3"
+        ],
+        "text": "News (low impact): Fauji Fertilizer And 10 Other PSX Companies Get Huge Tax Relief"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 2.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Tax relief and EPS growth lead, but stretched RSI limits conviction.",
+    "winner": "bull"
+  },
+  "HBL": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "MD-1"
+        ],
+        "text": "Macro: Political tensions and profit-taking pushed PSX below 178,000, making sentiment cautious into the next week."
+      },
+      {
+        "cites": [
+          "MD-2"
+        ],
+        "text": "Macro: KSE-100 fell nearly 400 points on geopolitical concerns and volatile trade, adding near-term pressure."
+      }
+    ],
+    "decision": "accept",
+    "direction": "down",
+    "net_score": -2.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "down",
+      "winner": "bear"
+    },
+    "reason": "Bear leads on market weakness; bull points are weak or not 5-day relevant. Low conviction fits.",
+    "winner": "bear"
+  },
+  "HMB": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-HMB-4"
+        ],
+        "text": "Q3 2026 EPS -20.9% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "MD-2"
+        ],
+        "text": "Macro: KSE-100 fell nearly 400 points on geopolitical concerns and volatile trade, adding near-term pressure."
+      }
+    ],
+    "decision": "accept",
+    "direction": "down",
+    "net_score": -3.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "down",
+      "winner": "bear"
+    },
+    "reason": "Q3 EPS decline and market drop outweigh the cheap P/E. Low conviction fits.",
+    "winner": "bear"
+  },
+  "HUBC": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "MD-2"
+        ],
+        "text": "Macro: KSE-100 fell nearly 400 points on geopolitical concerns and volatile trade, adding near-term pressure."
+      },
+      {
+        "cites": [
+          "N-HUBC-1"
+        ],
+        "text": "News (medium impact): Hub Power FY26 Profit Hits Rs. 48.6 Billion on Stronger BYD Contribution"
+      }
+    ],
+    "decision": "accept",
+    "direction": "flat",
+    "net_score": 1.5,
+    "proposal": {
+      "conviction": "low",
+      "direction": "flat",
+      "winner": "draw"
+    },
+    "reason": "Mixed evidence, modest edge; flat is reasonable.",
+    "winner": "draw"
+  },
+  "LUCK": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-LUCK-3"
+        ],
+        "text": "Net margin 34.1% vs 26.6% a year earlier"
+      },
+      {
+        "cites": [
+          "MD-2"
+        ],
+        "text": "Macro: KSE-100 fell nearly 400 points on geopolitical concerns and volatile trade, adding near-term pressure."
+      },
+      {
+        "cites": [
+          "N-LUCK-1"
+        ],
+        "text": "News (high impact): Lucky Cement Posts Rs. 89 Billion Profit in FY26"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 2.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "High-impact profit news and margin expansion beat market drag.",
+    "winner": "bull"
+  },
+  "MARI": {
+    "clamp_notes": [],
+    "conviction": "medium",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-MARI-4"
+        ],
+        "text": "Q1 2027 EPS +39.1% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "M-MARI-8"
+        ],
+        "text": "Daily range (ATR) 2.2% of price: calm; low-volatility stocks did best in the backtest"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 5.5,
+    "proposal": {
+      "conviction": "medium",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Strong EPS growth and calm volatility; bear points fully rebutted.",
+    "winner": "bull"
+  },
+  "MCB": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "M-MCB-8"
+        ],
+        "text": "Daily range (ATR) 1.5% of price: calm; low-volatility stocks did best in the backtest"
+      },
+      {
+        "cites": [
+          "MD-2"
+        ],
+        "text": "Macro: KSE-100 fell nearly 400 points on geopolitical concerns and volatile trade, adding near-term pressure."
+      }
+    ],
+    "decision": "accept",
+    "direction": "flat",
+    "net_score": -0.5,
+    "proposal": {
+      "conviction": "low",
+      "direction": "flat",
+      "winner": "draw"
+    },
+    "reason": "Evidence is balanced and weak on both sides, so flat with low conviction.",
+    "winner": "draw"
+  },
+  "MEBL": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-MEBL-4"
+        ],
+        "text": "Q3 2026 EPS +21.4% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "MD-2"
+        ],
+        "text": "Macro: KSE-100 fell nearly 400 points on geopolitical concerns and volatile trade, adding near-term pressure."
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 2.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Strong Q3 EPS growth leads the bull case, but market weakness caps conviction at low.",
+    "winner": "bull"
+  },
+  "MLCF": {
+    "clamp_notes": [],
+    "conviction": "high",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-MLCF-3"
+        ],
+        "text": "Net margin 11.9% vs 24.7% a year earlier"
+      },
+      {
+        "cites": [
+          "F-MLCF-4"
+        ],
+        "text": "Q1 2027 EPS -18.1% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "MD-1"
+        ],
+        "text": "Macro: Political tensions and profit-taking pushed PSX below 178,000, making sentiment cautious into the next week."
+      }
+    ],
+    "decision": "accept",
+    "direction": "down",
+    "net_score": -6.0,
+    "proposal": {
+      "conviction": "high",
+      "direction": "down",
+      "winner": "bear"
+    },
+    "reason": "Q1 EPS decline and margin collapse with weak market; bull case negligible.",
+    "winner": "bear"
+  },
+  "MTL": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-MTL-4"
+        ],
+        "text": "Q1 2027 EPS +90.7% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "MD-2"
+        ],
+        "text": "Macro: KSE-100 fell nearly 400 points on geopolitical concerns and volatile trade, adding near-term pressure."
+      },
+      {
+        "cites": [
+          "N-MTL-1"
+        ],
+        "text": "News (medium impact): Millat Tractors to launch electric two-wheelers on Nov 29"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 2.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Bull leads on launch catalyst and EPS growth; market weakness limits conviction.",
+    "winner": "bull"
+  },
+  "NBP": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-NBP-1"
+        ],
+        "text": "P/E (TTM) 5.52 vs top-30 median 7.51 (cheaper by 26%)"
+      },
+      {
+        "cites": [
+          "F-NBP-4"
+        ],
+        "text": "Q3 2026 EPS -28.8% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "MD-2"
+        ],
+        "text": "Macro: KSE-100 fell nearly 400 points on geopolitical concerns and volatile trade, adding near-term pressure."
+      }
+    ],
+    "decision": "accept",
+    "direction": "flat",
+    "net_score": -1.5,
+    "proposal": {
+      "conviction": "low",
+      "direction": "flat",
+      "winner": "draw"
+    },
+    "reason": "EPS drop and market weakness are offset by the cheap P/E, so flat with low conviction.",
+    "winner": "draw"
+  },
+  "OGDC": {
+    "clamp_notes": [],
+    "conviction": "medium",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-OGDC-4"
+        ],
+        "text": "Q1 2027 EPS +52.6% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "M-OGDC-8"
+        ],
+        "text": "Daily range (ATR) 1.4% of price: calm; low-volatility stocks did best in the backtest"
+      },
+      {
+        "cites": [
+          "N-OGDC-8"
+        ],
+        "text": "News (low impact): OGDCL, PPL and PARCO scrap LPG auctions after legal challenge in Lahore High Court"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 5.0,
+    "proposal": {
+      "conviction": "medium",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Strong EPS growth and low volatility; only a weak LPG news item against.",
+    "winner": "bull"
+  },
+  "POL": {
+    "clamp_notes": [],
+    "conviction": "medium",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-POL-4"
+        ],
+        "text": "Q1 2027 EPS +50.9% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "M-POL-8"
+        ],
+        "text": "Daily range (ATR) 1.0% of price: calm; low-volatility stocks did best in the backtest"
+      },
+      {
+        "cites": [
+          "MD-1"
+        ],
+        "text": "Macro: Political tensions and profit-taking pushed PSX below 178,000, making sentiment cautious into the next week."
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 4.5,
+    "proposal": {
+      "conviction": "medium",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Strong EPS growth and very calm volatility; macro bear points are weak or rebutted.",
+    "winner": "bull"
+  },
+  "PPL": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-PPL-4"
+        ],
+        "text": "Q1 2027 EPS +25.5% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "MD-1"
+        ],
+        "text": "Macro: Political tensions and profit-taking pushed PSX below 178,000, making sentiment cautious into the next week."
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 2.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Strong Q1 EPS growth outweighs weak macro and sentiment; score is fair.",
+    "winner": "bull"
+  },
+  "PSEL": {
+    "clamp_notes": [],
+    "conviction": "medium",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-PSEL-3"
+        ],
+        "text": "Net margin 2.8% vs -1.6% a year earlier"
+      },
+      {
+        "cites": [
+          "M-PSEL-8"
+        ],
+        "text": "Daily range (ATR) 8.0% of price: very volatile; such stocks lagged in the backtest"
+      },
+      {
+        "cites": [
+          "SENT-PSEL"
+        ],
+        "text": "Crowd mood bearish (low)"
+      }
+    ],
+    "decision": "accept",
+    "direction": "down",
+    "net_score": -5.0,
+    "proposal": {
+      "conviction": "medium",
+      "direction": "down",
+      "winner": "bear"
+    },
+    "reason": "Very high volatility and bearish crowd mood outweigh margin improvement.",
+    "winner": "bear"
+  },
+  "PSO": {
+    "clamp_notes": [],
+    "conviction": "medium",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-PSO-4"
+        ],
+        "text": "Q1 2027 EPS +172.2% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "N-PSO-8"
+        ],
+        "text": "News (medium impact): PSO Signs Oman Fuel Deal, Gets $200 Million Credit Line"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 4.0,
+    "proposal": {
+      "conviction": "medium",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Strong EPS growth plus Oman credit line deal; bear points are minor.",
+    "winner": "bull"
+  },
+  "SRVI": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-SRVI-4"
+        ],
+        "text": "Q3 2026 EPS +350.0% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "F-SRVI-C1"
+        ],
+        "text": "Announcement 2026-11-20: Material Information"
+      }
+    ],
+    "decision": "accept",
+    "direction": "up",
+    "net_score": 2.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "up",
+      "winner": "bull"
+    },
+    "reason": "Strong EPS growth outweighs macro; only a weak announcement against. Low conviction fits.",
+    "winner": "bull"
+  },
+  "SYS": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-SYS-C1"
+        ],
+        "text": "Board meeting notice (2026-11-27): results or payout may land in the window"
+      },
+      {
+        "cites": [
+          "MD-2"
+        ],
+        "text": "Macro: KSE-100 fell nearly 400 points on geopolitical concerns and volatile trade, adding near-term pressure."
+      }
+    ],
+    "decision": "accept",
+    "direction": "flat",
+    "net_score": -1.5,
+    "proposal": {
+      "conviction": "low",
+      "direction": "flat",
+      "winner": "draw"
+    },
+    "reason": "Weak, stale evidence on both sides; board meeting is a possible catalyst but direction is unclear.",
+    "winner": "draw"
+  },
+  "UBL": {
+    "clamp_notes": [],
+    "conviction": "low",
+    "deciding_points": [
+      {
+        "cites": [
+          "F-UBL-4"
+        ],
+        "text": "Q3 2026 EPS -12.9% vs same quarter last year"
+      },
+      {
+        "cites": [
+          "M-UBL-8"
+        ],
+        "text": "Daily range (ATR) 2.0% of price: calm; low-volatility stocks did best in the backtest"
+      }
+    ],
+    "decision": "accept",
+    "direction": "flat",
+    "net_score": -1.0,
+    "proposal": {
+      "conviction": "low",
+      "direction": "flat",
+      "winner": "draw"
+    },
+    "reason": "Weak EPS decline roughly offsets calm volatility; draw is fair.",
+    "winner": "draw"
+  }
+}

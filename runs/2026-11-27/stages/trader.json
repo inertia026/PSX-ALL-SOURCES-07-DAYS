@@ -1,0 +1,122 @@
+{
+  "AKBL": {
+    "invalidation": "Close above resistance 126.0 on rising volume would prove the downside call wrong.",
+    "setup": "avoid"
+  },
+  "ATRL": {
+    "invalidation": "Close above stop 947.58 would prove the down call wrong; material refinery news adds event risk.",
+    "setup": "avoid"
+  },
+  "BAFL": {
+    "invalidation": "Reclaim and hold above resistance 61.5 on volume would invalidate the downside call.",
+    "setup": "avoid"
+  },
+  "BAHL": {
+    "invalidation": "Break above resistance 171.97 or drop below support 146.02 would end the flat call.",
+    "setup": "avoid"
+  },
+  "BOP": {
+    "invalidation": "Close above resistance 32.62 on heavy volume would invalidate the downside call.",
+    "setup": "avoid"
+  },
+  "DGKC": {
+    "invalidation": "Upside target sits at entry, so a break above 215.31 on volume would show direction.",
+    "setup": "avoid"
+  },
+  "EFERT": {
+    "invalidation": "Close below sma20 211.26 or a break of stop 215.96 on volume.",
+    "setup": "momentum"
+  },
+  "ENGROH": {
+    "invalidation": "Close below stop 295.54, or buyback and results event reverses the up call.",
+    "setup": "catalyst"
+  },
+  "FABL": {
+    "invalidation": "Reclaim resistance 97.8 on volume as gambling-bust news fades would invalidate the call.",
+    "setup": "avoid"
+  },
+  "FATIMA": {
+    "invalidation": "Down call with limited short selling; avoid or reduce. Invalid if EPS decline reverses.",
+    "setup": "avoid"
+  },
+  "FCCL": {
+    "invalidation": "Close below stop 57.69, or a sustained loss of sma20 59.23, breaks the pullback.",
+    "setup": "pullback"
+  },
+  "FFC": {
+    "invalidation": "Close below stop 565.00 or failure to clear resistance20 580.00 within the window.",
+    "setup": "momentum"
+  },
+  "HBL": {
+    "invalidation": "Recovery above resistance20 318.99 on rising volume would invalidate the down call.",
+    "setup": "avoid"
+  },
+  "HMB": {
+    "invalidation": "A close above resistance20 106.0 with rising turnover would contradict the down call.",
+    "setup": "avoid"
+  },
+  "HUBC": {
+    "invalidation": "Flat direction with no expected move; no trade unless direction changes.",
+    "setup": "avoid"
+  },
+  "LUCK": {
+    "invalidation": "Close below stop 411.69 or failure to reclaim sma20 427.96 invalidates the catalyst.",
+    "setup": "catalyst"
+  },
+  "MARI": {
+    "invalidation": "Close below stop 698.71 or loss of sma20 near 693.37 on volume.",
+    "setup": "momentum"
+  },
+  "MCB": {
+    "invalidation": "A break above resistance20 414.77 or below support20 381.51 would make this flat call tradeable.",
+    "setup": "avoid"
+  },
+  "MEBL": {
+    "invalidation": "Sustained move above resistance20 585.0 would prove the avoid call wrong; stop 536.98 risk.",
+    "setup": "avoid"
+  },
+  "MLCF": {
+    "invalidation": "Close above stop 110.83 would invalidate the down call and the avoid stance.",
+    "setup": "avoid"
+  },
+  "MTL": {
+    "invalidation": "Close above 308 resistance on volume would reopen upside; thin plan otherwise.",
+    "setup": "avoid"
+  },
+  "NBP": {
+    "invalidation": "An earnings reversal or a close above resistance20 185.45 would prove the avoid call wrong.",
+    "setup": "avoid"
+  },
+  "OGDC": {
+    "invalidation": "Close below stop 304.79 or break of support20 near 295.21.",
+    "setup": "pullback"
+  },
+  "POL": {
+    "invalidation": "Close below stop 653.77 or break of support20 at 654.00 on volume.",
+    "setup": "mean_reversion"
+  },
+  "PPL": {
+    "invalidation": "Close below stop 217.11 or support20 208.20 breaks the pullback hold.",
+    "setup": "pullback"
+  },
+  "PSEL": {
+    "invalidation": "Any upward close above sma20 would contradict the reduce call; a rebound above 1264.03 confirms it wrong.",
+    "setup": "avoid"
+  },
+  "PSO": {
+    "invalidation": "Close below stop 350.27 or failure to hold sma20 360.76 after entry.",
+    "setup": "catalyst"
+  },
+  "SRVI": {
+    "invalidation": "Close below stop 168.41 or traded value stays thin; event risk makes it untradeable.",
+    "setup": "avoid"
+  },
+  "SYS": {
+    "invalidation": "Flat direction, thin volume and board meeting event risk; no trade.",
+    "setup": "avoid"
+  },
+  "UBL": {
+    "invalidation": "Flat call with zero expected move; a close above resistance20 452.00 would not be captured by this plan.",
+    "setup": "avoid"
+  }
+}

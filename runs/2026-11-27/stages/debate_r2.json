@@ -1,0 +1,806 @@
+{
+  "AKBL": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-AKBL-3"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "stale",
+          "target": "MD-2"
+        }
+      ]
+    }
+  },
+  "ATRL": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-ATRL-1"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": "F-ATRL-4",
+          "effective": true,
+          "reason": "outweighed_by",
+          "target": "MD-2"
+        }
+      ]
+    }
+  },
+  "BAFL": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-BAFL-1"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-BAFL-2"
+        }
+      ]
+    }
+  },
+  "BAHL": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": "M-BAHL-4",
+          "effective": true,
+          "reason": "outweighed_by",
+          "target": "F-BAHL-4"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": "F-BAHL-4",
+          "effective": true,
+          "reason": "outweighed_by",
+          "target": "M-BAHL-4"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-BAHL-2"
+        }
+      ]
+    }
+  },
+  "BOP": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-BOP-3"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-BOP-1"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "weak_signal",
+          "target": "SENT-BOP"
+        }
+      ]
+    }
+  },
+  "DGKC": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "stale",
+          "target": "F-DGKC-2"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": "F-DGKC-3",
+          "effective": true,
+          "reason": "outweighed_by",
+          "target": "MD-1"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "MD-5"
+        }
+      ]
+    }
+  },
+  "EFERT": {
+    "bear": {
+      "rebuttals": []
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": "N-EFERT-1",
+          "effective": true,
+          "reason": "outweighed_by",
+          "target": "M-EFERT-4"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-EFERT-2"
+        }
+      ]
+    }
+  },
+  "ENGROH": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "weak_signal",
+          "target": "F-ENGROH-C2"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": "F-ENGROH-C1",
+          "effective": true,
+          "reason": "outweighed_by",
+          "target": "M-ENGROH-9"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-ENGROH-3"
+        }
+      ]
+    }
+  },
+  "FABL": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-FABL-3"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "weak_signal",
+          "target": "SENT-FABL"
+        }
+      ]
+    }
+  },
+  "FATIMA": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-FATIMA-3"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "weak_signal",
+          "target": "N-FATIMA-4"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-FATIMA-2"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-FATIMA-1"
+        }
+      ]
+    }
+  },
+  "FCCL": {
+    "bear": {
+      "rebuttals": []
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": "F-FCCL-4",
+          "effective": true,
+          "reason": "outweighed_by",
+          "target": "MD-1"
+        },
+        {
+          "by": "F-FCCL-4",
+          "effective": true,
+          "reason": "outweighed_by",
+          "target": "MD-2"
+        }
+      ]
+    }
+  },
+  "FFC": {
+    "bear": {
+      "rebuttals": []
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-FFC-1"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "stale",
+          "target": "MD-2"
+        }
+      ]
+    }
+  },
+  "HBL": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-HBL-3"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "weak_signal",
+          "target": "N-HBL-2"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "MD-5"
+        }
+      ]
+    }
+  },
+  "HMB": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": "F-HMB-4",
+          "effective": true,
+          "reason": "outweighed_by",
+          "target": "F-HMB-1"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-HMB-3"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": []
+    }
+  },
+  "HUBC": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "stale",
+          "target": "F-HUBC-2"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-HUBC-1"
+        }
+      ]
+    }
+  },
+  "LUCK": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "weak_signal",
+          "target": "N-LUCK-2"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": "N-LUCK-1",
+          "effective": true,
+          "reason": "outweighed_by",
+          "target": "MD-1"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-LUCK-1"
+        }
+      ]
+    }
+  },
+  "MARI": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "weak_signal",
+          "target": "N-MARI-1"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": "F-MARI-4",
+          "effective": true,
+          "reason": "outweighed_by",
+          "target": "F-MARI-1"
+        },
+        {
+          "by": "F-MARI-4",
+          "effective": true,
+          "reason": "outweighed_by",
+          "target": "MD-2"
+        }
+      ]
+    }
+  },
+  "MCB": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-MCB-3"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "weak_signal",
+          "target": "MD-3"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "weak_signal",
+          "target": "N-MCB-1"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-MCB-2"
+        }
+      ]
+    }
+  },
+  "MEBL": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "weak_signal",
+          "target": "N-MEBL-2"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": "F-MEBL-4",
+          "effective": true,
+          "reason": "outweighed_by",
+          "target": "N-MEBL-3"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-MEBL-1"
+        }
+      ]
+    }
+  },
+  "MLCF": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "weak_signal",
+          "target": "MD-3"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "weak_signal",
+          "target": "MD-4"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-MLCF-2"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-MLCF-3"
+        }
+      ]
+    }
+  },
+  "MTL": {
+    "bear": {
+      "rebuttals": []
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": "N-MTL-1",
+          "effective": true,
+          "reason": "outweighed_by",
+          "target": "MD-1"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-MTL-1"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "MD-5"
+        }
+      ]
+    }
+  },
+  "NBP": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "stale",
+          "target": "F-NBP-2"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-NBP-3"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": []
+    }
+  },
+  "OGDC": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-OGDC-1"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": "F-OGDC-4",
+          "effective": true,
+          "reason": "outweighed_by",
+          "target": "MD-2"
+        }
+      ]
+    }
+  },
+  "POL": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-POL-1"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "MD-5"
+        },
+        {
+          "by": "F-POL-4",
+          "effective": true,
+          "reason": "outweighed_by",
+          "target": "MD-2"
+        }
+      ]
+    }
+  },
+  "PPL": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-PPL-1"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": "F-PPL-4",
+          "effective": true,
+          "reason": "outweighed_by",
+          "target": "MD-2"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "weak_signal",
+          "target": "N-PPL-2"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "weak_signal",
+          "target": "SENT-PPL"
+        }
+      ]
+    }
+  },
+  "PSEL": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-PSEL-2"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": "F-PSEL-2",
+          "effective": false,
+          "reason": "outweighed_by",
+          "target": "F-PSEL-1"
+        },
+        {
+          "by": "F-PSEL-2",
+          "effective": false,
+          "reason": "outweighed_by",
+          "target": "MD-2"
+        }
+      ]
+    }
+  },
+  "PSO": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-PSO-1"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "weak_signal",
+          "target": "SENT-PSO"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": "F-PSO-4",
+          "effective": true,
+          "reason": "outweighed_by",
+          "target": "F-PSO-2"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "weak_signal",
+          "target": "N-PSO-3"
+        }
+      ]
+    }
+  },
+  "SRVI": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-SRVI-3"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-SRVI-2"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": "F-SRVI-4",
+          "effective": true,
+          "reason": "outweighed_by",
+          "target": "MD-1"
+        },
+        {
+          "by": "F-SRVI-4",
+          "effective": true,
+          "reason": "outweighed_by",
+          "target": "MD-2"
+        }
+      ]
+    }
+  },
+  "SYS": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "stale",
+          "target": "F-SYS-3"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "stale",
+          "target": "F-SYS-4"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-SYS-1"
+        }
+      ]
+    }
+  },
+  "UBL": {
+    "bear": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-UBL-2"
+        },
+        {
+          "by": null,
+          "effective": false,
+          "reason": "not_5day_relevant",
+          "target": "F-UBL-3"
+        }
+      ]
+    },
+    "bull": {
+      "rebuttals": [
+        {
+          "by": null,
+          "effective": false,
+          "reason": "stale",
+          "target": "MD-2"
+        }
+      ]
+    }
+  }
+}

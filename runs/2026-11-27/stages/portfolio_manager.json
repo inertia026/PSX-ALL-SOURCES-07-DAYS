@@ -1,0 +1,212 @@
+{
+  "AKBL": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "down",
+    "flag": "caution",
+    "reason": "Weak quant score 1.0, high risk and cautious market; bearish call is low conviction with no company-specific catalyst."
+  },
+  "ATRL": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "down",
+    "flag": "watch_closely",
+    "reason": "Main crude unit shutdown for up to six days from Nov 29 hurts near term, despite huge EPS growth. High risk, so watch for reversal."
+  },
+  "BAFL": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "down",
+    "flag": "none",
+    "reason": "Calm volatility and medium risk, but cautious macro; down view is weak, so conviction stays low."
+  },
+  "BAHL": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "flat",
+    "flag": "none",
+    "reason": "Strong EPS growth offset by stretched RSI 72.9 that lagged in backtest; no clear edge, stay flat."
+  },
+  "BOP": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "down",
+    "flag": "caution",
+    "reason": "Bearish sentiment and cautious macro support down view, but share issuance to Punjab government is an unclear catalyst; keep low conviction."
+  },
+  "DGKC": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "flat",
+    "flag": "caution",
+    "reason": "No directional edge, high risk, avoid setup, and weak market. Stay flat."
+  },
+  "EFERT": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "up",
+    "flag": "caution",
+    "reason": "EPS +73.7% and urea price hike support upside, but high risk rating and weak quant score of 1.0 limit conviction."
+  },
+  "ENGROH": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "flat",
+    "flag": "watch_closely",
+    "reason": "Buyback is a high-impact catalyst, but price is 8.3% above its 20-day average, quant is -27 and risk is high. Stay flat."
+  },
+  "FABL": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "down",
+    "flag": "watch_closely",
+    "reason": "High risk, bearish sentiment and NCCIA money-trail news involving the bank raise headline risk that numbers may miss."
+  },
+  "FATIMA": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "down",
+    "flag": "caution",
+    "reason": "EPS fell 25.6% and quant is negative, but high risk and avoid setup make a short call weak."
+  },
+  "FCCL": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "up",
+    "flag": "caution",
+    "reason": "Strong EPS and margin gains, but high risk and neutral news and sentiment. Pullback setup needs confirmation; keep low conviction."
+  },
+  "FFC": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "up",
+    "flag": "caution",
+    "reason": "EPS growth and tax relief news help, but RSI 70.8 is stretched and lagged next week in the backtest."
+  },
+  "HBL": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "down",
+    "flag": "caution",
+    "reason": "Research says down, but news is positive and sentiment bullish; weak market pressure supports a low-conviction downside only."
+  },
+  "HMB": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "down",
+    "flag": "none",
+    "reason": "EPS fell 20.9% year on year and the market is weak. Risk is high, and conviction is already at the floor."
+  },
+  "HUBC": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "flat",
+    "flag": "none",
+    "reason": "Research is flat; positive profit news is offset by market weakness. No edge for the week."
+  },
+  "LUCK": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "up",
+    "flag": "watch_closely",
+    "reason": "Strong profit news and margins support upside, but high risk and a weak index could undercut it. Watch market direction."
+  },
+  "MARI": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "up",
+    "flag": "none",
+    "reason": "EPS growth of 39% and positive news with a calm daily range support the up call. Risk is medium and sentiment neutral, so conviction stays low."
+  },
+  "MCB": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "flat",
+    "flag": "none",
+    "reason": "No directional edge: neutral news and sentiment, calm volatility, weak market. Stay flat."
+  },
+  "MEBL": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "flat",
+    "flag": "caution",
+    "reason": "EPS grew 21.4% and sentiment is bullish, but risk is high and the market is weak. Setup is avoid, so flat."
+  },
+  "MLCF": {
+    "clamp_notes": [],
+    "final_conviction": "high",
+    "final_direction": "down",
+    "flag": "watch_closely",
+    "reason": "Margin collapse, EPS decline and cautious market support a bearish call. Short-term bounces could hurt, so monitor."
+  },
+  "MTL": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "up",
+    "flag": "caution",
+    "reason": "EPS growth and EV launch catalyst are positive, but setup is avoid and market is weak. Keep low conviction."
+  },
+  "NBP": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "flat",
+    "flag": "none",
+    "reason": "Cheap P/E is offset by a 28.8% EPS drop and a weak market. No clear edge, so flat."
+  },
+  "OGDC": {
+    "clamp_notes": [],
+    "final_conviction": "medium",
+    "final_direction": "up",
+    "flag": "none",
+    "reason": "EPS up 52.6%, calm volatility, and the best quant score in the batch. The LPG auction scrapping is low impact. Pullback setup supports a medium-conviction up call."
+  },
+  "POL": {
+    "clamp_notes": [],
+    "final_conviction": "medium",
+    "final_direction": "up",
+    "flag": "caution",
+    "reason": "EPS up 50.9%, calm volatility and positive news support the up call. The weak market (political tension, profit-taking) is a headwind for a mean-reversion setup."
+  },
+  "PPL": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "up",
+    "flag": "caution",
+    "reason": "Strong Q1 EPS growth, but bearish sentiment, pullback setup and weak market tone limit conviction. Keep low."
+  },
+  "PSEL": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "down",
+    "flag": "caution",
+    "reason": "Bearish crowd mood and a very volatile stock (8% daily range) back the down call. Setup is avoid and risk is high, so conviction stays low."
+  },
+  "PSO": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "up",
+    "flag": "none",
+    "reason": "Huge EPS growth and Oman fuel deal with credit line support upside; risk review trimmed conviction, and I keep it low given weak market."
+  },
+  "SRVI": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "flat",
+    "flag": "caution",
+    "reason": "Setup is avoid, risk high, and conviction is low. The EPS jump is strong, but the vague material-information announcement and neutral news give no clear edge. Stay flat."
+  },
+  "SYS": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "flat",
+    "flag": "watch_closely",
+    "reason": "Board meeting notice may bring results or payout inside the window; high risk and negative score, so no directional call."
+  },
+  "UBL": {
+    "clamp_notes": [],
+    "final_conviction": "low",
+    "final_direction": "flat",
+    "flag": "none",
+    "reason": "Research flat, EPS down 12.9%, avoid setup; calm volatility but no edge."
+  }
+}

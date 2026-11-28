@@ -1,0 +1,710 @@
+{
+  "AKBL": {
+    "aggressive": {
+      "argument": "Down call with target 116.53 and no long case to chase. Board meeting notice may bring results or payout inside the window, a binary event. Risk high. Keep conviction.",
+      "cites": [
+        "F-AKBL-C2"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "high"
+    },
+    "conservative": {
+      "argument": "ATR 2.5% with a board meeting in the window and a down call on low conviction. Results or payout could gap the price. Avoid.",
+      "cites": [
+        "F-AKBL-C1",
+        "F-AKBL-C2"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    },
+    "neutral": {
+      "argument": "Avoid setup with low conviction and ATR 2.5%. Board-meeting and disclosure catalysts could move price either way, so risk is medium. Keep conviction.",
+      "cites": [
+        "F-AKBL-C1",
+        "F-AKBL-C2"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    }
+  },
+  "ATRL": {
+    "aggressive": {
+      "argument": "The 2026-11-27 material refinery announcement adds unpredictable event risk, with the highest ATR at 2.92%. The down call pays only 0.25% against a 3.5% stop. Lower conviction.",
+      "cites": [
+        "F-ATRL-C1"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    },
+    "conservative": {
+      "argument": "Down call with low conviction. Material information dated 2026-11-27 (F-ATRL-C1) adds event risk on 2.92% ATR. Stop sits about 3.5% above entry, and short selling is limited on PSX, so the only action is avoid or reduce.",
+      "cites": [
+        "F-ATRL-C1"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    },
+    "neutral": {
+      "argument": "Material refinery news adds event risk to a down call with a stop about 3.5% above entry. Short selling is limited on PSX, so the plan reduces to avoid. Lower conviction further.",
+      "cites": [
+        "F-ATRL-C1"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    }
+  },
+  "BAFL": {
+    "aggressive": {
+      "argument": "Down call with stop 61.12 and target 59.73, so no upside to take risk for. Third interim dividend was already published, so the catalyst is largely known. Risk medium. Keep conviction.",
+      "cites": [
+        "F-BAFL-C1"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    },
+    "conservative": {
+      "argument": "Down call on low conviction with results and a third interim dividend already published. Ex-dividend passed on 2026-11-04. Moderate volatility. Avoid or reduce.",
+      "cites": [
+        "F-BAFL-C1"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "medium"
+    },
+    "neutral": {
+      "argument": "Avoid setup, low conviction, ATR 1.73%, traded value 146.7M. Interim dividend already in the catalyst list. Stop sits near the invalidation level. Medium risk, keep conviction.",
+      "cites": [
+        "F-BAFL-C1"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    }
+  },
+  "BAHL": {
+    "aggressive": {
+      "argument": "Flat call with zero expected move, so there is no growth for the plan to capture. Director disclosure is a minor catalyst. Liquidity of 78m is adequate. Risk low. Keep conviction.",
+      "cites": [
+        "F-BAHL-C1"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "low"
+    },
+    "conservative": {
+      "argument": "Flat call on low conviction with ATR 1.97% and only a director dealing disclosure. No edge in the window. Liquidity is adequate. Stay out.",
+      "cites": [
+        "F-BAHL-C1"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    },
+    "neutral": {
+      "argument": "Flat call with low conviction and avoid setup. No expected move, so no edge either way. Director disclosure is minor. Liquidity 78.3M is adequate. Medium risk, keep conviction.",
+      "cites": [
+        "F-BAHL-C1"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    }
+  },
+  "BOP": {
+    "aggressive": {
+      "argument": "Down call with stop 31.82 and target 30.85, no long edge. Government of Punjab share issuance is a dilution overhang, though 623m daily turnover keeps exit liquidity deep. Risk medium. Keep conviction.",
+      "cites": [
+        "F-BOP-C1"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    },
+    "conservative": {
+      "argument": "Highest traded value in the batch, but ATR 2.39% and a share issuance to GoPb add dilution risk. Down call on low conviction. Avoid.",
+      "cites": [
+        "F-BOP-C1"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    },
+    "neutral": {
+      "argument": "Avoid setup, low conviction, ATR 2.39%. Government share issuance tranche may dilute supply or sentiment. Traded value 623.1M gives good liquidity. Medium risk, keep conviction.",
+      "cites": [
+        "F-BOP-C1"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    }
+  },
+  "DGKC": {
+    "aggressive": {
+      "argument": "Expected move is zero and the target equals entry at 201.24. Four briefing-session announcements give no directional edge. Nothing to chase; reversal needs a break above 215.31 on volume.",
+      "cites": [
+        "F-DGKC-C1",
+        "F-DGKC-C3"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "low"
+    },
+    "conservative": {
+      "argument": "Flat direction with zero expected move; target equals entry, so no reward against open-ended risk at 2.5 ATR. Lower conviction.",
+      "cites": [
+        "F-DGKC-C1"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    },
+    "neutral": {
+      "argument": "Flat direction with zero expected move and no stop defined. The plan has no defined reward or loss bound, so risk is high despite the liquidity.",
+      "cites": [
+        "F-DGKC-C1"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "high"
+    }
+  },
+  "EFERT": {
+    "aggressive": {
+      "argument": "Target 222.57 is only 0.5% above entry 221.46, while the stop at 215.96 sits about 2.5% below. Reward-to-risk is poor even for a momentum setup. Lower conviction until the target widens.",
+      "cites": [],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    },
+    "conservative": {
+      "argument": "Stop sits about 2.5% below entry while the target is only 0.5% above, so reward-to-risk is poor. Ex-dividend 2026-10-30 is outside the window.",
+      "cites": [],
+      "conviction_adjust": -1,
+      "risk_rating": "medium"
+    },
+    "neutral": {
+      "argument": "Stop 215.96 sits about 2.5% below entry 221.46, while target 222.57 is only about 0.5% above. Reward-to-risk is roughly 0.2:1 against ATR 2.07%, so the plan is unfavourable.",
+      "cites": [],
+      "conviction_adjust": -1,
+      "risk_rating": "medium"
+    }
+  },
+  "ENGROH": {
+    "aggressive": {
+      "argument": "Buy-back announcement on 2026-11-24 is genuine support for upside. Results may land in the window, so volatility is real. Target 306.26 ignores the buy-back upside; raise conviction modestly.",
+      "cites": [
+        "F-ENGROH-C1",
+        "F-ENGROH-C2"
+      ],
+      "conviction_adjust": 1,
+      "risk_rating": "high"
+    },
+    "conservative": {
+      "argument": "Buyback announcement and a board meeting may land in the window, adding event risk. Stop about 3.3% below entry against a 0.25% target. Low conviction.",
+      "cites": [
+        "F-ENGROH-C1",
+        "F-ENGROH-C2"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    },
+    "neutral": {
+      "argument": "Buyback and possible results event could move price, but the plan quantifies neither. Stop 295.54 is about 3.3% below entry 305.5, while target 306.26 is about 0.25% above, with ATR 2.72%.",
+      "cites": [
+        "F-ENGROH-C1",
+        "F-ENGROH-C2"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    }
+  },
+  "FABL": {
+    "aggressive": {
+      "argument": "Down call on the thinnest liquidity here, 45.5m a day, with no catalyst. Stop 94.77 sits under 2 percent from entry, so normal noise can trigger it. Risk high. Keep conviction.",
+      "cites": [],
+      "conviction_adjust": 0,
+      "risk_rating": "high"
+    },
+    "conservative": {
+      "argument": "Thin liquidity at 45.5m traded value and no catalysts to anchor the move. Down call on low conviction. Gap risk from news is hard to size. Avoid.",
+      "cites": [],
+      "conviction_adjust": -1,
+      "risk_rating": "medium"
+    },
+    "neutral": {
+      "argument": "Avoid setup with low conviction. Traded value only 45.5M and no catalysts, so exits may be costly. Stop distance is about 1.9%. Thin liquidity raises risk. High risk, keep conviction.",
+      "cites": [],
+      "conviction_adjust": 0,
+      "risk_rating": "high"
+    }
+  },
+  "FATIMA": {
+    "aggressive": {
+      "argument": "Down call with limited short selling leaves no long route. Highest ATR at 3.07% and a 3.7% stop distance make it volatile. Avoid; lower conviction to reflect the bearish, unactionable view.",
+      "cites": [],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    },
+    "conservative": {
+      "argument": "Highest ATR at 3.07% with the thinnest liquidity at 155.8M. Short selling is limited on PSX, so the down call is effectively avoid. Risk is high.",
+      "cites": [],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    },
+    "neutral": {
+      "argument": "Down call with limited PSX short selling, so the plan reduces to avoid. Stop 152.01 is about 3.7% above entry against ATR 3.07%, and no upside path exists in this plan.",
+      "cites": [],
+      "conviction_adjust": -1,
+      "risk_rating": "medium"
+    }
+  },
+  "FCCL": {
+    "aggressive": {
+      "argument": "Results-day risk: financial results were published 2026-11-27. Reward is about 0.25% to target against about 3.4% to stop. The pullback is fine, but the plan does not pay for the risk. Lower conviction.",
+      "cites": [
+        "F-FCCL-C1",
+        "F-FCCL-C2"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    },
+    "conservative": {
+      "argument": "Target 59.88 sits only 0.25 percent above entry while stop 57.69 is about 3.4 percent below; reward-to-risk is poor at 2.84 ATR. Results day 2026-11-27 adds event risk.",
+      "cites": [
+        "F-FCCL-C2"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    },
+    "neutral": {
+      "argument": "Stop sits about 3.4% below entry while target is only 0.25% above. Reward-to-risk is poor for a pullback, so risk is high and conviction should be trimmed.",
+      "cites": [
+        "F-FCCL-C1"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    }
+  },
+  "FFC": {
+    "aggressive": {
+      "argument": "Liquidity is strong at 669.1m and ATR is low at 1.27%. Target 575.15 is just 0.25% above entry while the stop is about 1.5% below. Upside depends on clearing resistance20 580.00.",
+      "cites": [],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    },
+    "conservative": {
+      "argument": "Stop about 1.5% below entry against a target only 0.25% above, so reward is far smaller than risk. Low conviction and an expected move too small to justify entry.",
+      "cites": [],
+      "conviction_adjust": -1,
+      "risk_rating": "medium"
+    },
+    "neutral": {
+      "argument": "Stop 565.00 is about 1.5% below entry 573.72, while target 575.15 is only about 0.25% above. Reward-to-risk is poor for a low-conviction call, and the plan does not reach resistance20 580.00.",
+      "cites": [],
+      "conviction_adjust": -1,
+      "risk_rating": "medium"
+    }
+  },
+  "HBL": {
+    "aggressive": {
+      "argument": "Down call gives no long edge and PSX short selling is limited, so the plan is simply to stay out. The -0.25% expected move is too small to act on.",
+      "cites": [],
+      "conviction_adjust": -1,
+      "risk_rating": "low"
+    },
+    "conservative": {
+      "argument": "Down call with low conviction and ATR 1.74%. Plan is avoid, so exposure is minimal. Recovery above 318.99 on volume invalidates. Recent ex-dividend 2026-11-02 adds noise.",
+      "cites": [],
+      "conviction_adjust": 0,
+      "risk_rating": "low"
+    },
+    "neutral": {
+      "argument": "Avoid plan with low conviction and a tiny expected move of -0.25%. Short selling is limited on PSX, so the down call adds little. Liquid with ATR 1.74%, so risk is contained. Keep avoid.",
+      "cites": [],
+      "conviction_adjust": 0,
+      "risk_rating": "low"
+    }
+  },
+  "HMB": {
+    "aggressive": {
+      "argument": "Thin liquidity at about 22 PKR m a day, with a 1.95% ATR against a -0.25% expected move, means noise dominates. Down call is weak; avoid it.",
+      "cites": [],
+      "conviction_adjust": -1,
+      "risk_rating": "medium"
+    },
+    "conservative": {
+      "argument": "Down call, low conviction, ATR 1.95%, and average traded value only 22.4M PKR, which is thin liquidity. Exit or entry fills could slip. Avoid stance is correct; lower conviction further.",
+      "cites": [],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    },
+    "neutral": {
+      "argument": "Avoid plan on a down call with a -0.25% expected move and low conviction. Traded value of only 22.4M PKR makes exits and fills harder. Thin liquidity raises execution risk. Keep avoid.",
+      "cites": [],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    }
+  },
+  "HUBC": {
+    "aggressive": {
+      "argument": "The plan is flat with a zero expected move, so there is no trade to risk. The dividend credit notice is not a trade driver. Stay out.",
+      "cites": [
+        "F-HUBC-C1"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "low"
+    },
+    "conservative": {
+      "argument": "Flat direction with zero expected move, so the plan is no trade. No position means no exposure. The interim cash dividend (F-HUBC-C1) and the 2026-11-06 ex-dividend are already priced, so keep the avoid call.",
+      "cites": [
+        "F-HUBC-C1"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "low"
+    },
+    "neutral": {
+      "argument": "Flat direction with zero expected move and no stop. The avoid plan carries little risk if followed; no trade is the balanced outcome.",
+      "cites": [
+        "F-HUBC-C1"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "low"
+    }
+  },
+  "LUCK": {
+    "aggressive": {
+      "argument": "The catalyst setup has no catalyst in the data, and the target sits only 0.25% above entry. The stop is about 2.8% away, roughly 1.2 ATR. Risk is medium. A wider target is needed before conviction rises.",
+      "cites": [],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    },
+    "conservative": {
+      "argument": "Catalyst setup has no listed catalyst; target 424.67 is 0.25 percent above entry against a stop about 2.8 percent below at 2.34 ATR.",
+      "cites": [],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    },
+    "neutral": {
+      "argument": "Catalyst setup has a stop about 2.8% below entry against a 0.25% target. No catalyst evidence is attached, so the thesis is unsupported and risk is high.",
+      "cites": [],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    }
+  },
+  "MARI": {
+    "aggressive": {
+      "argument": "Liquid at 1447.9m with a momentum setup, but target 721.48 is only 0.5% above entry while stop is about 2.7% below. Reward-to-risk is poor, so hold risk at medium.",
+      "cites": [],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    },
+    "conservative": {
+      "argument": "Liquidity is adequate at 1447.9m and ATR is 2.23%. Stop 698.71 sits about 2.7% below entry 717.89, so normal swings could trigger a stop-out.",
+      "cites": [],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    },
+    "neutral": {
+      "argument": "Liquid, but the plan is lopsided. Target 721.48 is only about 0.5 percent above entry while stop 698.71 is about 2.7 percent below. Momentum setup needs a break above target to pay.",
+      "cites": [],
+      "conviction_adjust": -1,
+      "risk_rating": "medium"
+    }
+  },
+  "MCB": {
+    "aggressive": {
+      "argument": "Flat call with 0.0% expected move and no catalysts. Nothing to trade; the only cost is missed opportunity. Liquidity is adequate.",
+      "cites": [],
+      "conviction_adjust": 0,
+      "risk_rating": "low"
+    },
+    "conservative": {
+      "argument": "Flat call with no expected move and ATR 1.5%. Liquidity of 132.6M PKR is adequate. No tradeable edge, so the avoid plan carries little risk. Keep conviction unchanged.",
+      "cites": [],
+      "conviction_adjust": 0,
+      "risk_rating": "low"
+    },
+    "neutral": {
+      "argument": "Flat call with zero expected move and no stop or target. No edge to trade, so the plan carries little directional risk. Liquidity is adequate at 132.6M PKR. Keep avoid.",
+      "cites": [],
+      "conviction_adjust": 0,
+      "risk_rating": "low"
+    }
+  },
+  "MEBL": {
+    "aggressive": {
+      "argument": "Up call fails on the numbers: stop 536.98 sits about 2.1% below entry 548.74, while target 550.11 is only 0.25% above. Reward-to-risk is badly skewed.",
+      "cites": [],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    },
+    "conservative": {
+      "argument": "Up direction but setup is avoid with low conviction and only 0.25% expected move. ATR 1.79% and recent ex-dividend 2026-11-03 make the upside unreliable. Do not raise conviction.",
+      "cites": [],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    },
+    "neutral": {
+      "argument": "Up call but the target (550.11) is only 0.25% above entry, while the stop (536.98) is about 2.1% below. Reward-to-risk is poor even with low conviction. Lower conviction. Keep avoid.",
+      "cites": [],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    }
+  },
+  "MLCF": {
+    "aggressive": {
+      "argument": "The high-conviction down call supports avoid only; no long upside exists. Stop sits 3.2% above entry against a 0.75% downside target. Short selling is limited on PSX, so no aggressive action. Keep conviction unchanged.",
+      "cites": [],
+      "conviction_adjust": 0,
+      "risk_rating": "high"
+    },
+    "conservative": {
+      "argument": "Plan points down with high conviction; stop 110.83 sits above entry 107.31 and short selling is limited on PSX. Avoid, lower conviction.",
+      "cites": [],
+      "conviction_adjust": -1,
+      "risk_rating": "medium"
+    },
+    "neutral": {
+      "argument": "Down call with high conviction and an avoid stance. Stop 3.3% above entry, target 0.75% below. Risk is moderate since the plan is to stay out rather than hold.",
+      "cites": [],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    }
+  },
+  "MTL": {
+    "aggressive": {
+      "argument": "Thin plan: 0.25% expected move against about 2.0% stop distance, low conviction, avoid setup. Upside needs a close above 308 on volume first. The catalyst is only a briefing notice.",
+      "cites": [
+        "F-MTL-C1"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "medium"
+    },
+    "conservative": {
+      "argument": "Thin 65M daily value and avoid setup with low conviction; expected move only 0.25 percent against 1.7 ATR. Keep stance cautious.",
+      "cites": [
+        "F-MTL-C1"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "medium"
+    },
+    "neutral": {
+      "argument": "Expected move 0.25% against a 2% stop distance; the plan is thin and the setup is avoid. Medium risk from low conviction and wide stop relative to target.",
+      "cites": [
+        "F-MTL-C1"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    }
+  },
+  "NBP": {
+    "aggressive": {
+      "argument": "Flat call with no catalysts and no expected move. ATR of 2.56% is the highest here, so volatility is real but has no direction. Liquidity is ample.",
+      "cites": [],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    },
+    "conservative": {
+      "argument": "Flat call with no expected move and the highest ATR of the batch at 2.56%. Volatility is high relative to the zero edge. Avoid plan is correct; lower conviction.",
+      "cites": [],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    },
+    "neutral": {
+      "argument": "Flat call with zero expected move and no target. Highest ATR in the batch at 2.56%, so price swings are large without a directional edge. Liquidity is strong at 615.8M PKR. Keep avoid.",
+      "cites": [],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    }
+  },
+  "OGDC": {
+    "aggressive": {
+      "argument": "Ex-dividend date 2026-11-10 has already passed, so the 2026-11-23 cash dividend credit adds no price lift. Target is 0.5% above entry versus a 1.7% stop. Liquidity is fine; medium risk.",
+      "cites": [
+        "F-OGDC-C1"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    },
+    "conservative": {
+      "argument": "ATR 1.41% and traded value 713.1m keep risk contained. Ex-dividend on 2026-11-10 has passed, but the cash dividend credit announcement adds minor event noise.",
+      "cites": [
+        "F-OGDC-C1"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "low"
+    },
+    "neutral": {
+      "argument": "Liquid with low ATR of 1.41 percent. Target is about 0.5 percent above entry against a stop about 1.7 percent below. Dividend was already credited, so the catalyst is largely priced in.",
+      "cites": [
+        "F-OGDC-C1"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    }
+  },
+  "POL": {
+    "aggressive": {
+      "argument": "Traded value 151.5m is adequate and ATR 1.05% gives a tight range. Target 0.5% above entry against a 1.25% stop gives poor reward, so wait for a better setup. Medium risk.",
+      "cites": [],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    },
+    "conservative": {
+      "argument": "ATR 1.05% is low, but traded value 151.5m is thin versus peers. Stop 653.77 sits only about 1.25% below entry 662.07, so whipsaw is possible.",
+      "cites": [],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    },
+    "neutral": {
+      "argument": "Liquid, low ATR of 1.05 percent, and a tight stop about 1.25 percent below entry. Target is about 0.5 percent above entry, so payoff is small but the downside is contained.",
+      "cites": [],
+      "conviction_adjust": 0,
+      "risk_rating": "low"
+    }
+  },
+  "PPL": {
+    "aggressive": {
+      "argument": "Target 222.75 is only 0.25% above entry 222.19, while stop 217.11 sits about 2.3% below. Upside is too thin to justify raising conviction.",
+      "cites": [
+        "F-PPL-C1"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    },
+    "conservative": {
+      "argument": "Low conviction with a 0.25% expected move against 1.9% ATR. Stop sits about 2.3% below entry, so reward does not justify the risk. Ex-dividend 2026-11-11 is outside the window, but the 1st interim dividend credit (F-PPL-C1) is a minor payout ...",
+      "cites": [
+        "F-PPL-C1"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "medium"
+    },
+    "neutral": {
+      "argument": "Stop sits about 2.3% below entry while target offers only about 0.25% upside, a poor reward-to-risk. Low conviction and an ex-dividend already passed. Reduce risk, do not chase.",
+      "cites": [
+        "F-PPL-C1"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "medium"
+    }
+  },
+  "PSEL": {
+    "aggressive": {
+      "argument": "Setup is avoid on a down call, with ATR 7.99% and traded value 8.6m below threshold. Short selling is limited on PSX, so the only useful action is avoid or reduce.",
+      "cites": [
+        "F-PSEL-C1"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    },
+    "conservative": {
+      "argument": "Traded value 8.6m is below threshold and ATR 7.99% is the highest in the batch. Down call means avoid or reduce, since short selling is limited on PSX.",
+      "cites": [
+        "F-PSEL-C1"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    },
+    "neutral": {
+      "argument": "Avoid or reduce. Short selling is limited on PSX, ATR is about 8 percent, and traded value is thin. The down call carries high volatility with little tradable exit.",
+      "cites": [
+        "F-PSEL-C1"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    }
+  },
+  "PSO": {
+    "aggressive": {
+      "argument": "Upside to 360.75 is only 0.5% against a stop 2.4% below at 350.27. Catalysts are briefing notices, not earnings. Keep conviction unchanged.",
+      "cites": [
+        "F-PSO-C1",
+        "F-PSO-C2",
+        "F-PSO-C3"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    },
+    "conservative": {
+      "argument": "Medium conviction, but the catalysts are only corporate briefing notices with no earnings or payout (F-PSO-C1, F-PSO-C2, F-PSO-C3). Target is about 0.5% above entry while the stop is about 2.4% below, a poor reward-to-risk ratio on 2.02% ATR.",
+      "cites": [
+        "F-PSO-C2",
+        "F-PSO-C3"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "medium"
+    },
+    "neutral": {
+      "argument": "Medium conviction and a briefing-session catalyst support the setup, but the 0.5% target against a roughly 2.4% stop is weak reward-to-risk. Keep size small.",
+      "cites": [
+        "F-PSO-C1",
+        "F-PSO-C2",
+        "F-PSO-C3"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    }
+  },
+  "SRVI": {
+    "aggressive": {
+      "argument": "Target only 0.25% above entry while stop sits about 4.5% below. Liquidity 9.5m is below threshold and an announcement landed 2026-11-20. No upside worth this risk.",
+      "cites": [
+        "F-SRVI-C1"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    },
+    "conservative": {
+      "argument": "Traded value 9.5m is below threshold, ATR 3.79% is elevated, and a material-information announcement adds event risk. Setup is avoid.",
+      "cites": [
+        "F-SRVI-C1"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    },
+    "neutral": {
+      "argument": "Avoid. Traded value about 9.5m PKR is below the liquidity threshold, and a material-information announcement adds event risk. Stop and target sit within 5 percent of entry.",
+      "cites": [
+        "F-SRVI-C1"
+      ],
+      "conviction_adjust": -1,
+      "risk_rating": "high"
+    }
+  },
+  "SYS": {
+    "aggressive": {
+      "argument": "Traded value of 149.0m PKR is thin, and a board meeting could bring results or payout into the window. A flat plan gives no edge. Keep out.",
+      "cites": [
+        "F-SYS-C1"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "high"
+    },
+    "conservative": {
+      "argument": "Board meeting notice (F-SYS-C1) may bring results or payout inside the window. Average traded value is only PKR 149m with 2.67% ATR. Flat call, so keep the no-trade plan.",
+      "cites": [
+        "F-SYS-C1"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "high"
+    },
+    "neutral": {
+      "argument": "Flat direction and thin traded value of about 149 PKR m add liquidity risk. The board meeting may bring results or payout within the window. Remain on the sidelines.",
+      "cites": [
+        "F-SYS-C1"
+      ],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    }
+  },
+  "UBL": {
+    "aggressive": {
+      "argument": "Flat call with zero expected move and an avoid setup gives no upside to chase. A breakout above resistance20 452.00 sits outside the plan and would be missed. Stay out; no aggressive edge here.",
+      "cites": [],
+      "conviction_adjust": 0,
+      "risk_rating": "medium"
+    },
+    "conservative": {
+      "argument": "Flat call with zero expected move and no target. Liquidity is adequate and ATR is modest, but the plan offers no edge. Keep out.",
+      "cites": [],
+      "conviction_adjust": -1,
+      "risk_rating": "low"
+    },
+    "neutral": {
+      "argument": "Flat call with zero expected move and no catalysts. Little to gain, and the plan ignores a break above resistance20 452.00. Risk is low, but the plan offers no edge.",
+      "cites": [],
+      "conviction_adjust": 0,
+      "risk_rating": "low"
+    }
+  }
+}
